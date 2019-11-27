@@ -49,3 +49,5 @@ Byrjun á endurhönnuðu klasariti eftir fyrirlestur 2 –
 Gera happy path wireframe fyrir 6 use cases – Alexander, Birgir  og Sindri 
 
 Nytsemis- og notendaupplifunarkröfur - Alexander, Birgir, Ingunn og Sindri 
+
+Áframhaldandi vinna við klasarit - Birgir, Sindri
