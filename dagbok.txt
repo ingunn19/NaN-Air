@@ -1,0 +1,51 @@
+Dagbókarfærsla 1.
+
+Verkefnalisti 25/11/2019 
+
+Setja upp vinnusvæði - Alexander 
+
+Safna gögnum úr verkefnalýsingu í vinnuskrá - Birgir, Sindri 
+
+Gera kröfulista - Ingunn 
+
+Skrifa use cases fyirir kröfur - Alexander, Birgir, Ingunn, Sindri 
+
+Plana valmynd – Ingunn 
+
+Byrja á klasariti – Birgir, Alexander 
+
+Klasarit klárað - Birgir, Alexander 
+
+Stöðurit klárað - Birgir, Alexander 
+
+ 
+
+Dagbókarfærsla 2. 
+
+Verkefnalisti 26/11/2019 
+
+Endurhugsa menu – Ingunn 
+
+Stöðurit lagað – Birgir 
+
+Notendagreining – Alexander, Sindri 
+
+Valmynd sett niður á blað -Birgir 
+
+Kröfulisti uppfærður með B kröfum – Ingunn 
+
+Uppfæra notendatilvik - Ingunn 
+
+Klasarit – Birgir, Sindri, Alexander 
+
+ 
+
+Dagbókarfærsla 3. 
+
+Halda áfram að setja notendatilvik fyrir B kröfur - Ingunn 
+
+Byrjun á endurhönnuðu klasariti eftir fyrirlestur 2 –  
+
+Gera happy path wireframe fyrir 6 use cases – Alexander, Birgir  og Sindri 
+
+Nytsemis- og notendaupplifunarkröfur - Alexander, Birgir, Ingunn og Sindri 
