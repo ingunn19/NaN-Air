@@ -44,10 +44,20 @@ Dagbókarfærsla 3.
 
 Halda áfram að setja notendatilvik fyrir B kröfur - Ingunn 
 
-Byrjun á endurhönnuðu klasariti eftir fyrirlestur 2 –  
+Byrjun á endurhönnuðu klasariti eftir fyrirlestur 2 – Birgir
 
 Gera happy path wireframe fyrir 6 use cases – Alexander, Birgir  og Sindri 
 
 Nytsemis- og notendaupplifunarkröfur - Alexander, Birgir, Ingunn og Sindri 
 
 Áframhaldandi vinna við klasarit - Birgir, Sindri
+
+ 
+
+Dagbókarfærsla 4.
+
+Byrja að skrifa hönnunarskýrslu - Ingunn
+
+Búa til pappírs skissur af notendaviðmóti fyrir prófanir - Sindri
+
+Laga klasarit eftir að hafa fengið umsögn frá kennara - Birgir, Alexander
