@@ -61,3 +61,5 @@ Byrja að skrifa hönnunarskýrslu - Ingunn
 Búa til pappírs skissur af notendaviðmóti fyrir prófanir - Sindri
 
 Laga klasarit eftir að hafa fengið umsögn frá kennara - Birgir, Alexander
+
+Flowchart af valmynd - Ingunn
