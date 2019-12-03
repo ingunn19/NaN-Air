@@ -37,10 +37,12 @@ Skipulags
 Beinagrind af forriti
 
 ------03/12 þriðjudagur------
-
+Hefja vinnu í Logic Layer
+Hefja vinnu í Data Layer
 
 ------03/12 miðvikudagur------
-
+Laga init í Data - Alexander
+Setja upp startup í Logic fyrir að sækja skráargögn frá Data - Ingunn
 
 ------03/12 fimmtudagur------
 
