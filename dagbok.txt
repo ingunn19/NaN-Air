@@ -86,3 +86,8 @@ Beinagrind
 
 Dagbókarfærsla 7.
 
+Módel klasar - Birgir, Sindri
+
+Logic vinna - Ingunn
+
+Data layer - Alexander
