@@ -1,38 +1,38 @@
 id,ssn,name,role,licence,address,phonenumber,email
-1,3009907461,William Carillo,Pilot,NAFokkerF100,Fellsmúli 1,8998801,w.carillo@nanair.com
-2,2910858778,Virginia Ho,Pilot,NABAE146,Fellsmúli 2,8998802,v.ho@nanair
-3,2706838569,Gerard Nelson,Pilot,NAFokkerF100,Fellsmúli 3,8998803,g.nelson@nanair
-4,2209955782,Allen Ley,Pilot,NABAE146,Fellsmúli 4,8998804,a.ley@nanair
-5,2907675667,Felecia Moye,Pilot,NABAE146,Fellsmúli 5,8998805,f.moye@nanair
-6,1309797899,Tyler Anderson,Pilot,NAFokkerF28,Fellsmúli 6,8998806,t.anderson@nanair
-7,2410876598,Nan Gage,Pilot,NAFokkerF100,Fellsmúli 7,8998807,n.gage@nanair
-8,2211658134,Charla Johnson,Pilot,NABAE146,Fellsmúli 8,8998808,c.johnson@nanair
-9,2504939263,Sam Preciado,Pilot,NABAE146,Fellsmúli 9,8998809,s.preciado@nanair
-10,1900769521,Jasmine Hagadone,Pilot,NABAE146,Fellsmúli 10,8998810,j.hagadone@nanair
-11,2500812671,Anna Phillips,Pilot,NAFokkerF28,Fellsmúli 11,8998811,a.phillips@nanair
-12,1309927223,Patricia Bates,Pilot,NAFokkerF28,Fellsmúli 12,8998812,p.bates@nanair
-13,1600904199,Sherry Walker,Cabincrew,N/A,Fellsmúli 13,8998813,s.walker@nanair
-14,303758167,Margarita Fischer,Cabincrew,N/A,Fellsmúli 14,8998814,m.fischer@nanair
-15,2200763823,Judith Aleshire,Cabincrew,N/A,Fellsmúli 15,8998815,j.aleshire@nanair
-16,1308941169,Jacob Blecha,Cabincrew,N/A,Fellsmúli 16,8998816,j.blecha@nanair
-17,1405853585,Lula Stefani,Cabincrew,N/A,Fellsmúli 17,8998817,l.stefani@nanair
-18,909862878,Richard Sanders,Cabincrew,N/A,Fellsmúli 18,8998818,r.sanders@nanair
-19,1811931544,John Kline,Cabincrew,N/A,Fellsmúli 19,8998819,j.kline@nanair
-20,409858797,Evelyn Pickhardt,Cabincrew,N/A,Fellsmúli 20,8998820,e.pickhardt@nanair
-21,3002688722,Stacey Henrickson,Cabincrew,N/A,Fellsmúli 21,8998821,s.henrickson@nanair
-22,3003962187,Delores Whitfield,Cabincrew,N/A,Fellsmúli 22,8998822,d.whitfield@nanair
-23,1311772221,Maribel Lucero,Cabincrew,N/A,Fellsmúli 23,8998823,m.lucero@nanair
-24,2509913418,Katherine Wernimont,Cabincrew,N/A,Fellsmúli 24,8998824,k.wernimont@nanair
-25,1103647756,Wilma Horne,Cabincrew,N/A,Fellsmúli 25,8998825,w.horne@nanair
-26,2807755841,Bernard Carr,Cabincrew,N/A,Fellsmúli 26,8998826,b.carr@nanair
-27,409907212,Sara Davis,Cabincrew,N/A,Fellsmúli 27,8998827,s.davis@nanair
-28,1103912131,Robert Swope,Cabincrew,N/A,Fellsmúli 28,8998828,r.swope@nanair
-29,2801645554,John Iversen,Cabincrew,N/A,Fellsmúli 29,8998829,j.iversen@nanair
-30,1501681497,Rhonda Forman,Cabincrew,N/A,Fellsmúli 30,8998830,r.forman@nanair
-31,1811813379,Melissa Paquette,Cabincrew,N/A,Fellsmúli 31,8998831,m.paquette@nanair
-32,505942924,Carlton Chan,Cabincrew,N/A,Fellsmúli 32,8998832,c.chan@nanair
-33,1110732819,Arthur Karr,Cabincrew,N/A,Fellsmúli 33,8998833,a.karr@nanair
-34,2602806942,Teresa Thruman,Cabincrew,N/A,Fellsmúli 34,8998834,t.thruman@nanair
-35,1107951952,Elizabeth Mcfadden,Cabincrew,N/A,Fellsmúli 35,8998835,e.mcfadden@nanair
-36,1701728949,Meadow Mathis,Cabincrew,N/A,Fellsmúli 36,8998836,m.mathis@nanair
-37,2701886957,Jameel Buxton,Cabincrew,N/A,Fellsmúli 37,8998837,j.buxton@nanair
+1,3009907461,William Carillo,Pilot,NAFokkerF100,Mordor Hellir 1,8998801,w.carillo@nanair.com
+2,2910858778,Virginia Ho,Pilot,NABAE146,Mordor Hellir 2,8998802,v.ho@nanair.com
+3,2706838569,Gerard Nelson,Pilot,NAFokkerF100,Mordor Hellir 3,8998803,g.nelson@nanair.com
+4,2209955782,Allen Ley,Pilot,NABAE146,Mordor Hellir 4,8998804,a.ley@nanair.com
+5,2907675667,Felecia Moye,Pilot,NABAE146,Mordor Hellir 5,8998805,f.moye@nanair.com
+6,1309797899,Tyler Anderson,Pilot,NAFokkerF28,Mordor Hellir 6,8998806,t.anderson@nanair.com
+7,2410876598,Nan Gage,Pilot,NAFokkerF100,Mordor Hellir 7,8998807,n.gage@nanair.com
+8,2211658134,Charla Johnson,Pilot,NABAE146,Mordor Hellir 8,8998808,c.johnson@nanair.com
+9,2504939263,Sam Preciado,Pilot,NABAE146,Mordor Hellir 9,8998809,s.preciado@nanair.com
+10,1900769521,Jasmine Hagadone,Pilot,NABAE146,Mordor Hellir 10,8998810,j.hagadone@nanair.com
+11,2500812671,Anna Phillips,Pilot,NAFokkerF28,Mordor Hellir 11,8998811,a.phillips@nanair.com
+12,1309927223,Patricia Bates,Pilot,NAFokkerF28,Mordor Hellir 12,8998812,p.bates@nanair.com
+13,1600904199,Sherry Walker,Cabincrew,N/A,Mordor Hellir 13,8998813,s.walker@nanair.com
+14,303758167,Margarita Fischer,Cabincrew,N/A,Mordor Hellir 14,8998814,m.fischer@nanair.com
+15,2200763823,Judith Aleshire,Cabincrew,N/A,Mordor Hellir 15,8998815,j.aleshire@nanair.com
+16,1308941169,Jacob Blecha,Cabincrew,N/A,Mordor Hellir 16,8998816,j.blecha@nanair.com
+17,1405853585,Lula Stefani,Cabincrew,N/A,Mordor Hellir 17,8998817,l.stefani@nanair.com
+18,909862878,Richard Sanders,Cabincrew,N/A,Mordor Hellir 18,8998818,r.sanders@nanair.com
+19,1811931544,John Kline,Cabincrew,N/A,Mordor Hellir 19,8998819,j.kline@nanair.com
+20,409858797,Evelyn Pickhardt,Cabincrew,N/A,Mordor Hellir 20,8998820,e.pickhardt@nanair.com
+21,3002688722,Stacey Henrickson,Cabincrew,N/A,Mordor Hellir 21,8998821,s.henrickson@nanair.com
+22,3003962187,Delores Whitfield,Cabincrew,N/A,Mordor Hellir 22,8998822,d.whitfield@nanair.com
+23,1311772221,Maribel Lucero,Cabincrew,N/A,Mordor Hellir 23,8998823,m.lucero@nanair.com
+24,2509913418,Katherine Wernimont,Cabincrew,N/A,Mordor Hellir 24,8998824,k.wernimont@nanair.com
+25,1103647756,Wilma Horne,Cabincrew,N/A,Mordor Hellir 25,8998825,w.horne@nanair.com
+26,2807755841,Bernard Carr,Cabincrew,N/A,Mordor Hellir 26,8998826,b.carr@nanair.com
+27,409907212,Sara Davis,Cabincrew,N/A,Mordor Hellir 27,8998827,s.davis@nanair.com
+28,1103912131,Robert Swope,Cabincrew,N/A,Mordor Hellir 28,8998828,r.swope@nanair.com
+29,2801645554,John Iversen,Cabincrew,N/A,Mordor Hellir 29,8998829,j.iversen@nanair.com
+30,1501681497,Rhonda Forman,Cabincrew,N/A,Mordor Hellir 30,8998830,r.forman@nanair.com
+31,1811813379,Melissa Paquette,Cabincrew,N/A,Mordor Hellir 31,8998831,m.paquette@nanair.com
+32,505942924,Carlton Chan,Cabincrew,N/A,Mordor Hellir 32,8998832,c.chan@nanair.com
+33,1110732819,Arthur Karr,Cabincrew,N/A,Mordor Hellir 33,8998833,a.karr@nanair.com
+34,2602806942,Teresa Thruman,Cabincrew,N/A,Mordor Hellir 34,8998834,t.thruman@nanair.com
+35,1107951952,Elizabeth Mcfadden,Cabincrew,N/A,Mordor Hellir 35,8998835,e.mcfadden@nanair.com
+36,1701728949,Meadow Mathis,Cabincrew,N/A,Mordor Hellir 36,8998836,m.mathis@nanair.com
+37,2701886957,Jameel Buxton,Cabincrew,N/A,Mordor Hellir 37,8998837,j.buxton@nanair.com
