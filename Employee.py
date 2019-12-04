@@ -56,7 +56,7 @@ class Pilot(Employee):
         self.pilot_ssn = new_ssn
 
     def set_pilot_id(self, new_id):
-        sef.pilot_id = new_id
+        self.pilot_id = new_id
 
     def set_pilot_adress(self, new_adress):
         self.pilot_adress = new_adress
