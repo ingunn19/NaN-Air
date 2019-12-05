@@ -1,7 +1,7 @@
-id,destination,contact_name,contact_number
-LYR,Longyearbyean,Keanan Nielsen,47 67 03 54 00
-GOH,Nuuk,Ciaron Butler,299 32 60 05
-KUS,Kulusuk,Manpreet Cotton,299 98 69 88
-FAE,Thorshavn,Heidi Mcgee,298 354400
-LWK,Tingwall,Tiana Busby,44 1595 840246
-RKV,Reykjavik,Ela Gill,354 420 0750
+id,destination,travel_time,contact_name,contact_number
+LYR,Longyearbyean,4,Keanan Nielsen,47 67 03 54 00
+GOH,Nuuk,3,Ciaron Butler,299 32 60 05
+KUS,Kulusuk,2,Manpreet Cotton,299 98 69 88
+FAE,Thorshavn,1,Heidi Mcgee,298 354400
+LWK,Tingwall,2,Tiana Busby,44 1595 840246
+RKV,Reykjavik,0,Ela Gill,354 420 0750
