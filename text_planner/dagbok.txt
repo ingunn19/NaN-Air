@@ -91,3 +91,15 @@ Módel klasar - Birgir, Sindri
 Logic vinna - Ingunn
 
 Data layer - Alexander
+
+ 
+
+Dagbókarfærsla 8.
+
+Áframhaldandi vinna við UI - Birgir
+
+UI villuprófun - Sindri
+
+Logic virkni f. overview - Alexander
+
+Logic virkni fyrir work trip - Ingunn
