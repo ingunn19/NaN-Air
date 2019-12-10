@@ -1,6 +1,6 @@
 #used in methood picking_employee_work_overview_week
 from datetime import date, timedelta, datetime
-from dataLayer import DataAPI
+from data_layer.dataLayer import DataAPI
 
 #following class has various methoods that serve as an overview for employees
 
