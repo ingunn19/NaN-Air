@@ -8,7 +8,7 @@ class DataAPI:
 
     def write_file(self, info):
         '''writes into an existing file , if the file does not exist the program creates it.'''
-        with open(f'./csv_data/{self.name_of_file}.csv', 'a') as __csv_data:
+        with open(f'./csv_data/{self.name_of_file}.csv', 'w') as __csv_data:
             for line in info:
                 __csv_data.write(','.join(line) + '\n')
 
