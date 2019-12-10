@@ -1,7 +1,7 @@
-from ChangeEmployee import ChangeEmployee
-from ChangeWorkTrip import ChangeWorkTrip
-from ChangeDestination import ChangeDestination
-from ChangeAircraft import ChangeAircraft
+from ui_layer.changeEmployee import ChangeEmployee
+from ui_layer.changeWorkTrip import ChangeWorkTrip
+from ui_layer.changeDestination import ChangeDestination
+from ui_layer.changeAircraft import ChangeAircraft
 #from UI_API import UI_Api
 SPACER = "_____________________________________________"
 class Change_Info:

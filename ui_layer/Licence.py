@@ -1,8 +1,10 @@
-from UI_API import UI_Api
+from ui_layer.uiAPI import UI_API
+
 SPACER = "_____________________________________________"
+
 class Licence:
     def __init__(self):
-        self.__UI_API = UI_Api()
+        self.__UI_API = UI_API()
     def licence_menu(self):
         action = ""
         while action != "b":

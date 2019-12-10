@@ -1,10 +1,12 @@
 #from LogicLayerTest import LogicAPI
 from logic_layer.LogicLayerTest import LogicAPI
 from datetime import date, timedelta, datetime
+
 SPACER = "_____________________________________________"
-class UI_Api:
+
+class UI_API:
     def __inti__(self):
-        self.classObject = LogicAPI()
+        self.__logic_API = LogicAPI()
 
     def set_pilot(self, ssn, name, role, licence, address, gsm):
         set_pilot_list = [ssn, name, role, licence, address, gsm]
@@ -34,7 +36,8 @@ class UI_Api:
     #This is Alexanders code /all employees
     def get_all_employees(self):
         print("All employees")
-        test_listi1a = self.classObject.req_overview_allemployees()
+        l_API = LogicAPI()
+        test_listi1a = l_API.req_overview_allemployees()
         for line in test_listi1a:
             id, name, role, licence, address, phonenumber, email, eight = line
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
@@ -42,16 +45,18 @@ class UI_Api:
 
     def get_personal_info(self, employee):
         print('Employee Info')
-        test_listi1d = self.classObject.picking_employee_personal_det(8)
+        employee_info_list = self.__logic_API.picking_employee_personal_det(employee)
 
-        for line in test_listi1d:
+        for line in employee_info_list:
             id, name, role, licence, address, phonenumber, email, eight = line
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:17}{phonenumber:17}{email:14}{eight}')
         print(SPACER)
 
+        return employee_info_list
+
     def get_work_schedule(self, employee, year, week):
         print("Picking_employee_work_overview_week")
-        test_listi2 = self.classObject.picking_employee_work_overview_week(employee, year, week)
+        test_listi2 = self.__logic_API.picking_employee_work_overview_week(employee, year, week)
         for line in test_listi2:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
@@ -60,7 +65,7 @@ class UI_Api:
     # This is Alexanders code /all pilots
     def get_all_pilots(self):
         print("req_overview_pilots")
-        test_listi1b = self.classObject.req_overview_pilots()
+        test_listi1b = self.__logic_API.req_overview_pilots()
         for line in test_listi1b:
             id, name, role, licence, address, phonenumber, email, eight = line
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
@@ -69,7 +74,7 @@ class UI_Api:
     # This is Alexanders code /all cabin crew
     def get_all_cabin_crew(self):
         print("req_overview_flightattendants")
-        test_listi1c = self.classObject.req_overview_flightattendants()
+        test_listi1c = self.__logic_API.req_overview_flightattendants()
         for line in test_listi1c:
             id, name, role, licence, address, phonenumber, email, eight = line
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
@@ -85,7 +90,7 @@ class UI_Api:
     def get_day_with_task(self, task_day):
         print("Employee_with_task")
         #
-        test_listi3 = self.classObject.all_employees_with_task(task_day)
+        test_listi3 = self.__logic_API.all_employees_with_task(task_day)
         print('Employee Id: ', end="")
         for ch in test_listi3:
             print(ch, end=" ")
@@ -94,7 +99,7 @@ class UI_Api:
 
     def get_day_no_task(self, task_day):
         print("Employee_not_with_task")
-        test_listi4 = self.classObject.all_employees_not_with_task(task_day)
+        test_listi4 = self.__logic_API.all_employees_not_with_task(task_day)
         print('Employee Id: ', end="")
         for ch in test_listi4:
             print(ch, end=" ")
@@ -103,7 +108,7 @@ class UI_Api:
 
     def get_airplane_licence(self, model):
         print("Pilots with licence on one plane")
-        test_listi5 = self.classObject.all_pilots_with_licence_on_an_given_plane(model)
+        test_listi5 = self.__logic_API.all_pilots_with_licence_on_an_given_plane(model)
         for line in test_listi5:
             id, ssn, name, role, licence, address, phonenumber, email = line
             print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
@@ -111,7 +116,7 @@ class UI_Api:
 
     def get_pilot_licence(self):
         print("Pilots with licence")
-        test_listi6 = self.classObject.all_pilots_with_licences_all_planes()
+        test_listi6 = self.__logic_API.all_pilots_with_licences_all_planes()
         for line in test_listi6:
             id, ssn, name, role, licence, address, phonenumber, email = line
             print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
@@ -119,8 +124,7 @@ class UI_Api:
 
     def get_all_worktrips(self):
         print("All worktrips")
-        test_listi7 = self.classObject.all_worktrips()
-        counter = 0
+        test_listi7 = self.__logic_API.all_worktrips()
         for line in test_listi7:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
@@ -128,7 +132,7 @@ class UI_Api:
 
     def get_week_worktrip(self, year, week):
         print("All worktrips in given year,week")
-        test_listi8 = self.classObject.get_week_of_worktrip(year, week)
+        test_listi8 = self.__logic_API.get_week_of_worktrip(year, week)
         for line in test_listi8:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
@@ -136,7 +140,7 @@ class UI_Api:
 
     def get_day_worktrip(self, display_workday):
         print("All worktrips in given date")
-        test_listi9a = self.classObject.worktrips_of_the_day(display_workday)
+        test_listi9a = self.__logic_API.worktrips_of_the_day(display_workday)
         for line in test_listi9a:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(

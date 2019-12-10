@@ -1,5 +1,5 @@
-from New_Pilot import New_Pilot
-from New_CabinCrew import New_CabinCrew
+from ui_layer.newPilot import New_Pilot
+from ui_layer.newCabinCrew import New_CabinCrew
 SPACER = "_____________________________________________"
 class New_Employee:
     def __init__(self):

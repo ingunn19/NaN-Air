@@ -1,8 +1,10 @@
-from UI_API import UI_Api
+from ui_layer.uiAPI import UI_API
+
 SPACER = "_____________________________________________"
+
 class New_WorkTrip:
     def __init__(self):
-        self.__UI_API = UI_Api()
+        self.__UI_API = UI_API()
         self.__arrivingAt = ""
         self.__departure = ""
         self.__aircraftID = ""
@@ -11,6 +13,7 @@ class New_WorkTrip:
         self.__flightAttendant1 = ""
         self.__flightAttendant2 = ""
         self.__flightAttendant3 = ""
+
     def Initialize_WorkTrip(self):
         print("New WorkTrip")
         self.__arrivingAt = input("Destination: ")

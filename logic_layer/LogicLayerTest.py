@@ -47,7 +47,7 @@ class LogicAPI:
 
         return __flight_attendants
 
-    #nákvæm leiit,velja starfsmann, persónuuplýsingar
+    #nákvæm leit, velja starfsmann, persónuuplýsingar
     def picking_employee_personal_det(self, __identity):
         __identity = str(__identity)
         __all_employee = self.__crew.read_file()

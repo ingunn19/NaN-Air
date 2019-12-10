@@ -1,7 +1,7 @@
-from New_Employee import New_Employee
-from New_Airplane import New_Airplane
-from New_WorkTrip import New_WorkTrip
-from New_Destination import New_Destination
+from ui_layer.newEmployee import New_Employee
+from ui_layer.newAirplane import New_Airplane
+from ui_layer.newWorkTrip import New_WorkTrip
+from ui_layer.newDestination import New_Destination
 SPACER = "_____________________________________________"
 
 class Initialize:
