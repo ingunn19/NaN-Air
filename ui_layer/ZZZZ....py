@@ -1,4 +1,4 @@
-from LogicLayerTest import LogicAPI
+from logic_layer.LogicLayerTest import LogicAPI
 from datetime import date, timedelta, datetime
 
 classObject = LogicAPI()
