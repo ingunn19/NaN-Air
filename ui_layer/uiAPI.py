@@ -3,7 +3,7 @@ from logic_layer.LogicLayerTest import LogicAPI
 from datetime import date, timedelta, datetime
 
 SPACER = "_____________________________________________"
-
+logic_API = LogicAPI()
 class UI_API:
     def __inti__(self):
         self.__logic_API = LogicAPI()
@@ -36,8 +36,7 @@ class UI_API:
     #This is Alexanders code /all employees
     def get_all_employees(self):
         print("All employees")
-        l_API = LogicAPI()
-        test_listi1a = l_API.req_overview_allemployees()
+        test_listi1a = logic_API.req_overview_allemployees()
         for line in test_listi1a:
             id, name, role, licence, address, phonenumber, email, eight = line
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
@@ -45,7 +44,7 @@ class UI_API:
 
     def get_personal_info(self, employee):
         print('Employee Info')
-        employee_info_list = self.__logic_API.picking_employee_personal_det(employee)
+        employee_info_list = logic_API.picking_employee_personal_det(employee)
 
         for line in employee_info_list:
             id, name, role, licence, address, phonenumber, email, eight = line
@@ -56,7 +55,7 @@ class UI_API:
 
     def get_work_schedule(self, employee, year, week):
         print("Picking_employee_work_overview_week")
-        test_listi2 = self.__logic_API.picking_employee_work_overview_week(employee, year, week)
+        test_listi2 = logic_API.picking_employee_work_overview_week(employee, year, week)
         for line in test_listi2:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
@@ -65,7 +64,7 @@ class UI_API:
     # This is Alexanders code /all pilots
     def get_all_pilots(self):
         print("req_overview_pilots")
-        test_listi1b = self.__logic_API.req_overview_pilots()
+        test_listi1b = logic_API.req_overview_pilots()
         for line in test_listi1b:
             id, name, role, licence, address, phonenumber, email, eight = line
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
@@ -74,13 +73,13 @@ class UI_API:
     # This is Alexanders code /all cabin crew
     def get_all_cabin_crew(self):
         print("req_overview_flightattendants")
-        test_listi1c = self.__logic_API.req_overview_flightattendants()
+        test_listi1c = logic_API.req_overview_flightattendants()
         for line in test_listi1c:
             id, name, role, licence, address, phonenumber, email, eight = line
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
         print(SPACER)
 
-    def get_name(self, employee_id):
+    def get_name(self, employee_id): # Vantar get name
         testname = "birgir"
         #self.__LL_Api.get_name()
         print("Employee name")# þessi print setning er bara svo eg fái ekki errror
@@ -90,7 +89,7 @@ class UI_API:
     def get_day_with_task(self, task_day):
         print("Employee_with_task")
         #
-        test_listi3 = self.__logic_API.all_employees_with_task(task_day)
+        test_listi3 = logic_API.all_employees_with_task(task_day)
         print('Employee Id: ', end="")
         for ch in test_listi3:
             print(ch, end=" ")
@@ -99,7 +98,7 @@ class UI_API:
 
     def get_day_no_task(self, task_day):
         print("Employee_not_with_task")
-        test_listi4 = self.__logic_API.all_employees_not_with_task(task_day)
+        test_listi4 = logic_API.all_employees_not_with_task(task_day)
         print('Employee Id: ', end="")
         for ch in test_listi4:
             print(ch, end=" ")
@@ -108,7 +107,7 @@ class UI_API:
 
     def get_airplane_licence(self, model):
         print("Pilots with licence on one plane")
-        test_listi5 = self.__logic_API.all_pilots_with_licence_on_an_given_plane(model)
+        test_listi5 = logic_API.all_pilots_with_licence_on_an_given_plane(model)
         for line in test_listi5:
             id, ssn, name, role, licence, address, phonenumber, email = line
             print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
@@ -116,7 +115,7 @@ class UI_API:
 
     def get_pilot_licence(self):
         print("Pilots with licence")
-        test_listi6 = self.__logic_API.all_pilots_with_licences_all_planes()
+        test_listi6 = logic_API.all_pilots_with_licences_all_planes()
         for line in test_listi6:
             id, ssn, name, role, licence, address, phonenumber, email = line
             print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
@@ -124,7 +123,7 @@ class UI_API:
 
     def get_all_worktrips(self):
         print("All worktrips")
-        test_listi7 = self.__logic_API.all_worktrips()
+        test_listi7 = logic_API.all_worktrips()
         for line in test_listi7:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
@@ -132,7 +131,7 @@ class UI_API:
 
     def get_week_worktrip(self, year, week):
         print("All worktrips in given year,week")
-        test_listi8 = self.__logic_API.get_week_of_worktrip(year, week)
+        test_listi8 = logic_API.get_week_of_worktrip(year, week)
         for line in test_listi8:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
@@ -140,33 +139,44 @@ class UI_API:
 
     def get_day_worktrip(self, display_workday):
         print("All worktrips in given date")
-        test_listi9a = self.__logic_API.worktrips_of_the_day(display_workday)
+        test_listi9a = logic_API.worktrips_of_the_day(display_workday)
         for line in test_listi9a:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
             print(
                 f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
         print(SPACER)
+        return test_listi9a
 
     def get_all_destinations(self):
-        #self.__LL_Api.get_all_destinations()
-        print("Here we list all destinations")
+        print("All destinaions")
+        test_listi10 = logic_API.all_destinations()
+        for line in test_listi10:
+            id, destination, travel_time, contact_name, contact_number = line
+            print(f"{id:4}{destination:15}{travel_time:13}{contact_name:17}{contact_number:10}")
         print(SPACER)
 
     def get_specific_destination(self, a_destination):
-        testdestinationlist = ["1", "Greenland", "Birgir", "845-3461"]
-        #self.__LL_Api.get_specific_destination(a_destination)
-        print("Here we list a specific destination")
-        print(SPACER)
-        return testdestinationlist
+        print("One destinaion")
+        test_listi11 = logic_API.one_destination("LYR")
+        for line in test_listi11:
+            id, destination, travel_time, contact_name, contact_number = line
+            print(f"{id:4}{destination:15}{travel_time:13}{contact_name:17}{contact_number:10}")
+        return test_listi11
 
     def get_all_planes(self):
-        #self.__LL_Api.get_all_planes()
-        print("Here we list all planes")
+        print("All airplane")
+        test_listi12 = logic_API.all_planes()
+        for line in test_listi12:
+            planeInsignia, planetypeId = line
+            print(f"{planeInsignia:<15}{planetypeId}")
         print(SPACER)
 
     def get_plane_state(self):
-        #self.__LL_Api.get_stadeof_planes()
-        print("here we list state of all planes")
+        print("State of planes")
+        test = logic_API.state_of_plane("2019-11-02T14:21:00")
+        for line in test:
+            planeType, planeInsignia, status, next_available, destination, flightNumber = line
+            print(f"{planeInsignia:15}{planeType:15}{status:14}{str(next_available):20}{destination:13}{flightNumber}")
         print(SPACER)
 
     def set_changes_for_existing_employee(self, employee):
@@ -178,22 +188,26 @@ class UI_API:
         print("Setja inn breytt gögn um áfangastað")
 
     def get_specific_aircraft(self, plane_insignia):
-        testaircraft = ["plane_insignia", "plane ID"]
-        #self.__LL_Api.get_specific_aircraft(plane_insignia)
-        print("hér sýnum við áhverðna flugvél")
+        print("Single airplanes")
+        test_listi13 = logic_API.single_plane(plane_insignia)
+        for line in test_listi13:
+            planeInsignia, planetypeId = line
+            print(f"{planeInsignia:<15}{planetypeId}")
         print(SPACER)
-        return testaircraft
+        return test_listi13
 
     def set_changes_for_existing_aircraft(self, aircraft):
         #self.__LL_Api.set_changes_for_existing_aircraft(aircraft)
         print("Setja inn breytt gögn um flugvél")
 
     def get_specific_worktrip(self, flight_number):
-        testworktrip = ["100", "reykjavik", "greenland", "timeto", "timehome", "ID", "jónas", "lisa", "katrin", "maggey", "lirgir"]# pilot1, pilot2, cc1, cc2, cc3
-        #self.__LL_Api.get_specific_worktrip(flight_number)
-        print("ná í upplýsingar um staka vinnuferð")
+        print("Single worktrip")
+        test_listi9c = logic_API.singe_worktrip(flight_number)
+        for line in test_listi9c:
+            flightNumber,departingFrom,arrivingAt,departure_time,return_time,aircraftID,pilot1,pilot2,fa1,fa2,fa3=line
+            print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
         print(SPACER)
-        return testworktrip
+        return test_listi9c
 
     def set_changes_for_existing_worktrip(self, worktrip):
         #self.__LL_Api.set_changes_for_existing_worktrip(worktrip)

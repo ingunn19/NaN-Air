@@ -89,18 +89,14 @@ for line in test_listi1a:
 #     print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
 # print("------------------------------------------------------------------------------------------------------------")
 # print("All worktrips in given date")
+# komið
 # test_listi9a = classObject.worktrips_of_the_day("2019-11-24")
 # for line in test_listi9a:
 #     flightNumber,departingFrom,arrivingAt,departure_time,return_time,aircraftID,pilot1,pilot2,fa1,fa2,fa3=line
 #     print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
 # print("------------------------------------------------------------------------------------------------------------")
-# print("All worktrips of the day")
-# test_listi9b = classObject.worktrips_of_the_day("2019-11-20")
-# for line in test_listi9b:
-#     flightNumber,departingFrom,arrivingAt,departure_time,return_time,aircraftID,pilot1,pilot2,fa1,fa2,fa3=line
-#     print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
-# print("------------------------------------------------------------------------------------------------------------")
 # print("Single worktrip")
+# komið
 # test_listi9c = classObject.singe_worktrip("100")
 # for line in test_listi9c:
 #     flightNumber,departingFrom,arrivingAt,departure_time,return_time,aircraftID,pilot1,pilot2,fa1,fa2,fa3=line
@@ -114,12 +110,14 @@ for line in test_listi1a:
 
 # print("------------------------------------------------------------------------------------------------------------")
 # print("One destinaion")
+# komið
 # test_listi11 = classObject.one_destination("LYR")
 # for line in test_listi11:
 #     id, destination, travel_time, contact_name, contact_number = line
 #     print(f"{id:4}{destination:15}{travel_time:13}{contact_name:17}{contact_number:10}")
 # print("------------------------------------------------------------------------------------------------------------")
 # print("All airplane")
+# komið
 # test_listi12 = classObject.all_planes()
 # for line in test_listi12:
 #     planeInsignia, planetypeId = line
@@ -127,6 +125,7 @@ for line in test_listi1a:
 
 # print("------------------------------------------------------------------------------------------------------------")
 # print("Single airplanes")
+# komið
 # test_listi13 = classObject.single_plane("TF-XUP")
 # for line in test_listi13:
 #     planeInsignia, planetypeId = line
