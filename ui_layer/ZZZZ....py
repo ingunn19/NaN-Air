@@ -3,6 +3,7 @@ from datetime import date, timedelta, datetime
 
 classObject = LogicAPI()
 print("------------------------------------------------------------------------------------------------------------")
+# komið inn í ui api
 print("All employees")
 test_listi1a = classObject.req_overview_allemployees()
 for line in test_listi1a:
@@ -11,12 +12,14 @@ for line in test_listi1a:
 
 print("------------------------------------------------------------------------------------------------------------")
 print("req_overview_pilots")
+#komið
 test_listi1b = classObject.req_overview_pilots()
 for line in test_listi1b:
     id, name, role, licence, address, phonenumber, email, eight = line
     print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
 print("------------------------------------------------------------------------------------------------------------")
 print("req_overview_flightattendants")
+#komið
 test_listi1c = classObject.req_overview_flightattendants()
 for line in test_listi1c:
     id, name, role, licence, address, phonenumber, email, eight = line
@@ -25,6 +28,7 @@ print("-------------------------------------------------------------------------
 
 print('Employee Info')
 #test for employee_overview stuff
+#komið
 test_listi1d = classObject.picking_employee_personal_det(8)
 
 for line in test_listi1d:
@@ -33,12 +37,14 @@ for line in test_listi1d:
 
 print("------------------------------------------------------------------------------------------------------------")
 print("Picking_employee_work_overview_week")
+# komið
 test_listi2 = classObject.picking_employee_work_overview_week(ID, Year, week)
 for line in test_listi2:
     flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2,fa3=line
     print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
 print("------------------------------------------------------------------------------------------------------------")
 print("Employee_with_task")
+# komið
 test_listi3 = classObject.all_employees_with_task("2019-11-24")
 print('Employee Id: ', end="")
 for ch in test_listi3:
@@ -46,6 +52,7 @@ for ch in test_listi3:
 print("\n")
 print("------------------------------------------------------------------------------------------------------------")
 print("Employee_not_with_task")
+#komið
 test_listi4 = classObject.all_employees_not_with_task("2019-11-24")
 print('Employee Id: ', end="")
 for ch in test_listi4:
@@ -53,18 +60,21 @@ for ch in test_listi4:
 print("\n")
 print("------------------------------------------------------------------------------------------------------------")
 print("Pilots with licence on one plane")
+#komið
 test_listi5 = classObject.all_pilots_with_licence_on_an_given_plane("NAFokkerF100")
 for line in test_listi5:
     id, ssn, name, role, licence, address, phonenumber, email = line
     print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
 print("------------------------------------------------------------------------------------------------------------")
 print("Pilots with licence")
+#komið
 test_listi6 = classObject.all_pilots_with_licences_all_planes()
 for line in test_listi6:
     id,ssn,name,role,licence,address,phonenumber,email= line
     print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
 print("------------------------------------------------------------------------------------------------------------")
 print("All worktrips")
+#komið
 test_listi7 = classObject.all_worktrips()
 counter = 0
 for line in test_listi7:
@@ -72,6 +82,7 @@ for line in test_listi7:
     print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
 print("------------------------------------------------------------------------------------------------------------")
 print("All worktrips in given year,week")
+#komið
 test_listi8 = classObject.get_week_of_worktrip(2019, 47)
 for line in test_listi8:
     flightNumber,departingFrom,arrivingAt,departure_time,return_time,aircraftID,pilot1,pilot2,fa1,fa2,fa3=line

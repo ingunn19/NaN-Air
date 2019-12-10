@@ -26,14 +26,15 @@ class WorktripHistory:
             elif action == "2":
                 print("Week worktrip overview ")
                 print("Choose a week: 1 - 52:")
-                display_workweek = input()
-                self.__UI_API.get_week_worktrip(display_workweek)
+                year = input("Year: ")
+                week = input("Week: ")
+                self.__UI_API.get_week_worktrip(year, week)
                 input()
                 print(SPACER)
 
             elif action == "3":
                 print("Day worktrip overview ")
-                print("Choose your day: yyyy, mm, dd")
+                print("Choose your day: yyyy-mm-dd")
                 display_workday = input()
                 self.__UI_API.get_day_worktrip(display_workday)
                 input()
