@@ -1,7 +1,12 @@
+#from LogicLayerTest import LogicAPI
+from logic_layer.LogicLayerTest import LogicAPI
+from datetime import date, timedelta, datetime
 SPACER = "_____________________________________________"
+classObject = LogicAPI()
 class UI_Api:
     def __inti__(self):
-        self.__LL_Api = LL_Api()
+        self.__LL_Api = LogicAPI()
+        self.classObject = LogicAPI()
 
     def set_pilot(self, ssn, name, role, licence, address, gsm):
         set_pilot_list = [ssn, name, role, licence, address, gsm]
@@ -28,35 +33,49 @@ class UI_Api:
         print(set_destination_list)
         #self.__LL_Api.set_destination(set_destination_list)
 
+    #This is Alexanders code /all employees
     def get_all_employees(self):
-        #self.__LL_Api.get_all_employees()
-        #Her þarf að raða gögnum úr lista og prenta út
-        print("This is me showing of all employees")
+        print("All employees")
+        test_listi1a = classObject.req_overview_allemployees()
+        for line in test_listi1a:
+            id, name, role, licence, address, phonenumber, email, eight = line
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
         print(SPACER)
 
     def get_personal_info(self, employee):
-        pemp_employee = ["2105972719", "Birgir Snær Ingason", "Pilot","Fokker", "Drekavellir 63", "8453461"]
-        #self.__LL_Api.get_personal_info(employee)
-        print("here we have personal info")
-        print(SPACER)
-        if employee == "1":
-            return pemp_employee
+        print('Employee Info')
+        test_listi1d = classObject.picking_employee_personal_det(8)
 
-    def get_work_schedule(self, employee):
-        # self.__LL_Api.get_work_schedule(employee)
-        print("Here we have work schedule")
+        for line in test_listi1d:
+            id, name, role, licence, address, phonenumber, email, eight = line
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:17}{phonenumber:17}{email:14}{eight}')
         print(SPACER)
 
+    def get_work_schedule(self, employee, year, week):
+        print("Picking_employee_work_overview_week")
+        test_listi2 = classObject.picking_employee_work_overview_week(ID, year, week)
+        for line in test_listi2:
+            flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
+            print(
+                f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
+        print(SPACER)
+
+    # This is Alexanders code /all pilots
     def get_all_pilots(self):
-        # self.__LL_Api.get_all_pilots()
-        # Her þarf að raða gögnum úr lista og prenta út
-        print("This is me showing of all pilots")
+        print("req_overview_pilots")
+        test_listi1b = classObject.req_overview_pilots()
+        for line in test_listi1b:
+            id, name, role, licence, address, phonenumber, email, eight = line
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
         print(SPACER)
 
+    # This is Alexanders code /all cabin crew
     def get_all_cabin_crew(self):
-        # self.__LL_Api.get_all_cabin_crew()
-        # Her þarf að raða gögnum úr lista og prenta út
-        print("This is me showing of all cabincrew")
+        print("req_overview_flightattendants")
+        test_listi1c = classObject.req_overview_flightattendants()
+        for line in test_listi1c:
+            id, name, role, licence, address, phonenumber, email, eight = line
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
         print(SPACER)
 
     def get_name(self, employee_id):

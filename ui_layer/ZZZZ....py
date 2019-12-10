@@ -33,7 +33,7 @@ for line in test_listi1d:
 
 print("------------------------------------------------------------------------------------------------------------")
 print("Picking_employee_work_overview_week")
-test_listi2 = classObject.picking_employee_work_overview_week(1, 2019, 47)
+test_listi2 = classObject.picking_employee_work_overview_week(ID, Year, week)
 for line in test_listi2:
     flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2,fa3=line
     print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
