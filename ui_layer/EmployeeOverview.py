@@ -116,7 +116,9 @@ class DetailedSearch:
 
             elif action == "2":
                 print(SPACER)
-                self.__UI_API.get_work_schedule(self.employee_id)
+                year = input("Year: ")
+                week = input("week: ")
+                self.__UI_API.get_work_schedule(self.employee_id, year, week)
                 input()
 
             elif action == "q":
