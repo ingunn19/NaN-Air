@@ -11,7 +11,6 @@ class ChangeWorkTrip:
         self.flight_number = input("Flight number: ")
         self.worktrip = self.__UI_API.get_specific_worktrip(self.flight_number)
         original_list = self.worktrip.copy()
-        print(self.worktrip)
 
         self.worktrip[1] = input("Departing from: ")
         if self.worktrip[1] == "":
@@ -52,5 +51,5 @@ class ChangeWorkTrip:
         self.worktrip[10] = input("Cabin crew3: ")
         if self.worktrip[10] == "":
             self.worktrip[10] = original_list[10]
-        print(self.worktrip)
+        # Hér væri gott að sýna breytingar
         self.__UI_API.set_changes_for_existing_worktrip(self.worktrip)

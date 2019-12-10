@@ -66,19 +66,15 @@ class EmployeeOverview:
                 quit()
 
     def view_employees(self):
-        print("All employees")
         self.__UI_API.get_all_employees()
         input()
-        print(SPACER)
 
     def all_pilots(self):
         print("Here we list all pilots!")
         self.__UI_API.get_all_pilots()
         input()
-        print(SPACER)
 
     def all_cabin_crew(self):
         print("Here we list all attendants!")
         self.__UI_API.get_all_cabin_crew()
         input()
-        print(SPACER)

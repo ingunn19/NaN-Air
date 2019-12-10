@@ -10,12 +10,11 @@ class ChangeDestination:
         self.destination_name = input("Destination: ")
         self.destination = self.__UI_API.get_specific_destination(self.destination_name)
         originallist = self.destination.copy()
-        print(self.destination)
         self.destination[2] = input("New emergency contact name: ")
         if self.destination[2] == "":
             self.destination[2] = originallist[2]
         self.destination[3] = input("New emergency contact GSM: ")
         if self.destination[3] == "":
             self.destination[3] = originallist[3]
-        print(self.destination)
+        # hér væri gott að sýna breytingar
         self.__UI_API.set_changes_for_existing_destination(self.destination)
