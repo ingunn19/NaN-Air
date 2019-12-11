@@ -16,7 +16,6 @@ def ssn_validation(ssn):
             print("ERROR! Cannot include letters.")
             return False
 
-
 def name_validation(name):
     NAME_LENGTH = 50
     name_list = []
@@ -33,8 +32,6 @@ def name_validation(name):
             return print("ERROR! Name cannot include numbers.")
         except ValueError:
             continue
-
-
 
 def pilot_validation(pilot):
     ROLE = "pilot"
@@ -54,7 +51,6 @@ def cabin_crew_validation(cabin_crew):
         print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
         return False
 
-
 def licence_validation(licence):
     LICENCE = "NAFokkerF100"
     LICENCE2 = "NAFokkerF28"
@@ -65,7 +61,6 @@ def licence_validation(licence):
         print(f"ERROR! Invalid licence.\nChoose from the following licences: {LICENCE}, {LICENCE2}, {LICENCE3}")
         return False
 
-
 def email_vaidation(e_mail):
     e_mail_list = e_mail.split("@")
     if e_mail_list[1] == "nanair.com":
@@ -73,7 +68,6 @@ def email_vaidation(e_mail):
     else:
         print("ERROR! Invalid email.\nNot a corporate email.")
         return False
-
 
 def phone_validation(gsm):
     gsm_list = []
@@ -92,7 +86,6 @@ def phone_validation(gsm):
         print("ERROR! Gsm cannot include letters.")
         return False
 
-
 def address_validation(address):
     for x in address:
         if x in string.punctuation:
@@ -108,7 +101,6 @@ def address_validation(address):
         except ValueError:
             continue
     return address
-
 
 def plane_insignia_validation(plane_insignia):
     PLANE_INSIGNIA = 6
@@ -139,7 +131,6 @@ def plane_insignia_validation(plane_insignia):
         except ValueError:
             continue
 
-
 def plane_type_ID_validation(plane_type_ID):
     LICENCE = "NAFokkerF100"
     LICENCE2 = "NAFokkerF28"
@@ -149,7 +140,6 @@ def plane_type_ID_validation(plane_type_ID):
     if plane_type_ID not in LICENCE_LIST:
         print(f"ERROR! Invalid licence.\nChoose from the following: {LICENCE}, {LICENCE2}, {LICENCE3}")
         return False
-
 
 def checker_worktrip(destination, departure, aircraftID, pilot, attendant):
     count = 0
@@ -185,7 +175,6 @@ def checker_worktrip(destination, departure, aircraftID, pilot, attendant):
     if count == 5:
         return True
 
-
 def checker_destination(destination_ID, destination, contact_name, contact_number):
     count = 0
     if LLapi.check_destination(destination):
@@ -212,7 +201,6 @@ def checker_destination(destination_ID, destination, contact_name, contact_numbe
         return False
     if count == 4:
         return True
-
 
 def checker_week_and_day(day, week):
     count = 0

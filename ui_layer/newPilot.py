@@ -16,37 +16,37 @@ class New_Pilot:
 
     def create_pilot(self):
         print("New Pilot: ")
-        ssn_check = ""
-        while ssn_check != None:
+        ssn_check = True
+        while ssn_check == True:
             self.__ssn = input("SSN: ")
             ssn_check = ssn_validation(self.__ssn)
 
-        name_check = "BOB"
-        while name_check != None:
+        name_check = True
+        while name_check == True:
             self.__name = input("Full name: ")
             name_check = name_validation(self.__name)
-        role_check = "BOB"
-        while role_check != None:
+
+        role_check = True
+        while role_check == True:
             self.__role = input("Role: ").lower()
             role_check = pilot_validation(self.__role)
-        licence_check = "BOB"
 
-        while licence_check != None:
+        licence_check = True
+        while licence_check == True:
             self.__licence = input("Licence: ")
             licence_check = licence_validation(self.__licence)
 
-        email_check = "BOB"
-        while email_check != None:
+        email_check = True
+        while email_check == True:
             self.__email = input("Email: ")
             email_check = email_vaidation(self.__email)
 
-        gsm_cheker = "BOB"
+        gsm_cheker = True
         self.__address = input("Address: ")
-        while gsm_cheker != None:
+        while gsm_cheker == True:
             self.__gsm = input("GSM: ")
             gsm_cheker = phone_validation(self.__gsm)
 
-        # Villuchekka
-        # Hér væri gott að prenta út nýan pilot
+        print(f"{self.__ssn}{self.__name}{self.__role}{self.__licence}{self.__email}{self.__address}{self.__gsm}")
         print(SPACER)
         self.__UI_API.set_pilot(self.__ssn, self.__name, self.__role, self.__licence, self.__email, self.__address, self.__gsm)

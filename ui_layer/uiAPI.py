@@ -8,9 +8,8 @@ class UI_API:
     def __inti__(self):
         self.__logic_API = LogicAPI()
 
-    def set_pilot(self, ssn, name, role, licence, address, gsm):
-        set_pilot_list = [ssn, name, role, licence, address, gsm]
-        print(set_pilot_list)
+    def set_pilot(self, ssn, name, role, licence, email,  address, gsm):
+        set_pilot_list = [ssn, name, role, licence, email, address, gsm]
         #self.__LL_Api.set_pilot(set_pilot_list)
 
     def set_airplane(self, Plane_Insignia, plane_type_Id):
@@ -18,9 +17,8 @@ class UI_API:
         print(set_airplane_list)
         #self.__LL_Api.set_airplane(set_airplane_list)
 
-    def set_Cabin_crew(self, ssn, name, role, address, gsm):
-        set_cabin_crew_list = [ssn, name, role, address, gsm]
-        print(set_cabin_crew_list)
+    def set_Cabin_crew(self, ssn, name, role, email, address, gsm):
+        set_cabin_crew_list = [ssn, name, role, "N/A", email, address, gsm]
         #self.__LL_Api.set_cabin_crew(set_cabin_crew_list)
 
     def set_WorkTrip(self, arrivingAt, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3):
