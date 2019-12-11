@@ -1,4 +1,3 @@
-from data_layer.dataLayer import DataAPI
 from datetime import datetime, timedelta
 from worktrip_overview import WorkTripOverviewLogic
 from logic_parent import LogicParent

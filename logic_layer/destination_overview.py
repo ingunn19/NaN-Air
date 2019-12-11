@@ -1,4 +1,3 @@
-from data_layer.dataLayer import DataAPI
 from logic_parent import LogicParent
 
 class DestinationOverviewLogic(LogicParent):

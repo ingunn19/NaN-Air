@@ -1,11 +1,10 @@
-from data_layer.dataLayer import DataAPI
 from models.work_trip import WorkTrip
 from datetime import date, timedelta, datetime
 from employee_overview import EmployeeOverviewLogic
 from clock import Clock
 from logic_parent import LogicParent
 
-class WorkTripLogic(LogicParent):
+class New_WorkTrip(LogicParent):
     def check_employee_availability(self, employee_id, day):
         """Takes in employee_id and time of day, checks if employee is busy that day
             returns None if busy, True if available"""
@@ -38,7 +37,7 @@ class WorkTripLogic(LogicParent):
             has the needed licence for that aircraft
             returns None if no licence, True if it checks out"""
         pilotData = EmployeeOverviewLogic()
-        classObject = WorkTripLogic()
+        classObject = New_WorkTrip()
         plane_type = classObject.get_aircraft_type(plane_insignia)
         employee_list = pilotData.req_overview_pilots()
         for line in employee_list:
@@ -119,7 +118,7 @@ class WorkTripLogic(LogicParent):
         """Takes in a destination and departure time
             calculates the return time for the trip
             and returns it"""
-        classObject = WorkTripLogic()
+        classObject = New_WorkTrip()
         time_to_destination = int(classObject.get_travel_time(destination))
         travel_time = (time_to_destination * 2) + 1
         depart_time = Clock(depart_time)
@@ -129,7 +128,7 @@ class WorkTripLogic(LogicParent):
     def new_worktrip(self, flight_info_list):
         """Takes in a list of information to register a new worktrip, 
             generates a return time, flight id, feeds the information into a model and returns it"""
-        classObject = WorkTripLogic()
+        classObject = New_WorkTrip()
         depart_from, arrive_at, depart_time, plane_insignia, pilot1, pilot2, fa1, fa2, fa3 = [i for i in flight_info_list]
         return_time = classObject.get_return_time(arrive_at, depart_time)
         flight_info_list.insert(0, '')

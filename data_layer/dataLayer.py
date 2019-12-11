@@ -1,15 +1,12 @@
 class DataAPI:
-
     def __init__(self, name_of_file):
         self.name_of_file = name_of_file
-
 
     def write_file(self, info):
         '''writes into an existing file , if the file does not exist the program creates it.'''
         with open(f'.//csv_data//{self.name_of_file}.csv', 'w') as __csv_data:
             for line in info:
                 __csv_data.write(','.join(line) + '\n')
-
 
     def read_file(self):
         '''in start of application the logic worker tries to read a certan file.

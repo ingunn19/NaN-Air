@@ -4,7 +4,7 @@ from airplane_overview import PlaneOverviewLogic
 from destination_overview import DestinationOverviewLogic
 from worktrip_overview import WorkTripOverviewLogic
 # Add new
-from add_new_worktrip import New_WorkTrip
+from new_work_trip import New_WorkTrip
 # Edit existing
 
 
@@ -104,8 +104,7 @@ class LogicAPI():
             return worktrip
         return None
 
-    def view_work_week(self, week_year_maybe):
-        year, week = week_year_maybe.split()
+    def view_work_week(self, year, week):
         # is this week realchecker   ATH!!!
         return self.__worktrip_data.req_worktrips_of_the_week(year, week)
 
@@ -125,7 +124,7 @@ class LogicAPI():
     def view_all_planes(self):
         return self.__airplane_data.req_all_planes
 
-    def view_one_airplane(self, plane_id):
+    def view_single_airplane(self, plane_id):
         __airplane = self.__airplane_data.req_single_plane
         if __airplane:
             return __airplane

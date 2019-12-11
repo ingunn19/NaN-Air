@@ -1,14 +1,14 @@
-from logic_layer.LogicLayerTest import LogicAPI
-from datetime import date, timedelta, datetime
+# from logic_layer.LogicLayerTest import LogicAPI
+# from datetime import date, timedelta, datetime
 
-classObject = LogicAPI()
-print("------------------------------------------------------------------------------------------------------------")
-# komið inn í ui api
-print("All employees")
-test_listi1a = classObject.req_overview_allemployees()
-for line in test_listi1a:
-    id, name, role, licence, address, phonenumber, email, eight = line
-    print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
+# classObject = LogicAPI()
+# print("------------------------------------------------------------------------------------------------------------")
+# # komið inn í ui api
+# print("All employees")
+# test_listi1a = classObject.req_overview_allemployees()
+# for line in test_listi1a:
+#     id, name, role, licence, address, phonenumber, email, eight = line
+#     print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
 
 # print("------------------------------------------------------------------------------------------------------------")
 # print("req_overview_pilots")
@@ -136,20 +136,3 @@ for line in test_listi1a:
 # for line in test:
 #     planeType, planeInsignia, status, next_available, destination, flightNumber = line
 #     print(f"{planeInsignia:15}{planeType:15}{status:14}{str(next_available):20}{destination:13}{flightNumber}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

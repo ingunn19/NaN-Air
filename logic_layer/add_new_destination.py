@@ -10,4 +10,3 @@ class AddNewDestinaion(LogicParent):
 
     def add_destination(self):
 
-
