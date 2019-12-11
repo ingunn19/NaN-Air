@@ -1,15 +1,11 @@
-from datetime import date, timedelta, datetime
 from data_layer.dataLayer import DataAPI
-from clock import Clock
 from models.work_trip import WorkTrip
+from datetime import date, timedelta, datetime
+from employee_overview import EmployeeOverviewLogic
+from clock import Clock
+from logicAPI import LogicAPI
 
-class LogicAPI():
-    def __init__(self):
-        self.__crew = DataAPI("Crew")
-        self.__aircraft = DataAPI("Aircraft")
-        self.__destinations = DataAPI("Destinations")
-        self.__flight_records = DataAPI("FlightRecords")
-
+class WorkTripLogic(LogicAPI):
     def check_employee_availability(self, employee_id, day):
         """Takes in employee_id and time of day, checks if employee is busy that day
             returns None if busy, True if available"""
@@ -41,34 +37,15 @@ class LogicAPI():
         """Takes in employee_id and time of aircraft type, checks if pilot 
             has the needed licence for that aircraft
             returns None if no licence, True if it checks out"""
-        classObject = LogicAPI()
+        pilotData = EmployeeOverviewLogic()
+        classObject = WorkTripLogic()
         plane_type = classObject.get_aircraft_type(plane_insignia)
-        employee_list = classObject.req_overview_pilots()
+        employee_list = pilotData.req_overview_pilots()
         for line in employee_list:
             if employee_id in line:
                 if plane_type in line:
                     return True
         return None
-
-    def get_aircraft_type(self, plane_insignia):
-        """Takes in plane insignia and returns aircraft type ID"""
-        planes_list = self.__aircraft.read_file()
-        for line in planes_list:
-            if plane_insignia in line:
-                return planes_list[planes_list.index(line)][1]
-
-    def req_overview_pilots(self):
-        """Reads employee list and returns a list of all pilots and their licences"""
-        __all_employee = self.__crew.read_file()
-        __pilot_list = []
-        for listi in __all_employee:
-            if 'licence' in listi:
-                __pilot_list.append(listi)
-            if 'Pilot' in listi:
-                __pilot_list.append(listi)
-        if len(__pilot_list) == 0:
-            return None
-        return __pilot_list
 
     def check_timeslot_availability(self, time_slot):
         """Takes in a time and date, reads the flight records
@@ -80,7 +57,24 @@ class LogicAPI():
                 return True
         return None
 
-    def new_flight_id(self, new_trip):
+    def check_destination(self, destination):
+        """Checks if destination is registered
+            returns True if registered, None if not"""
+        destination_to_check = destination
+        destination_list = self.__destinations.read_file()
+        for line in destination_list:
+            if destination_to_check in line:
+                return True
+        return None
+
+    def get_aircraft_type(self, plane_insignia):
+        """Takes in plane insignia and returns aircraft type ID"""
+        planes_list = self.__aircraft.read_file()
+        for line in planes_list:
+            if plane_insignia in line:
+                return planes_list[planes_list.index(line)][1]
+
+    def get_new_flight_id(self, new_trip):
         """Takes in information list to register a new trip,
             reads the flight records file, inserts the new flight chronologically
             and generates a flight ID for the new trip and adjusts any shifted flights.
@@ -125,51 +119,20 @@ class LogicAPI():
         """Takes in a destination and departure time
             calculates the return time for the trip
             and returns it"""
-        classObject = LogicAPI()
+        classObject = WorkTripLogic()
         time_to_destination = int(classObject.get_travel_time(destination))
         travel_time = (time_to_destination * 2) + 1
         depart_time = Clock(depart_time)
         return_time = depart_time.calculate_return_time(travel_time)
         return return_time
 
-    def list_of_dates_in_given_week_and_given_year(self, year, week):
-        d = date(year, 1, 1)
-        d = d - timedelta(d.weekday())
-        dlt = timedelta(days=(week - 1) * 7)
-        return [str(d + dlt), str(d + dlt + timedelta(days=1)), str(d + dlt + timedelta(days=2)), str(d + dlt + timedelta(days=3)),
-                str(d + dlt + timedelta(days=4)), str(d + dlt + timedelta(days=5)), str(d + dlt + timedelta(days=6))]
-
-    def check_destination(self, destination):
-        """Checks if destination is registered
-            returns True if registered, None if not"""
-        destination_to_check = destination
-        destination_list = self.__destinations.read_file()
-        for line in destination_list:
-            if destination_to_check in line:
-                return True
-        return None
-
-    def worktrips_of_the_day(self, date):
-        __all_worktrips = self.__flight_records.read_file()
-        __day_overview = []
-        # take the days from the respectable value and search for that in the all_worktrips (if identity and weedays... then append to list)
-        # adding the first line
-        __day_overview.append(__all_worktrips[0])
-        # each line in all worktrips
-        for line in __all_worktrips:
-                # check if date maches any dates in each line of all_worktrip
-                if (date == (line[3][:10] or line[4][:10])):
-                    # appending to the week overwiew
-                    __day_overview.append(line)
-        return __day_overview
-
     def new_worktrip(self, flight_info_list):
         """Takes in a list of information to register a new worktrip, 
             generates a return time, flight id, feeds the information into a model and returns it"""
-        classObject = LogicAPI()
+        classObject = WorkTripLogic()
         depart_from, arrive_at, depart_time, plane_insignia, pilot1, pilot2, fa1, fa2, fa3 = [i for i in flight_info_list]
         return_time = classObject.get_return_time(arrive_at, depart_time)
         flight_info_list.insert(0, '')
         flight_info_list.insert(4, return_time)
-        flight_id = classObject.new_flight_id(flight_info_list)
+        flight_id = classObject.get_new_flight_id(flight_info_list)
         return WorkTrip(flight_id, depart_from, arrive_at, depart_time, return_time, plane_insignia, pilot1, pilot2, fa1, fa2, fa3)

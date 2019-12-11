@@ -25,3 +25,13 @@ class Clock():
         datetime_waiting_time = timedelta(hours=1)
         time_next_available = (datetime_return_time + datetime_waiting_time)
         return time_next_available.strftime('%Y-%m-&dT%H:%M:%S')
+
+    #nessecery part of picking_employee_work_week
+    def list_of_dates_in_given_week_and_given_year(self, __year, __week):
+        __day = date(__year, 1, 1)
+        __day = __day - timedelta(__day.weekday())
+        __delta = timedelta(days=(__week - 1) * 7)
+        return [str(__day + __delta), str(__day + __delta + timedelta(days=1)), str(__day + __delta + timedelta(days=2)),
+                str(__day + __delta + timedelta(days=3)),
+                str(__day + __delta + timedelta(days=4)), str(__day + __delta + timedelta(days=5)),
+                str(__day + __delta + timedelta(days=6))]
