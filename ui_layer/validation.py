@@ -1,6 +1,7 @@
 import string
 import datetime
 # from logic_layer.logic import LogicAPI
+# þessi inport setning verður að fara í gegnum ui_apa
 
 # LLapi = LogicAPI()
 def ssn_validation(ssn):
@@ -52,6 +53,7 @@ def cabin_crew_validation(cabin_crew):
         return False
 
 def licence_validation(licence):
+    # fínt að sækja flugvélar niður í LL, veit það þyrfti að breyta slatta til þess að það virki en það væri mikið hentugra
     LICENCE = "NAFokkerF100"
     LICENCE2 = "NAFokkerF28"
     LICENCE3 = "NABAE146"
@@ -132,6 +134,7 @@ def plane_insignia_validation(plane_insignia):
             continue
 
 def plane_type_ID_validation(plane_type_ID):
+    # fínt að sækja flugvélar niður í LL, veit það þyrfti að breyta slatta til þess að það virki en það væri mikið hentugra
     LICENCE = "NAFokkerF100"
     LICENCE2 = "NAFokkerF28"
     LICENCE3 = "NABAE146"
@@ -188,6 +191,8 @@ def checker_destination(destination_ID, destination, contact_name, contact_numbe
     else:
         print("ERROR! Invalid destination ID.")
         return False
+
+    # herna vantar travel time
 
     if LLapi.check_contact_name(contact_name):
         count += 1
