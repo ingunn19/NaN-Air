@@ -19,23 +19,21 @@ def ssn_validation(ssn):
 
 def name_validation(name):
     NAME_LENGTH = 50
+    name_list = []
     if len(name) > NAME_LENGTH:
-        print("ERROR! Name too long.")
-        return False
+        return print("ERROR! Name too long.")
     if len(name) <= 0:
-        print("ERROR! Name too short")
-        return False
+        return print("ERROR! Name too short")
 
     for x in name:
-        if x == string.punctuation:
-            print("ERROR! Name cannot include punctuations.")
-            return False
+        if x in string.punctuation:
+            return print("ERROR! Name cannot include punctuations.")
         try:
             int(x)
-            print("ERROR! Name cannot include numbers.")
-            return False
+            return print("ERROR! Name cannot include numbers.")
         except ValueError:
-            return name
+            continue
+
 
 
 def pilot_validation(pilot):
@@ -93,6 +91,23 @@ def phone_validation(gsm):
     except ValueError:
         print("ERROR! Gsm cannot include letters.")
         return False
+
+
+def address_validation(address):
+    for x in address:
+        if x in string.punctuation:
+            print("ERROR! Cannot include punctuations in address.")
+            return False
+        
+    address_list = address.split(" ")
+    for y in address_list[0]:
+        try:
+            int(y)
+            print("ERROR! Cannot include numbers in first half of address.")
+            return False
+        except ValueError:
+            continue
+    return address
 
 
 def plane_insignia_validation(plane_insignia):
