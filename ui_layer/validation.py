@@ -32,14 +32,21 @@ def name_validation(name):
             return name
 
 
-def role_validation(role):
-    ROLE = "Pilot"
-    ROLE2 = "Cabin crew"
+def pilot_validation(pilot):
+    ROLE = "pilot"
 
-    if role == ROLE or role == ROLE2:
-        return role
+    if pilot == ROLE:
+        return pilot
     else:
-        return print(f"ERROR! Invalid role.\nChoose from the following roles: {ROLE}, {ROLE2}")
+        return print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
+
+def cabin_crew_validation(cabin_crew):
+    ROLE = "cabin crew"
+
+    if cabin_crew == ROLE:
+        return cabin_crew
+    else:
+        return print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
 
 
 def licence_validation(licence):
