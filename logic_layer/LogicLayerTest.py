@@ -11,6 +11,7 @@ class LogicAPI:
         self.__destinations = DataAPI("Destinations")
         self.__flight_records = DataAPI("FlightRecords")
 
+# Overview employees
     def req_overview_allemployees(self):
         #geting a list of all employees
         __return_list = self.__crew.read_file()
@@ -27,10 +28,8 @@ class LogicAPI:
             #if the role pilot is in
             if 'Pilot' == list[3]:
                 __pilot_list.append(list)
-
         if len(__pilot_list) <= 1:
             return None
-
         return __pilot_list
 
     def req_overview_flightattendants(self):
@@ -39,28 +38,27 @@ class LogicAPI:
         __all_employee = self.__crew.read_file()
         __flight_attendants = []
         __flight_attendants.append(__all_employee[0])
+
         for listi in __all_employee:
             if 'Cabincrew' in listi:
                 __flight_attendants.append(listi)
         if len(__flight_attendants) <= 1:
             return None
-
         return __flight_attendants
 
     #nákvæm leit, velja starfsmann, persónuuplýsingar
-    def picking_employee_personal_det(self, __identity):
+    def req_employee_personal_details(self, __identity):
         __identity = str(__identity)
         __all_employee = self.__crew.read_file()
         __list_of_employee = []
         __list_of_employee.append(__all_employee[0])
+
         for employee in __all_employee:
             if __identity in employee:
                 __list_of_employee.append(employee)
 
         if len(__list_of_employee) <= 1:
             return None
-
-
         return __list_of_employee
 
     #nessecery part of picking_employee_work_week
@@ -74,7 +72,7 @@ class LogicAPI:
                 str(__day + __delta + timedelta(days=6))]
 
     # nákvæm leiit,velja starfsmann,vikuskipulag (vika x)
-    def picking_employee_work_overview_week(self, __identity, __year, __week):
+    def req_employee_work_week_overview(self, __identity, __year, __week):
         #make a list of all fligts
         __all_flights = self.__flight_records.read_file()
 
@@ -96,7 +94,6 @@ class LogicAPI:
                     if str(__identity) in line:
                         #appending to the week overwiew
                         __week_overview.append(line)
-
         if len(__week_overview) <= 1:
             return None
 
@@ -105,12 +102,11 @@ class LogicAPI:
             try:
                 line[3] = datetime.strptime(line[3], '%Y-%m-%dT%H:%M:%S')
                 line[4] = datetime.strptime(line[4], '%Y-%m-%dT%H:%M:%S')
-
             except:
                 pass
         return __week_overview
 
-    def all_employees_with_task(self, __date):
+    def req_all_employees_with_task(self, __date):
         __return_list = []
         __unavalible_employees = []
         __all_flights = self.__flight_records.read_file()
@@ -118,29 +114,27 @@ class LogicAPI:
         for line in __all_flights:
             if (__date == (line[3][:10] or line[4][:10])):
                     __return_list.append(line)
-
         if len(__return_list) <= 1:
             return None
+
         for line in __return_list:
             __unavalible_employees.append(line[6])
             __unavalible_employees.append(line[7])
             __unavalible_employees.append(line[8])
             __unavalible_employees.append(line[9])
             __unavalible_employees.append(line[10])
-
         return __unavalible_employees
 
-    def all_employees_not_with_task(self, __date):
+    def req_all_employees_not_with_task(self, __date):
         __temp_list = []
         __unavalible_employees = []
         __all_flights = self.__flight_records.read_file()
         for line in __all_flights:
             if (__date == (line[3][:10] or line[4][:10])):
                     __temp_list.append(line)
-
-
         if len(__temp_list) < 1:
             return None
+
         #getting all of the employers id
         for line in __temp_list:
             __unavalible_employees.append(line[6])
@@ -148,7 +142,6 @@ class LogicAPI:
             __unavalible_employees.append(line[8])
             __unavalible_employees.append(line[9])
             __unavalible_employees.append(line[10])
-
 
         #removing duplicates
         new_unavalible_employees = []
@@ -167,11 +160,9 @@ class LogicAPI:
         for crew_id in __unavalible_employees:
             if crew_id in __all_crew_list:
                 __all_crew_list.remove(crew_id)
-
         return __all_crew_list
 
-
-    def all_pilots_with_licence_on_an_given_plane(self, __plane):
+    def req_all_pilots_with_licence_on_a_given_plane(self, __plane):
         classObject = LogicAPI()
         __pilot_list = classObject.req_overview_pilots()
         __pilots_with_licence = []
@@ -182,23 +173,20 @@ class LogicAPI:
 
         if len(__pilots_with_licence) <= 1:
             return None
-
         return __pilots_with_licence
 
-    def all_pilots_with_licences_all_planes(self):
+    def req_all_pilot_licences(self):
         __list_of_all_pilots = []
         classObject = LogicAPI()
         __list_of_all_pilots = classObject.req_overview_pilots()
 
         if len(__list_of_all_pilots) <= 1:
             return None
-
         return __list_of_all_pilots
 
 #overview of worktrips
-    def all_worktrips(self):
+    def req_all_worktrips(self):
         __all_worktrips = self.__flight_records.read_file()
-
         if len(__all_worktrips) <= 1:
             return None
 
@@ -207,10 +195,8 @@ class LogicAPI:
             try:
                 line[3] = datetime.strptime(line[3], '%Y-%m-%dT%H:%M:%S')
                 line[4] = datetime.strptime(line[4], '%Y-%m-%dT%H:%M:%S')
-
             except:
                 pass
-
         return __all_worktrips
 
     def get_week_of_worktrip(self, __year, __week):
@@ -242,7 +228,7 @@ class LogicAPI:
                 pass
         return __week_overview
 
-    def worktrips_of_the_day(self,date):
+    def req_worktrips_of_the_day(self,date):
         __all_worktrips = self.__flight_records.read_file()
         __day_overview = []
         # take the days from the respectable value and search for that in the all_worktrips (if identity and weedays... then append to list)
@@ -264,7 +250,7 @@ class LogicAPI:
 
         return __day_overview
 
-    def singe_worktrip(self,flight_number):
+    def req_single_worktrip(self,flight_number):
         __all_worktrips = self.__flight_records.read_file()
         return_list = []
         return_list.append(__all_worktrips[0])
@@ -280,7 +266,7 @@ class LogicAPI:
 
 
 #overview destination
-    def all_destinations(self):
+    def req_all_destinations(self):
         #getting all destination
         __all_destinaions = self.__destinations.read_file()
 
@@ -289,7 +275,7 @@ class LogicAPI:
 
         return __all_destinaions
 
-    def one_destination(self, dest):
+    def req_one_destination(self, dest):
         #getting a list of all of the destinations
         __all_destinaions = self.__destinations.read_file()
         list_of_the_destinataion = []
@@ -307,18 +293,15 @@ class LogicAPI:
 
         return list_of_the_destinataion
 
-#overview aeroplanes
-
-    def all_planes(self):
+#overview airplanes
+    def req_all_planes(self):
         #getting all planes
         __all_planes = self.__aircraft.read_file()
-
         if len(__all_planes) <= 1:
             return None
-
         return __all_planes
 
-    def single_plane(self, plane_insignia):
+    def req_single_plane(self, plane_insignia):
         __all_planes = self.__aircraft.read_file()
         return_list = []
         return_list.append(__all_planes[0])
@@ -328,11 +311,10 @@ class LogicAPI:
                 return return_list
         return None
 
-    def state_of_plane(self, date_input):
-
+    def req_state_of_planes(self, date_input):
         #importing all planes
         classObject = LogicAPI()
-        __list_of_all_planes = classObject.all_planes()
+        __list_of_all_planes = classObject.req_all_planes()
         __list_of_all_planes.pop(0)
         __list_of_avalible_planes_insignia = []
 
@@ -340,33 +322,28 @@ class LogicAPI:
         for line in __list_of_all_planes:
             __list_of_avalible_planes_insignia.append(line[0])
 
-
         #importing all worktrips
-        __list_of_all_worktrips = classObject.all_worktrips()
+        __list_of_all_worktrips = classObject.req_all_worktrips()
 
         #making the date  an isoformat
-
         date_iso_format = datetime.strptime(date_input, '%Y-%m-%dT%H:%M:%S')
 
         #making the final list
         __final_list = []
         __final_list.append(['planeType', 'planeInsignia', 'status', 'next available', 'destination', 'flightNumber'])
-
         __list_of_all_worktrips.pop(0)
 
         #parsing
         for line in __list_of_all_worktrips:
-
             #getting the planetype name fokker300...
             for plane_row in __list_of_all_planes:
                 if line[5] in plane_row:
                     planeType = plane_row[1]
-
             departure = line[3]
             arrival = line[4]
+
             # if date is between dep. and (arrival + 1hr) then is aircraft is unavailable.
             # if datetime.strptime(departure, '%Y-%m-%dT%H:%M:%S') <= date_iso_format <= ((datetime.strptime(arrival, '%Y-%m-%dT%H:%M:%S')) + timedelta(hours=1)):
-
             if departure <= date_iso_format <= arrival + timedelta(hours=1):
                 #making all of the attributes that go to the list
                 next_available = line[4] + timedelta(hours=1)
@@ -389,5 +366,4 @@ class LogicAPI:
                     planeType = plane_row[1]
 
             __final_list.append([planeType, plane_insignia, 'Available', 'N/A', 'N/A', 'N/A'])
-
         return __final_list
