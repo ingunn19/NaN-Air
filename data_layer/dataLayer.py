@@ -1,3 +1,5 @@
+import os
+
 class DataAPI:
     def __init__(self, name_of_file):
         self.name_of_file = name_of_file
@@ -14,7 +16,8 @@ class DataAPI:
         the logic worker then calls the write methood and a new file will be created.
         first line in the file will be names of the columns'''
         try:
-            with open(f'.//csv_data//{self.name_of_file}.csv', 'r') as __csv_data:
+            print("Here!!", os.getcwd())
+            with open(f'..//csv_data//{self.name_of_file}.csv', 'r') as __csv_data:
                 self.__data_list = [line.strip().split(",") for line in __csv_data]
                 return self.__data_list
 

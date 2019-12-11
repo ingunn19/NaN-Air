@@ -1,10 +1,10 @@
 # Overview
-from employee_overview import EmployeeOverviewLogic
-from airplane_overview import PlaneOverviewLogic
-from destination_overview import DestinationOverviewLogic
-from worktrip_overview import WorkTripOverviewLogic
+from logic_layer.employee_overview import EmployeeOverviewLogic
+from logic_layer.airplane_overview import PlaneOverviewLogic
+from logic_layer.destination_overview import DestinationOverviewLogic
+from logic_layer.worktrip_overview import WorkTripOverviewLogic
 # Add new
-from new_work_trip import New_WorkTrip
+from logic_layer.new_work_trip import New_WorkTrip
 # Edit existing
 
 
@@ -110,10 +110,10 @@ class LogicAPI():
 
     def view_work_day(self, date):
         # is this date real checker   ATH!!!
-        return self.__worktrip_data.req_worktrips_of_the_day
+        return self.__worktrip_data.req_worktrips_of_the_day(date)
 
     def view_all_destinations(self):
-        return self.__destination_data.req_all_destinations
+        return self.__destination_data.req_all_destinations()
 
     def view_single_destination(self, destination_id):
         __destination = self.__destination_data.req_one_destination(destination_id)
@@ -122,10 +122,10 @@ class LogicAPI():
         return None
 
     def view_all_planes(self):
-        return self.__airplane_data.req_all_planes
+        return self.__airplane_data.req_all_planes()
 
     def view_single_airplane(self, plane_id):
-        __airplane = self.__airplane_data.req_single_plane
+        __airplane = self.__airplane_data.req_single_plane(plane_id)
         if __airplane:
             return __airplane
         return None

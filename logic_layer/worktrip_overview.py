@@ -1,5 +1,5 @@
-from clock import Clock
-from logic_parent import LogicParent
+from logic_layer.clock import Clock
+from logic_layer.logic_parent import LogicParent
 
 class WorkTripOverviewLogic(LogicParent):
 #overview of worktrips

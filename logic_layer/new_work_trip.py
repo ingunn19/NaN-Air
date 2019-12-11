@@ -1,8 +1,8 @@
 from models.work_trip import WorkTrip
 from datetime import date, timedelta, datetime
-from employee_overview import EmployeeOverviewLogic
-from clock import Clock
-from logic_parent import LogicParent
+from logic_layer.employee_overview import EmployeeOverviewLogic
+from logic_layer.clock import Clock
+from logic_layer.logic_parent import LogicParent
 
 class New_WorkTrip(LogicParent):
     def check_employee_availability(self, employee_id, day):

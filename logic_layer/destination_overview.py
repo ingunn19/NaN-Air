@@ -1,4 +1,4 @@
-from logic_parent import LogicParent
+from logic_layer.logic_parent import LogicParent
 
 class DestinationOverviewLogic(LogicParent):
 #overview destination

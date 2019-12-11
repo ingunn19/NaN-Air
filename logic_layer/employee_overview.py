@@ -1,17 +1,17 @@
-from clock import Clock
-from logic_parent import LogicParent
+from logic_layer.clock import Clock
+from logic_layer.logic_parent import LogicParent
 from datetime import datetime, timedelta
 
 class EmployeeOverviewLogic(LogicParent):
 # Overview employees
     def req_overview_allemployees(self):
         #geting a list of all employees
-        __return_list = self.__crew.read_file()
+        __return_list = self.crew.read_file()
         return __return_list
 
     def req_overview_pilots(self):
         #getting an list of all empoyees
-        __all_employee = self.__crew.read_file()
+        __all_employee = self.crew.read_file()
         __pilot_list = []
         #adding the first row(adding the header)
         __pilot_list.append(__all_employee[0])
@@ -27,7 +27,7 @@ class EmployeeOverviewLogic(LogicParent):
     def req_overview_flightattendants(self):
         #getting an list of all employees
         #same funtion as above but for
-        __all_employee = self.__crew.read_file()
+        __all_employee = self.crew.read_file()
         __flight_attendants = []
         __flight_attendants.append(__all_employee[0])
 
@@ -41,7 +41,7 @@ class EmployeeOverviewLogic(LogicParent):
     #nákvæm leit, velja starfsmann, persónuuplýsingar
     def req_employee_personal_details(self, __identity):
         __identity = str(__identity)
-        __all_employee = self.__crew.read_file()
+        __all_employee = self.crew.read_file()
         __list_of_employee = []
         __list_of_employee.append(__all_employee[0])
 
@@ -56,7 +56,7 @@ class EmployeeOverviewLogic(LogicParent):
     # nákvæm leiit,velja starfsmann,vikuskipulag (vika x)
     def req_employee_work_week_overview(self, __identity, __year, __week):
         #make a list of all fligts
-        __all_flights = self.__flight_records.read_file()
+        __all_flights = self.flight_records.read_file()
 
         #getting all the days in given week of year
         clock = Clock()
@@ -91,7 +91,7 @@ class EmployeeOverviewLogic(LogicParent):
     def req_all_employees_with_task(self, __date):
         __return_list = []
         __unavalible_employees = []
-        __all_flights = self.__flight_records.read_file()
+        __all_flights = self.flight_records.read_file()
 
         for line in __all_flights:
             if (__date == (line[3][:10] or line[4][:10])):
@@ -109,7 +109,7 @@ class EmployeeOverviewLogic(LogicParent):
     def req_all_employees_not_with_task(self, __date):
         __temp_list = []
         __unavalible_employees = []
-        __all_flights = self.__flight_records.read_file()
+        __all_flights = self.flight_records.read_file()
         for line in __all_flights:
             if (__date == (line[3][:10] or line[4][:10])):
                     __temp_list.append(line)
@@ -127,7 +127,7 @@ class EmployeeOverviewLogic(LogicParent):
                 new_unavalible_employees.append(ch)
 
         #all_crew_id
-        __all_crew = self.__crew.read_file()
+        __all_crew = self.crew.read_file()
         __all_crew_list = []
         for line in __all_crew:
             if line[0]!= "id":

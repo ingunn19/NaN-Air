@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
-from worktrip_overview import WorkTripOverviewLogic
-from logic_parent import LogicParent
+from logic_layer.worktrip_overview import WorkTripOverviewLogic
+from logic_layer.logic_parent import LogicParent
 
 class PlaneOverviewLogic(LogicParent):
 #overview airplanes

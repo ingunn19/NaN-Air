@@ -1,4 +1,4 @@
-from logic_parent import LogicParent
+from logic_layer.logic_parent import LogicParent
 class AddNewDestinaion(LogicParent):
 
     def __init__(self,__id,__destination,__travel_time,__contact_name,__contact_number):
