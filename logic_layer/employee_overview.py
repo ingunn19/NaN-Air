@@ -1,6 +1,6 @@
-from data_layer.dataLayer import DataAPI
 from clock import Clock
 from logicAPI import LogicAPI
+from datetime import datetime, timedelta
 
 class EmployeeOverviewLogic(LogicAPI):
 # Overview employees
@@ -100,11 +100,10 @@ class EmployeeOverviewLogic(LogicAPI):
             return None
 
         for line in __return_list:
-            __unavalible_employees.append(line[6])
-            __unavalible_employees.append(line[7])
-            __unavalible_employees.append(line[8])
-            __unavalible_employees.append(line[9])
-            __unavalible_employees.append(line[10])
+            __unavalible_employees = [i for i in line[6:11]]
+
+
+        __unavalible_employees.insert(0,"id")
         return __unavalible_employees
 
     def req_all_employees_not_with_task(self, __date):
@@ -119,11 +118,7 @@ class EmployeeOverviewLogic(LogicAPI):
 
         #getting all of the employers id
         for line in __temp_list:
-            __unavalible_employees.append(line[6])
-            __unavalible_employees.append(line[7])
-            __unavalible_employees.append(line[8])
-            __unavalible_employees.append(line[9])
-            __unavalible_employees.append(line[10])
+            __unavalible_employees = [i for i in line[6:11]]
 
         #removing duplicates
         new_unavalible_employees = []
@@ -142,6 +137,8 @@ class EmployeeOverviewLogic(LogicAPI):
         for crew_id in __unavalible_employees:
             if crew_id in __all_crew_list:
                 __all_crew_list.remove(crew_id)
+
+        __all_crew_list.insert(0,"id")
         return __all_crew_list
 
     def req_all_pilots_with_licence_on_a_given_plane(self, __plane):
