@@ -6,28 +6,34 @@ import datetime
 def ssn_validation(ssn):
     SSN_LENGTH = 10
     if len(ssn) != 10:
-        return print("ERROR! Invalid ssn")
+        print("ERROR! Invalid ssn")
+        return False
     if len(ssn) == 10:
         try:
             int(ssn)
             return ssn
         except ValueError:
-            return print("ERROR! Cannot include letters.")
+            print("ERROR! Cannot include letters.")
+            return False
 
 
 def name_validation(name):
     NAME_LENGTH = 50
     if len(name) > NAME_LENGTH:
-        return print("ERROR! Name too long.")
+        print("ERROR! Name too long.")
+        return False
     if len(name) <= 0:
-        return print("ERROR! Name too short")
+        print("ERROR! Name too short")
+        return False
 
     for x in name:
         if x == string.punctuation:
-            return print("ERROR! Name cannot include punctuations.")
+            print("ERROR! Name cannot include punctuations.")
+            return False
         try:
             int(x)
-            return print("ERROR! Name cannot include numbers.")
+            print("ERROR! Name cannot include numbers.")
+            return False
         except ValueError:
             return name
 
@@ -38,7 +44,8 @@ def pilot_validation(pilot):
     if pilot == ROLE:
         return pilot
     else:
-        return print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
+        print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
+        return False
 
 def cabin_crew_validation(cabin_crew):
     ROLE = "cabin crew"
@@ -46,7 +53,8 @@ def cabin_crew_validation(cabin_crew):
     if cabin_crew == ROLE:
         return cabin_crew
     else:
-        return print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
+        print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
+        return False
 
 
 def licence_validation(licence):
@@ -56,7 +64,8 @@ def licence_validation(licence):
     LICENCE_LIST = [LICENCE, LICENCE2, LICENCE3]
 
     if licence not in LICENCE_LIST:
-        return print(f"ERROR! Invalid licence.\nChoose from the following licences: {LICENCE}, {LICENCE2}, {LICENCE3}")
+        print(f"ERROR! Invalid licence.\nChoose from the following licences: {LICENCE}, {LICENCE2}, {LICENCE3}")
+        return False
 
 
 def email_vaidation(e_mail):
@@ -64,7 +73,8 @@ def email_vaidation(e_mail):
     if e_mail_list[1] == "nanair.com":
         return e_mail
     else:
-        return print("ERROR! Invalid email.\nNot a corporate email.")
+        print("ERROR! Invalid email.\nNot a corporate email.")
+        return False
 
 
 def phone_validation(gsm):
@@ -81,29 +91,36 @@ def phone_validation(gsm):
         int(gsm_string)
         return gsm
     except ValueError:
-        return print("ERROR! Gsm cannot include letters.")
+        print("ERROR! Gsm cannot include letters.")
+        return False
 
 
 def plane_insignia_validation(plane_insignia):
     PLANE_INSIGNIA = 6
 
     if len(plane_insignia) > PLANE_INSIGNIA:
-        return print("ERROR! Insignia too long.")
+        print("ERROR! Insignia too long.")
+        return False
     if len(plane_insignia) < PLANE_INSIGNIA:
-        return print("ERROR! Insignia too short.")
+        print("ERROR! Insignia too short.")
+        return False
     if plane_insignia[0] != "T":
-        return print("ERROR! Insignia invalid.")
+        print("ERROR! Insignia invalid.")
+        return False
     if plane_insignia[1] != "F":
-        return print("ERROR! Insignia invalid.")
+        print("ERROR! Insignia invalid.")
+        return False
     for x in plane_insignia:
         if plane_insignia[2] == "-":
             continue
         else:
-            return print("ERROR! Invalid insignia.\nRequires '-'")
+            print("ERROR! Invalid insignia.\nRequires '-'")
+            return False
     for x in plane_insignia:
         try:
             int(x)
-            return print("ERROR! Insignia cannot include numbers.")
+            print("ERROR! Insignia cannot include numbers.")
+            return False
         except ValueError:
             continue
 
@@ -115,7 +132,8 @@ def plane_type_ID_validation(plane_type_ID):
     LICENCE_LIST = [LICENCE, LICENCE2, LICENCE3]
 
     if plane_type_ID not in LICENCE_LIST:
-        return print(f"ERROR! Invalid licence.\nChoose from the following: {LICENCE}, {LICENCE2}, {LICENCE3}")
+        print(f"ERROR! Invalid licence.\nChoose from the following: {LICENCE}, {LICENCE2}, {LICENCE3}")
+        return False
 
 
 def checker_worktrip(destination, departure, aircraftID, pilot, attendant):
@@ -123,29 +141,34 @@ def checker_worktrip(destination, departure, aircraftID, pilot, attendant):
     if LLapi.check_destination(destination):
         count += 1
     else:
-        return print("ERROR! Invalid destination.")
+        print("ERROR! Invalid destination.")
+        return False
 
     if LLapi.check_departure(departure):
         count += 1
     else:
-        return print("ERROR! Invalid departure.")
+        print("ERROR! Invalid departure.")
+        return False
 
     if LLapi.check_aircraftID(aircraftID):
         count += 1
     else:
-        return print("ERROR! Invalid aricraft ID.")
+        print("ERROR! Invalid aricraft ID.")
+        return False
 
     if LLapi.check_pilot(pilot):
         count += 1
     else:
-        return print("ERROR! Invalid pilot.")
+        print("ERROR! Invalid pilot.")
+        return False
 
     if LLapi.check_attendant(attendant):
         count += 1
     else:
-        return print("ERROR! Invalid attendant.")
+        print("ERROR! Invalid attendant.")
+        return False
     if count == 5:
-        return
+        return True
 
 
 def checker_destination(destination_ID, destination, contact_name, contact_number):
@@ -153,12 +176,14 @@ def checker_destination(destination_ID, destination, contact_name, contact_numbe
     if LLapi.check_destination(destination):
         count += 1
     else:
-        return print("ERROR! Invalid destination.")
+        print("ERROR! Invalid destination.")
+        return False
 
     if LLapi.check_destination_ID(destination_ID):
         count += 1
     else:
-        return print("ERROR! Invalid destination ID.")
+        print("ERROR! Invalid destination ID.")
+        return False
 
     if LLapi.check_contact_name(contact_name):
         count += 1
@@ -168,9 +193,10 @@ def checker_destination(destination_ID, destination, contact_name, contact_numbe
     if LLapi.check_contact_number(contact_number):
         count += 1
     else:
-        return print("ERROR! Invalid contact number.")
+        print("ERROR! Invalid contact number.")
+        return False
     if count == 4:
-        return
+        return True
 
 
 def checker_week_and_day(day, week):
@@ -178,19 +204,21 @@ def checker_week_and_day(day, week):
     if LLapi.check_day(day):
         count += 1
     else:
-        return print("ERROR! Invalid date")
+        print("ERROR! Invalid date")
+        return True
 
     if LLapi.check_week(week):
         count += 1
     else:
-        return print("ERROR! Invalid week.")
+        print("ERROR! Invalid week.")
+        return False
     if count == 2:
-        return
-
+        return True
 
 def checker_datetime(date):
     try:
         datetime_date = datetime.datetime.strptime(date, '%Y, %m, %d')
-        return  # print(datetime_date.strftime('%Y-%m-%d'))
+        return  True# print(datetime_date.strftime('%Y-%m-%d'))
     except:
-        return print("ERROR! Invalid date.")
+        print("ERROR! Invalid date.")
+        return False
