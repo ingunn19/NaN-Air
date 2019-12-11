@@ -3,9 +3,9 @@ from models.work_trip import WorkTrip
 from datetime import date, timedelta, datetime
 from employee_overview import EmployeeOverviewLogic
 from clock import Clock
-from logicAPI import LogicAPI
+from logic_parent import LogicParent
 
-class WorkTripLogic(LogicAPI):
+class WorkTripLogic(LogicParent):
     def check_employee_availability(self, employee_id, day):
         """Takes in employee_id and time of day, checks if employee is busy that day
             returns None if busy, True if available"""

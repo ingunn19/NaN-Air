@@ -1,9 +1,9 @@
 from data_layer.dataLayer import DataAPI
 from datetime import datetime, timedelta
 from worktrip_overview import WorkTripOverviewLogic
-from logicAPI import LogicAPI
+from logic_parent import LogicParent
 
-class PlaneOverviewLogic(LogicAPI):
+class PlaneOverviewLogic(LogicParent):
 #overview airplanes
     def req_all_planes(self):
         #getting all planes

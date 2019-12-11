@@ -1,8 +1,8 @@
 from clock import Clock
-from logicAPI import LogicAPI
+from logic_parent import LogicParent
 from datetime import datetime, timedelta
 
-class EmployeeOverviewLogic(LogicAPI):
+class EmployeeOverviewLogic(LogicParent):
 # Overview employees
     def req_overview_allemployees(self):
         #geting a list of all employees

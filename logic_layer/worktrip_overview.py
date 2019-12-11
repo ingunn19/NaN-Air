@@ -1,8 +1,8 @@
 from data_layer.dataLayer import DataAPI
 from clock import Clock
-from logicAPI import LogicAPI
+from logic_parent import LogicParent
 
-class WorkTripOverviewLogic(LogicAPI):
+class WorkTripOverviewLogic(LogicParent):
 #overview of worktrips
     def req_all_worktrips(self):
         __all_worktrips = self.__flight_records.read_file()

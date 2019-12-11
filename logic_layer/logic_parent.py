@@ -1,6 +1,6 @@
 from data_layer.dataLayer import DataAPI
 
-class LogicAPI():
+class LogicParent():
     def __init__(self):
         self.__crew = DataAPI("Crew")
         self.__aircraft = DataAPI("Aircraft")

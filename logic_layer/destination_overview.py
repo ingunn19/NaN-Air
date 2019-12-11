@@ -1,7 +1,7 @@
 from data_layer.dataLayer import DataAPI
-from logicAPI import LogicAPI
+from logic_parent import LogicParent
 
-class DestinationOverviewLogic(LogicAPI):
+class DestinationOverviewLogic(LogicParent):
 #overview destination
     def req_all_destinations(self):
         #getting all destination
