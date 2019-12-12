@@ -4,10 +4,10 @@ from logic_layer.overview_airplanes import PlaneOverviewLogic
 from logic_layer.overview_destinations import DestinationOverviewLogic
 from logic_layer.overview_worktrips import WorkTripOverviewLogic
 # Add new or edit existing
-from logic_layer.new_or_change_work_trip import AddNewWorkTrip
-from logic_layer.new_or_change_airplane import AddNewAirplane
-from logic_layer.new_or_change_destination import AddNewDestinaion
-from logic_layer.new_or_change_employee import AddNewEmployee
+from logic_layer.new_or_change_work_trip import AddNewOrChangeWorkTrip
+from logic_layer.new_or_change_airplane import AddNewOrChangeAirplane
+from logic_layer.new_or_change_destination import AddNewOrChangeDestinaion
+from logic_layer.new_or_change_employee import AddNewOrChangeEmployee
 
 
 
@@ -19,37 +19,23 @@ class LogicAPI():
         self.__destination_data = DestinationOverviewLogic()
         self.__worktrip_data = WorkTripOverviewLogic()
         # Add new or edit existing
-        self.__add_or_edit_work_trip = AddNewWorkTrip()
-        self.__add_or_edit_employee = AddNewEmployee()
-        self.__add_or_edit_destination = AddNewDestinaion()
-        self.__add_or_edit_airplane = AddNewAirplane()
+        self.__add_or_edit_work_trip = AddNewOrChangeWorkTrip()
+        self.__add_or_edit_employee = AddNewOrChangeEmployee()
+        self.__add_or_edit_destination = AddNewOrChangeDestinaion()
+        self.__add_or_edit_airplane = AddNewOrChangeAirplane()
 
 
     # Add new
     def set_employee(self, employee_info_list):
         # checker
-        self.__add_or_edit_employee.add_new_employee(employee_info_list)
+            self.__add_or_edit_employee.add_new_employee(employee_info_list)
 
     def set_airplane(self, airplane_info_list):
         # checker
         self.__add_or_edit_airplane.add_new_airplane(airplane_info_list)
 
     def set_workTrip(self, trip_info_list):
-        depart_from, arrive_at, depart_time, plane_insignia, pilot1, pilot2, fa1, fa2, fa3 = [i for i in trip_info_list]
-        if self.__add_or_edit_work_trip.check_timeslot_availability(depart_time) == None:
-            return None
-        if self.__add_or_edit_work_trip.check_destination(arrive_at) == None:
-            return None
-        if self.__add_or_edit_work_trip.get_aircraft_type(plane_insignia) == None:
-            return None
-        if self.__add_or_edit_work_trip.check_aircraft_availability(plane_insignia, depart_time) == None:
-            return None
-        for employee in trip_info_list[4: ]:
-            if self.__add_or_edit_work_trip.check_employee_availability(employee, depart_time) == None:
-                return None
-        for pilot in trip_info_list[4: 6]:
-            if self.__add_or_edit_work_trip.check_pilot_licence(pilot, plane_insignia) == None:
-                return None
+        # chekcer
         self.__add_or_edit_work_trip.add_new_worktrip(trip_info_list)
 
     def set_destination(self, destination_info_list):
@@ -78,11 +64,6 @@ class LogicAPI():
 
     def view_all_cabin_crew(self):
         return self.__employee_data.req_overview_flightattendants()
-
-    def get_name(self):
-        """Hvað er þetta?"""
-        # code
-        pass
 
     def view_working_today(self, date):
         # is this date real checker     ATH!!!
@@ -141,18 +122,21 @@ class LogicAPI():
 
 
     # Edit existing
-    def edit_employee(self, employee):
-        # code
-        pass
+    def edit_employee(self, employee_info):
+        # checker
+        self.__add_or_edit_employee.replace_info(employee_info)
 
-    def edit_airplane(self, plane_id):
-        # code
-        pass
+    def edit_airplane(self, plane_info):
+        # checker
+        self.__add_or_edit_airplane.replace_info(plane_info)
 
-    def edit_worktrip_crew(self, flight_id):
-        # code
-        pass
+    def edit_worktrip_crew(self, flight_info):
+        # checker
+        self.__add_or_edit_work_trip.replace_info(flight_info)
 
-    def edit_destination_contact(self, destination_id):
+    def edit_destination_contact(self, destination_info):
         # code
-        pass
+        self.__add_or_edit_destination.replace_info(destination_info)
+
+
+    # Checker
