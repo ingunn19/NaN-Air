@@ -3,7 +3,7 @@ from logic_layer.overview_employees import EmployeeOverviewLogic
 from logic_layer.clock import Clock
 
 
-class ValitationChecker(LogicParent):
+class ValidationChecker(LogicParent):
     # Check if exists
     def check_if_ssn_exists(self, __ssn):
         """Takes in ssn, checks if it already exists in logs

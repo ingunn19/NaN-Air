@@ -1,9 +1,9 @@
-from validation_checker import ValitationChecker
+from logic_layer.validation_checker import ValidationChecker
 
 #checks if the stuff existst (aka: line or an employee or something exists in the csv files)
 #returns True if the stuff exists else None
 
-validate = ValitationChecker()
+validate = ValidationChecker()
 
 def check_edit_employee(__employee_list):
     __id, __ssn, __name, __role, __licence, __address, __phonenumber, __email = __employee_list

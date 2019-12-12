@@ -10,7 +10,7 @@ from logic_layer.new_or_change_destination import AddNewOrChangeDestinaion
 from logic_layer.new_or_change_employee import AddNewOrChangeEmployee
 # Error checker
 from logic_layer import verify_dude
-from logic_layer.validation_checker import ValitationChecker
+from logic_layer.validation_checker import ValidationChecker
 
 
 class LogicAPI():
@@ -142,4 +142,4 @@ class LogicAPI():
 
     # Return checker
     def logic_checker(self):
-        return ValitationChecker()
+        return ValidationChecker()
