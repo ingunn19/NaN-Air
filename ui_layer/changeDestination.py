@@ -41,5 +41,7 @@ class ChangeDestination:
                 CONTACT_NUMBER = ORIGINAL_CONTACT_NUMBER
             contact_number_checkker = contact_number(CONTACT_NUMBER)
 
+        change_list = [ID, DESTIONATION, TRAVEL_TIME, CONTACT_NAME, CONTACT_NUMBER]
+
         print(f"{ID}    {DESTIONATION}    {TRAVEL_TIME}    {CONTACT_NAME}    {CONTACT_NUMBER}")
-        self.__UI_API.set_changes_for_existing_destination(self.destination)
+        self.__UI_API.set_changes_for_existing_destination(change_list)

@@ -25,6 +25,7 @@ class New_Airplane:
                 continue
             plane_type_cheker = plane_type_ID_validation(self.plane_type_Id)
 
+        set_airplane = [self.Plane_Insignia, self.plane_type_Id]
+        print(f"{set_airplane[0]}    {set_airplane[1]}")
         print(SPACER)
-        # Prenta út nýa flugvél
-        self.__UI_API.set_airplane(self.Plane_Insignia, self.plane_type_Id)
+        self.__UI_API.set_airplane(set_airplane)

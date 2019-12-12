@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import plane_type_ID_validation, email_vaidation, address_validation, phone_validation, employee_validation
+from ui_layer.validation import plane_type_ID_validation, email_vaidation, address_validation, phone_validation, role_validation
 SPACER = "_____________________________________________"
 class ChangeEmployee:
     def __init__(self):
@@ -17,15 +17,16 @@ class ChangeEmployee:
             except :# vantar villumeldinguna þarf að prufa að keyra þetta
                 continue
         self.__employee = self.__UI_API.get_personal_info(self.__employee_ID)
-        orgenallist = self.__employee.copy()
-        EMPLOYEE_ID = self.__employee[0]
-        SSN = self.__employee[1]
-        NAME = self.__employee[2]
-        ROLE = self.__employee[3]
-        LICENCE = self.__employee[4]
-        ADDRESS = self.__employee[5]
-        GSM = self.__employee[6]
-        EMAIL = self.__employee[7]
+        change_employee = self.__employee[1]
+        orgenallist = change_employee.copy()
+        EMPLOYEE_ID = change_employee[0]
+        SSN = change_employee[1]
+        NAME = change_employee[2]
+        ROLE = change_employee[3]
+        LICENCE = change_employee[4]
+        ADDRESS = change_employee[5]
+        GSM = change_employee[6]
+        EMAIL = change_employee[7]
 
         ORGINAL_EMPLOYEE_ID = orgenallist[0]
         ORGINAL_SSN = orgenallist[1]
@@ -41,7 +42,7 @@ class ChangeEmployee:
             ROLE = input("New role: ")
             if ROLE == "":
                 ROLE = ORGINAL_ROLE
-            role_checkker = employee_validation(ROLE)
+            role_checkker = role_validation(ROLE)
 
         licence_checkker = False
         while licence_checkker== False:
@@ -71,6 +72,7 @@ class ChangeEmployee:
                 EMAIL = ORGINAL_EMAIL
             email_chekker = email_vaidation(EMAIL)
 
+        checkker_list = [EMPLOYEE_ID, SSN, NAME, ROLE, LICENCE, ADDRESS, GSM, EMAIL]
 
-        # hér væri gott að sýna breitingar
-        self.__UI_API.set_changes_for_existing_employee(self.__employee)
+        print(f"{EMPLOYEE_ID}    {SSN}    {NAME}    {ROLE}    {LICENCE}    {ADDRESS}    {GSM}    {EMAIL}")
+        self.__UI_API.set_changes_for_existing_employee(change_employee)
