@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import ssn_validation, name_validation, pilot_validation, phone_validation, email_vaidation
+from ui_layer.validation import ssn_validation, name_validation, pilot_validation, phone_validation, email_validation, address_validation
 
 
 SPACER = "_____________________________________________"
@@ -14,7 +14,16 @@ class New_CabinCrew:
         self.__address = ""
         self.__gsm = ""
 
+    # EMPLOYEE_ID //
+    # SSN +
+    # NAME +
+    # ROLE +
+    # LICENCE //
+    # ADDRESS +
+    # GSM +
+    # EMAIL +
     def create_Cabin_crew(self):
+
         ssn_check = False
         while ssn_check == False:
             self.__ssn = input("SSN: ")
@@ -30,16 +39,23 @@ class New_CabinCrew:
             self.__role = input("Role: ").lower()
             role_check = pilot_validation(self.__role)
 
-        email_check = False
-        while email_check == False:
-            self.__email = input("Email: ")
-            email_check = email_vaidation(self.__email)
+        address_checkker = False
+        while address_checkker == False:
+            self.__address = input("Address: ")
+            address_checkker = address_validation(self.__address)
 
         gsm_cheker = False
-        self.__address = input("Address: ")
         while gsm_cheker == False:
             self.__gsm = input("GSM: ")
             gsm_cheker = phone_validation(self.__gsm)
-        print(SPACER)
+
+        email_check = False
+        while email_check == False:
+            self.__email = input("Email: ")
+            email_check = email_validation(self.__email)
+
+
         #Hér væri flott að prenta út nýa flugþjóninn
-        self.__UI_API.set_Cabin_crew(self.__ssn, self.__name, self.__role, self.__email, self.__address, self.__gsm)
+        print(f"{self.__ssn}    {self.__name}    {self.__role}    {self.__address}    {self.__gsm}    {self.__email}")
+        print(SPACER)
+        self.__UI_API.set_Cabin_crew(self.__ssn, self.__name, self.__role, self.__address, self.__gsm, self.__email)

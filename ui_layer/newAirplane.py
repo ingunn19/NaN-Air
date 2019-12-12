@@ -28,4 +28,4 @@ class New_Airplane:
         set_airplane = [self.Plane_Insignia, self.plane_type_Id]
         print(f"{set_airplane[0]}    {set_airplane[1]}")
         print(SPACER)
-        self.__UI_API.set_airplane(set_airplane)
+        self.__UI_API.set_airplane(self.Plane_Insignia, self.plane_type_Id)
