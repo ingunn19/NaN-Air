@@ -29,14 +29,21 @@ class AddNewDestinaion(LogicParent):
 
 
     #adding
-    def add_destination(self,__new_list):
+    def add_new_destination(self,__new_list):
         all_destinations = self.destinations.read_file()
         all_destinations.append(__new_list)
         self.destinations.write_file(all_destinations)
 
     #changing
     def replace_info(self, __new_list):
-        self.destination.write_file(__new_list)
+        __all_destinations = self.destinations.read_file()
+        for line in __all_destinations:
+            if __new_list[0] == line[0]:
+                line = __new_list
+            else:
+                return None
+
+        self.destination.write_file(__all_destinations)
 
 
 

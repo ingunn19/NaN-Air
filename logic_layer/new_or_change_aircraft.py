@@ -10,13 +10,19 @@ class AddNewaircaft(LogicParent):
         return True
 
     #adding
-    def add_aircraft(self, __new_list):
+    def add_new_aircraft(self, __new_list):
         all_aircrafts = self.aircraft.read_file()
         all_aircrafts.append(__new_list)
         self.aircraft.write_file(all_aircrafts)
 
     #changing
     def replace_info(self, __new_list):
-        self.aircraft.write_file(__new_list)
+        __all_aircrafts = self.aircraft.read_file()
+        for line in __all_aircrafts:
+            if __new_list[0] == line[0]:
+                line = __new_list
+            else:
+                return None
+        self.aircraft.write_file(__all_aircrafts)
 
 
