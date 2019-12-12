@@ -4,6 +4,7 @@ from ui_layer.uiAPI import UI_API
 
 UIapi = UI_API()
 
+# Check input
 def ssn_validation(ssn):
     SSN_LENGTH = 10
     if len(ssn) != SSN_LENGTH:
@@ -16,7 +17,6 @@ def ssn_validation(ssn):
         except ValueError:
             print("ERROR! Cannot include letters.")
             return False
-
 
 def name_validation(name):
     NAME_LENGTH = 50
@@ -39,7 +39,6 @@ def name_validation(name):
             continue
     return True
 
-
 def pilot_validation(pilot):
     ROLE = "pilot"
 
@@ -48,7 +47,6 @@ def pilot_validation(pilot):
     else:
         print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
         return False
-
 
 def cabin_crew_validation(cabin_crew):
     ROLE = "cabin crew"
@@ -59,23 +57,13 @@ def cabin_crew_validation(cabin_crew):
         print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
         return False
 
-
-def employee_validation(employee):
-    if UI_API.check_employee(employee):
-        return True
-    else:
-        print("ERROR! Invalid employee.")
-        return False
-
-
-def email_vaidation(e_mail):
+def email_validation(e_mail):
     e_mail_list = e_mail.split("@")
     if e_mail_list[1] == "nanair.com":
         return True
     else:
         print("ERROR! Invalid email.\nNot a corporate email.")
         return False
-
 
 def phone_validation(gsm):
     gsm_list = []
@@ -94,7 +82,6 @@ def phone_validation(gsm):
         print("ERROR! Gsm cannot include letters.")
         return False
 
-
 def address_validation(address):
     for x in address:
         if x in string.punctuation:
@@ -111,14 +98,12 @@ def address_validation(address):
             continue
     return True
 
-
 def time_validation(time):
     if type(time) == int:
         return True
     else:
         print("ERROR! Invalid time.")
         return False
-
 
 def plane_insignia_validation(plane_insignia):
     PLANE_INSIGNIA = 6
@@ -148,106 +133,7 @@ def plane_insignia_validation(plane_insignia):
             return False
         except ValueError:
             continue
-            return True
-
-
-def plane_type_ID_validation(plane_type_ID):
-
-    if UI_API.check_planeID(plane_type_ID):
-        return True
-    else:
-        print("ERROR! Plane does not exist.")
-        return False
-
-
-def departure_validation(departure):
-
-    if UI_API.check_departure(departure):
-        return True
-    else:
-        print("ERROR! Invalid departure.")
-        return False
-
-
-def aircraft_validation(aircraft):
-
-    if UI_API.check_aircraftID(aircraft):
-        return True
-    else:
-        print("ERROR! Invalid aricraft ID.")
-        return 
-
-
-def check_pilot_validation(pilot):
-
-    if UI_API.check_pilot(pilot):
-        return True
-    else:
-        print("ERROR! Invalid pilot.")
-        return False
-
-
-def attendant_validation(attendant):
-
-    if UI_API.check_attendant(attendant):
-        return True
-    else:
-        print("ERROR! Invalid attendant.")
-        return False
-
-
-def check_destination(destination):
-
-    if UI_API.check_destination(destination):
-        return True
-    else:
-        print("ERROR! Invalid destination.")
-        return False
-
-
-def destination_ID_validation(destination_ID):
-
-    if UI_API.check_destination_ID(destination_ID):
-        return True
-    else:
-        print("ERROR! Invalid destination ID.")
-        return False
-
-
-def contact_name_validation(contact_name):
-
-    if UI_API.check_contact_name(contact_name):
-        return True
-    else:
-        return print("ERROR! Invalid contact name.")
-
-
-def contact_number(contact_number):
-
-    if UI_API.check_contact_number(contact_number):
-        return True
-    else:
-        print("ERROR! Invalid contact number.")
-        return False
-
-
-def day_validation(day):
-
-    if UI_API.check_day(day):
-        return True
-    else:
-        print("ERROR! Invalid date")
-        return True
-
-
-def week_validation(week):
-
-    if UI_API.check_week(week):
-        return True
-    else:
-        print("ERROR! Invalid week.")
-        return False
-
+    return True
 
 def date_validation(date):
     try:
@@ -257,8 +143,86 @@ def date_validation(date):
         print("ERROR! Invalid date.")
         return False
 
-def main():
-    time = 12
-    chekc = time_validation(time)
+# Check if exists
+def employee_validation(employee):
+    if UIapi.check_employee(employee):
+        return True
+    else:
+        print("ERROR! Invalid employee.")
+        return False
 
-main()
+def plane_type_ID_validation(plane_type_ID):
+    if UIapi.check_planeID(plane_type_ID):
+        return True
+    else:
+        print("ERROR! Plane does not exist.")
+        return False
+
+def departure_validation(departure):
+    if UIapi.check_departure(departure):
+        return True
+    else:
+        print("ERROR! Invalid departure.")
+        return False
+
+def aircraft_validation(aircraft):
+    if UIapi.check_aircraftID(aircraft):
+        return True
+    else:
+        print("ERROR! Invalid aricraft ID.")
+        return 
+
+def check_pilot_validation(pilot):
+    if UIapi.check_pilot(pilot):
+        return True
+    else:
+        print("ERROR! Invalid pilot.")
+        return False
+
+def attendant_validation(attendant):
+    if UIapi.check_attendant(attendant):
+        return True
+    else:
+        print("ERROR! Invalid attendant.")
+        return False
+
+def check_destination(destination):
+    if UIapi.check_destination(destination):
+        return True
+    else:
+        print("ERROR! Invalid destination.")
+        return False
+
+def destination_ID_validation(destination_ID):
+    if UIapi.check_destination_ID(destination_ID):
+        return True
+    else:
+        print("ERROR! Invalid destination ID.")
+        return False
+
+def contact_name_validation(contact_name):
+    if UIapi.check_contact_name(contact_name):
+        return True
+    else:
+        return print("ERROR! Invalid contact name.")
+
+def contact_number(contact_number):
+    if UIapi.check_contact_number(contact_number):
+        return True
+    else:
+        print("ERROR! Invalid contact number.")
+        return False
+
+def day_validation(day):
+    if UIapi.check_day(day):
+        return True
+    else:
+        print("ERROR! Invalid date")
+        return True
+
+def week_validation(week):
+    if UIapi.check_week(week):
+        return True
+    else:
+        print("ERROR! Invalid week.")
+        return False
