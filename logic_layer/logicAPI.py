@@ -8,7 +8,9 @@ from logic_layer.new_or_change_work_trip import AddNewOrChangeWorkTrip
 from logic_layer.new_or_change_airplane import AddNewOrChangeAirplane
 from logic_layer.new_or_change_destination import AddNewOrChangeDestinaion
 from logic_layer.new_or_change_employee import AddNewOrChangeEmployee
-
+# Error checker
+from logic_layer import verify_dude
+from logic_layer.validation_checker import ValitationChecker
 
 
 class LogicAPI():
@@ -117,7 +119,7 @@ class LogicAPI():
         return None
 
     def view_state_of_planes(self, date):
-        # is this date real checker   ATH!!!
+        # checker
         return self.__airplane_data.req_state_of_planes(date)
 
 
@@ -135,8 +137,5 @@ class LogicAPI():
         self.__add_or_edit_work_trip.replace_info(flight_info)
 
     def edit_destination_contact(self, destination_info):
-        # code
+        # checker
         self.__add_or_edit_destination.replace_info(destination_info)
-
-
-    # Checker

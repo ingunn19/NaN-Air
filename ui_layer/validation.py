@@ -193,13 +193,6 @@ def attendant_validation(attendant):
         print("ERROR! Invalid attendant.")
         return False
 
-def check_destination(destination):
-    if UIapi.check_destination(destination):
-        return True
-    else:
-        print("ERROR! Invalid destination.")
-        return False
-
 def destination_ID_validation(destination_ID):
     if UIapi.check_destination_ID(destination_ID):
         return True
@@ -252,6 +245,13 @@ def employee_gsm_validation(employee_gsm):
 def employee_email_validation(employee_email):
     if UIapi.check_employee_email_validation(employee_email_validation):
         print("ERROR! This email address is already in use.")
+        return False
+    else:
+        return True
+
+def is_ssn_available(ssn):
+    if UIapi.check_if_ssn_exists(ssn):
+        print("ERROR! This phonenumber is already in use.")
         return False
     else:
         return True

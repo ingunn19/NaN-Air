@@ -5,12 +5,21 @@ from logic_layer.clock import Clock
 
 class ValitationChecker(LogicParent):
     # Check if exists
-    def check_if_id_exists(self, __id):
+    def check_if_ssn_exists(self, __ssn):
+        """Takes in ssn, checks if it already exists in logs
+            returns True if it exists, None if not"""
+        __all_employee_list = self.crew.read_file()
+        for line in __all_employee_list:
+            if __ssn in line:
+                return True
+        return None
+
+    def check_if_employee_exists(self, __employee_id):
         """Takes in employee ID, checks if it already exists in logs
             returns True if it exists, None if not"""
-        all_destinations = self.destinations.read_file()
-        for line in all_destinations:
-            if __id in line:
+        __all_employee_list = self.crew.read_file()
+        for line in __all_employee_list:
+            if __employee_id in line:
                 return True
         return None
 
