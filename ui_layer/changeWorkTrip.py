@@ -20,7 +20,7 @@ class ChangeWorkTrip:
         if self.worktrip[2] == "":
             self.worktrip[2] = original_list[2]
 
-        self.worktrip[3] = input("Departure: ")
+        self.worktrip[3] = input("Departure time: ")
         if self.worktrip[3] == "":
             self.worktrip[3] = original_list[3]
 
