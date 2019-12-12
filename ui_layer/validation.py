@@ -143,6 +143,13 @@ def date_validation(date):
         print("ERROR! Invalid date.")
         return False
 
+def week_validation(week):
+    if 1 <= week <= 52:
+        return True
+    else:
+        print("ERROR! Invalid week.")
+        return False
+
 # Check if exists
 def employee_validation(employee):
     if UIapi.check_employee(employee):
@@ -205,18 +212,4 @@ def contact_number(contact_number):
         return True
     else:
         print("ERROR! Invalid contact number.")
-        return False
-
-def day_validation(day):
-    if UIapi.check_day(day):
-        return True
-    else:
-        print("ERROR! Invalid date")
-        return True
-
-def week_validation(week):
-    if UIapi.check_week(week):
-        return True
-    else:
-        print("ERROR! Invalid week.")
         return False
