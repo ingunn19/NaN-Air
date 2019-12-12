@@ -1,6 +1,6 @@
 from logic_layer.logic_parent import LogicParent
 
-class AddNewDestinaion(LogicParent):
+class AddNewOrChangeDestinaion(LogicParent):
     #checkers
     def check_if_id_is_taken(self, __id):
         all_destinations = self.destinations.read_file()

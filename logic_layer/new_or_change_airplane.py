@@ -1,6 +1,6 @@
 from logic_layer.logic_parent import LogicParent
 
-class AddNewAirplane(LogicParent):
+class AddNewOrChangeAirplane(LogicParent):
     # checking
     def check_if_insignia_is_taken(self, __insignia):
         all_aircrafts = self.aircraft.read_file()

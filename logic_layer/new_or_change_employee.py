@@ -1,6 +1,6 @@
 from logic_layer.logic_parent import LogicParent
 
-class AddNewEmployee(LogicParent):
+class AddNewOrChangeEmployee(LogicParent):
     def check_ssn(self, ssn):
         __all_employee_list = self.crew.read_file()
         for line in __all_employee_list:

@@ -4,7 +4,7 @@ from logic_layer.overview_employees import EmployeeOverviewLogic
 from logic_layer.clock import Clock
 from logic_layer.logic_parent import LogicParent
 
-class AddNewWorkTrip(LogicParent):
+class AddNewOrChangeNewWorkTrip(LogicParent):
     def check_employee_availability(self, employee_id, day):
         """Takes in employee_id and time of day, checks if employee is busy that day
             returns None if busy, True if available"""
