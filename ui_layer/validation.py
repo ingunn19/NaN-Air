@@ -1,7 +1,7 @@
 import string
 import datetime
-# from logic_layer.logic import LogicAPI
-# þessi inport setning verður að fara í gegnum ui_apa
+from uiAPI import UI_API
+
 
 # LLapi = LogicAPI()
 def ssn_validation(ssn):
