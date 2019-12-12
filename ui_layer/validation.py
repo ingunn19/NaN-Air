@@ -68,18 +68,6 @@ def employee_validation(employee):
         return False
 
 
-def licence_validation(licence):
-    # fínt að sækja flugvélar niður í LL, veit það þyrfti að breyta slatta til þess að það virki en það væri mikið hentugra
-    LICENCE = "NAFokkerF100"
-    LICENCE2 = "NAFokkerF28"
-    LICENCE3 = "NABAE146"
-    LICENCE_LIST = [LICENCE, LICENCE2, LICENCE3]
-
-    if licence not in LICENCE_LIST:
-        print(f"ERROR! Invalid licence.\nChoose from the following licences: {LICENCE}, {LICENCE2}, {LICENCE3}")
-        return False
-
-
 def email_vaidation(e_mail):
     e_mail_list = e_mail.split("@")
     if e_mail_list[1] == "nanair.com":
@@ -124,6 +112,14 @@ def address_validation(address):
     return True
 
 
+def time_validation(time):
+    if type(time) == int:
+        return True
+    else:
+        print("ERROR! Invalid time.")
+        return False
+
+
 def plane_insignia_validation(plane_insignia):
     PLANE_INSIGNIA = 6
 
@@ -152,7 +148,7 @@ def plane_insignia_validation(plane_insignia):
             return False
         except ValueError:
             continue
-    return True
+            return True
 
 
 def plane_type_ID_validation(plane_type_ID):
@@ -179,7 +175,7 @@ def aircraft_validation(aircraft):
         return True
     else:
         print("ERROR! Invalid aricraft ID.")
-        return
+        return 
 
 
 def check_pilot_validation(pilot):
@@ -260,3 +256,9 @@ def date_validation(date):
     except:
         print("ERROR! Invalid date.")
         return False
+
+def main():
+    time = 12
+    chekc = time_validation(time)
+
+main()
