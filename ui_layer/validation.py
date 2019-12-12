@@ -54,6 +54,7 @@ def cabin_crew_validation(cabin_crew):
         print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
         return False
 
+
 def employee_validation(employee):
     count = 0
     if UI_API.check_employee(employee):
