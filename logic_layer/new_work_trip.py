@@ -135,3 +135,8 @@ class New_WorkTrip(LogicParent):
         flight_info_list.insert(4, return_time)
         flight_id = classObject.get_new_flight_id(flight_info_list)
         return WorkTrip(flight_id, depart_from, arrive_at, depart_time, return_time, plane_insignia, pilot1, pilot2, fa1, fa2, fa3)
+
+
+    #changing info
+    def replace_info(self,__new_list):
+        self.flight_records.write_file(__new_list)

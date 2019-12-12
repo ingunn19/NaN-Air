@@ -17,7 +17,7 @@ class AddNewaircaft(LogicParent):
         self.aircraft.write_file(all_aircrafts)
 
     #changing
-    def replace_info(self, new_list):
-        self.aircraft.write_file(new_list)
+    def replace_info(self, __new_list):
+        self.aircraft.write_file(__new_list)
 
 
