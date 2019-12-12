@@ -15,13 +15,13 @@ class UI_API:
         print(set_airplane_list)
         logic_API.set_airplane(set_airplane_list)
 
-    def set_Cabin_crew(self, ssn, name, role, email, address, gsm):
-        set_cabin_crew_list = [ssn, name, role, "N/A", email, address, gsm]
+    def set_Cabin_crew(self, ssn, name, role, address, gsm, email):
+        set_cabin_crew_list = [ssn, name, role, "N/A", address, gsm, email]
         logic_API.set_employee(set_cabin_crew_list)
 
     # Vantar að taka inn departure time ATH!!!
     def set_WorkTrip(self, arrivingAt, depart_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3):
-        set_workTrip_list =['RKV', arrivingAt, depart_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3]
+        set_workTrip_list = ['RKV', arrivingAt, depart_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3]
         print(set_workTrip_list)
         logic_API.set_workTrip(set_workTrip_list)
 
