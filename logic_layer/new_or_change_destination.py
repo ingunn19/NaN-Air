@@ -29,10 +29,9 @@ class AddNewDestinaion(LogicParent):
 
 
     #adding
-    def add_destination(self,__identification, __destination, __travel_time, __contact_name, __contact_number):
+    def add_destination(self,__new_list):
         all_destinations = self.destinations.read_file()
-        new_line = [__identification, __destination, __travel_time, __contact_name, __contact_number]
-        all_destinations.append(new_line)
+        all_destinations.append(__new_list)
         self.destinations.write_file(all_destinations)
 
     #changing
