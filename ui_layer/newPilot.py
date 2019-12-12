@@ -14,6 +14,14 @@ class New_Pilot:
         self.__address = ""
         self.__gsm = ""
 
+    # EMPLOYEE_ID //
+    # SSN +
+    # NAME +
+    # ROLE +
+    # LICENCE +
+    # ADDRESS +
+    # GSM +
+    # EMAIL +
     def create_pilot(self):
         print("New Pilot: ")
 

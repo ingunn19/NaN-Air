@@ -58,7 +58,7 @@ class ChangeWorkTrip:
             if AIRCRAFT_ID == "":
                 AIRCRAFT_ID = ORGINAL_AIRCRAFT_ID
             plane_id_checkker = plane_insignia_validation(AIRCRAFT_ID)
-            #
+            # is plane ready
 
         pilot_checkker1 = False
         while pilot_checkker1 == False:
