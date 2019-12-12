@@ -200,12 +200,6 @@ def destination_ID_validation(destination_ID):
         print("ERROR! Invalid destination ID.")
         return False
 
-def contact_name_validation(contact_name):
-    if UIapi.check_contact_name(contact_name):
-        return True
-    else:
-        return print("ERROR! Invalid contact name.")
-
 def contact_number(contact_number):
     if UIapi.check_contact_number(contact_number):
         return True
