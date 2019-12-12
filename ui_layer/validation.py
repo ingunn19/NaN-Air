@@ -213,3 +213,45 @@ def contact_number(contact_number):
     else:
         print("ERROR! Invalid contact number.")
         return False
+
+def role_validation(role):
+    if UIapi.check_role_validation(role_validation):
+        return True
+    else:
+        print("ERROR! Role does not exist.")
+        return False
+
+def check_employee_validation(employee):
+    if UIapi.check_employee_validation(employee_validation):
+        return True
+    else:
+        print("ERROR! Employee not available.")
+        return False
+
+def check_aircraft_validation(aircraft):
+    if UIapi.check_aircraft_validation(aircraft_validation):
+        return True
+    else:
+        print("ERROR! Aircraft not available.")
+        return False
+
+def pilot_licence_validation(pilot_licence):
+    if UIapi.check_pilot_licence_validation(pilot_licence_validation):
+        return True
+    else:
+        print("ERROR! Pilot does not have licence for that aircraft.")
+        return False
+
+def employee_gsm_validation(employee_gsm):
+    if UIapi.check_employee_gsm_validation(employee_gsm_validation):
+        print("ERROR! This phonenumber is already in use.")
+        return False
+    else:
+        return True
+
+def employee_email_validation(employee_email):
+    if UIapi.check_employee_email_validation(employee_email_validation):
+        print("ERROR! This email address is already in use.")
+        return False
+    else:
+        return True
