@@ -4,7 +4,7 @@ from logic_layer.employee_overview import EmployeeOverviewLogic
 from logic_layer.clock import Clock
 from logic_layer.logic_parent import LogicParent
 
-class New_WorkTrip(LogicParent):
+class AddNewWorkTrip(LogicParent):
     def check_employee_availability(self, employee_id, day):
         """Takes in employee_id and time of day, checks if employee is busy that day
             returns None if busy, True if available"""
@@ -37,7 +37,7 @@ class New_WorkTrip(LogicParent):
             has the needed licence for that aircraft
             returns None if no licence, True if it checks out"""
         pilotData = EmployeeOverviewLogic()
-        classObject = New_WorkTrip()
+        classObject = AddNewWorkTrip()
         plane_type = classObject.get_aircraft_type(plane_insignia)
         employee_list = pilotData.req_overview_pilots()
         for line in employee_list:
@@ -118,17 +118,17 @@ class New_WorkTrip(LogicParent):
         """Takes in a destination and departure time
             calculates the return time for the trip
             and returns it"""
-        classObject = New_WorkTrip()
+        classObject = AddNewWorkTrip()
         time_to_destination = int(classObject.get_travel_time(destination))
         travel_time = (time_to_destination * 2) + 1
         depart_time = Clock(depart_time)
         return_time = depart_time.calculate_return_time(travel_time)
         return return_time
 
-    def new_worktrip(self, flight_info_list):
+    def add_new_worktrip(self, flight_info_list):
         """Takes in a list of information to register a new worktrip, 
             generates a return time, flight id, feeds the information into a model and returns it"""
-        classObject = New_WorkTrip()
+        classObject = AddNewWorkTrip()
         depart_from, arrive_at, depart_time, plane_insignia, pilot1, pilot2, fa1, fa2, fa3 = [i for i in flight_info_list]
         return_time = classObject.get_return_time(arrive_at, depart_time)
         flight_info_list.insert(0, '')
@@ -138,5 +138,12 @@ class New_WorkTrip(LogicParent):
 
 
     #changing info
-    def replace_info(self,__new_list):
-        self.flight_records.write_file(__new_list)
+    def replace_info(self, flight_info_list):
+        __flight_record_list = self.flight_records.read_file()
+        __flight_id = flight_info_list[0]
+        for line in __flight_record_list:
+            if __flight_id in line:
+                line = flight_info_list
+            else:
+                return None
+        self.flight_records.write_file(__flight_record_list)

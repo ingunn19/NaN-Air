@@ -4,7 +4,7 @@ from logic_layer.logic_parent import LogicParent
 class WorkTripOverviewLogic(LogicParent):
 #overview of worktrips
     def req_all_worktrips(self):
-        __all_worktrips = self.__flight_records.read_file()
+        __all_worktrips = self.flight_records.read_file()
         if len(__all_worktrips) <= 1:
             return None
 
@@ -19,7 +19,7 @@ class WorkTripOverviewLogic(LogicParent):
 
     def req_worktrips_of_the_week(self, __year, __week):
         clock = Clock()
-        __all_worktrips = self.__flight_records.read_file()
+        __all_worktrips = self.flight_records.read_file()
         __days_in_week_list = clock.list_of_dates_in_given_week_and_given_year(__year, __week)
         __week_overview = []
         # take the days from the respectable value and search for that in the all_worktrips (if identity and weedays... then append to list)
@@ -46,7 +46,7 @@ class WorkTripOverviewLogic(LogicParent):
         return __week_overview
 
     def req_worktrips_of_the_day(self,date):
-        __all_worktrips = self.__flight_records.read_file()
+        __all_worktrips = self.flight_records.read_file()
         __day_overview = []
         # take the days from the respectable value and search for that in the all_worktrips (if identity and weedays... then append to list)
         # adding the first line
@@ -67,7 +67,7 @@ class WorkTripOverviewLogic(LogicParent):
         return __day_overview
 
     def req_single_worktrip(self,flight_number):
-        __all_worktrips = self.__flight_records.read_file()
+        __all_worktrips = self.flight_records.read_file()
         return_list = []
         return_list.append(__all_worktrips[0])
         for line in __all_worktrips:

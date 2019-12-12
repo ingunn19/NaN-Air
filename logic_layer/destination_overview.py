@@ -4,14 +4,14 @@ class DestinationOverviewLogic(LogicParent):
 #overview destination
     def req_all_destinations(self):
         #getting all destination
-        __all_destinaions = self.__destinations.read_file()
+        __all_destinaions = self.destinations.read_file()
         if len(__all_destinaions) <=1:
             return None
         return __all_destinaions
 
     def req_one_destination(self, dest):
         #getting a list of all of the destinations
-        __all_destinaions = self.__destinations.read_file()
+        __all_destinaions = self.destinations.read_file()
         list_of_the_destinataion = []
         #getting the first row of the csv file (aka: header)
         list_of_the_destinataion.append(__all_destinaions[0])
