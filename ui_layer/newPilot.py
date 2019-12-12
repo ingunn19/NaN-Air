@@ -30,7 +30,6 @@ class New_Pilot:
             self.__ssn = input("SSN: ")
             ssn_check = ssn_validation(self.__ssn)
 
-
         name_check = False
         while name_check == False:
             self.__name = input("Full name: ")
@@ -60,6 +59,7 @@ class New_Pilot:
         while gsm_cheker == False:
             self.__gsm = input("GSM: ")
             gsm_cheker = phone_validation(self.__gsm)
+
 
         print(f"{self.__ssn}    {self.__name}    {self.__role}   {self.__licence}    {self.__email}   {self.__address}   {self.__gsm}")
         print(SPACER)
