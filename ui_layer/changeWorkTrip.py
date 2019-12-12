@@ -43,7 +43,7 @@ class ChangeWorkTrip:
                 ARRIVING_AT = input("Arriving at: ")
                 if ARRIVING_AT == "":
                     ARRIVING_AT = ORGINAL_ARRIVING_AT
-                arriving_at_checkker = destination_ID_validation(ARRIVING_AT)
+                arriving_at_checkker = destination_ID_validation(ARRIVING_AT) # það er ekki til neitt sem athugar formattið á input destination
 
         departure_checkker = False
         while departure_checkker == False:
@@ -51,6 +51,7 @@ class ChangeWorkTrip:
             if ARRIVING_AT == "":
                 ARRIVING_AT = ORGINAL_ARRIVING_AT
             departure_checkker = time_validation(ARRIVING_AT)
+            # er þessi brottfaratími laus?
 
         plane_id_checkker = False
         while plane_id_checkker == False:
@@ -58,6 +59,7 @@ class ChangeWorkTrip:
             if AIRCRAFT_ID == "":
                 AIRCRAFT_ID = ORGINAL_AIRCRAFT_ID
             plane_id_checkker = plane_insignia_validation(AIRCRAFT_ID)
+            # eigum við þessa flugvél til?
             # er flugvél laus?
 
         pilot_checkker1 = False
@@ -66,9 +68,9 @@ class ChangeWorkTrip:
             if PILOT1 == "":
                 PILOT1 = ORGINAL_PILOT1
             pilot_checkker1 = pilot_validation(PILOT1)
-            # er flugmaður laus?
-            # er flugmaður með leifi á flugvélina?
             # er þetta örugglega flugmaður?
+            # er flugmaður með leifi á flugvélina?
+            # er flugmaður laus?
 
         pilot_checkker2 = False
         while pilot_checkker2 == False:
@@ -76,9 +78,9 @@ class ChangeWorkTrip:
             if PILOT2 == "":
                 PILOT2 = ORGINAL_PILOT2
             pilot_checkker2 = pilot_validation(PILOT1)
-            # er flugmaður laus?
-            # er flugmaður með leifi á flugvélina?
             # er þetta örugglega flugmaður?
+            # er flugmaður með leifi á flugvélina?
+            # er flugmaður laus?
 
         cabin_crew_checkker1 = False
         while cabin_crew_checkker1 == False:
@@ -86,9 +88,8 @@ class ChangeWorkTrip:
             if CABINCREW1 == "":
                 CABINCREW1 = ORGINAL_CABINCREW1
             cabin_crew_checkker1 = cabin_crew_validation(CABINCREW1)
-            # er flugmaður laus?
-            # er flugmaður með leifi á flugvélina?
-            # er þetta örugglega flugmaður?
+            # er þetta örugglega flugþjónn?
+            # er flugþjónn laus?
 
         cabin_crew_checkker2 = False
         while cabin_crew_checkker2 == False:
@@ -96,9 +97,8 @@ class ChangeWorkTrip:
             if CABINCREW2 == "":
                 CABINCREW2 = ORGINAL_CABINCREW2
             cabin_crew_checkker2 = cabin_crew_validation(CABINCREW2)
-            # er flugmaður laus?
-            # er flugmaður með leifi á flugvélina?
-            # er þetta örugglega flugmaður?
+            # er þetta örugglega flugþjónn?
+            # er flugþjónn laus?
 
         cabin_crew_checkker3 = False
         while cabin_crew_checkker3 == False:
@@ -106,9 +106,8 @@ class ChangeWorkTrip:
             if CABINCREW3 == "":
                 CABINCREW3 = original_list[10]
             cabin_crew_checkker3 = cabin_crew_validation(CABINCREW3)
-            # er flugmaður laus?
-            # er flugmaður með leifi á flugvélina?
-            # er þetta örugglega flugmaður?
+            # er þetta örugglega flugþjónn?
+            # er flugþjónn laus?
 
         change_list = [FLIGHT_NUM, DESTINATION_FROM, ARRIVING_AT, DEPARTURE, RETURN, AIRCRAFT_ID, PILOT1, PILOT2, CABINCREW1, CABINCREW2, CABINCREW3]
         print(f"{FLIGHT_NUM}    {DESTINATION_FROM}    {ARRIVING_AT}    {DEPARTURE}    {RETURN}    {AIRCRAFT_ID}    {PILOT1}    {PILOT2}    {CABINCREW1}    {CABINCREW2}    {CABINCREW3}")

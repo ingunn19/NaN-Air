@@ -3,6 +3,7 @@ import datetime
 from ui_layer.uiAPI import UI_API
 
 UIapi = UI_API()
+ll_validation = UIapi.get_logic_checker()
 
 # Check input
 def ssn_validation(ssn):
@@ -152,105 +153,105 @@ def week_validation(week):
 
 # Check if exists
 def employee_validation(employee):
-    if UIapi.check_employee(employee):
+    if ll_validation.check_if_employee_exists(employee):
         return True
     else:
         print("ERROR! Invalid employee.")
         return False
 
 def plane_type_ID_validation(plane_type_ID):
-    if UIapi.check_planeID(plane_type_ID):
+    if ll_validation.check_if_plane_type_exists(plane_type_ID):
         return True
     else:
         print("ERROR! Plane does not exist.")
         return False
 
 def departure_validation(departure):
-    if UIapi.check_departure(departure):
+    if ll_validation.check_depart_time_availability(departure):
         return True
     else:
-        print("ERROR! Invalid departure.")
+        print("ERROR! Departure time is already reserved.")
         return False
 
 def aircraft_validation(aircraft):
-    if UIapi.check_aircraftID(aircraft):
+    if ll_validation.check_if_insignia_exists(aircraft):
         return True
     else:
         print("ERROR! Invalid aricraft ID.")
-        return 
+        return False
 
 def check_pilot_validation(pilot):
-    if UIapi.check_pilot(pilot):
+    if ll_validation.check_if_pilot(pilot):
         return True
     else:
-        print("ERROR! Invalid pilot.")
+        print("ERROR! Employee is not a pilot.")
         return False
 
 def attendant_validation(attendant):
-    if UIapi.check_attendant(attendant):
+    if ll_validation.check_if_cabin_crew(attendant):
         return True
     else:
-        print("ERROR! Invalid attendant.")
+        print("ERROR! Employee is not a flight attendant.")
         return False
 
 def destination_ID_validation(destination_ID):
-    if UIapi.check_destination_ID(destination_ID):
+    if ll_validation.check_if_destination_exists(destination_ID):
         return True
     else:
         print("ERROR! Invalid destination ID.")
         return False
 
 def contact_number(contact_number):
-    if UIapi.check_contact_number(contact_number):
-        return True
-    else:
-        print("ERROR! Invalid contact number.")
+    if ll_validation.check_if_contact_number_exists(contact_number):
+        print("ERROR! This contact number is already in use.")
         return False
+    else:
+        return True
 
 def role_validation(role):
-    if UIapi.check_role_validation(role_validation):
+    if ll_validation.check_if_role_exists(role):
         return True
     else:
         print("ERROR! Role does not exist.")
         return False
 
-def check_employee_validation(employee):
-    if UIapi.check_employee_validation(employee_validation):
+def check_employee_validation(employee, day):
+    if ll_validation.check_employee_availability(employee, day):
         return True
     else:
         print("ERROR! Employee not available.")
         return False
 
-def check_aircraft_validation(aircraft):
-    if UIapi.check_aircraft_validation(aircraft_validation):
+def check_aircraft_validation(aircraft, depart_time):
+    if ll_validation.check_aircraft_availability(aircraft, depart_time):
         return True
     else:
         print("ERROR! Aircraft not available.")
         return False
 
-def pilot_licence_validation(pilot_licence):
-    if UIapi.check_pilot_licence_validation(pilot_licence_validation):
+def pilot_licence_validation(pilot_id, plane_insignia):
+    if ll_validation.check_pilot_licence(pilot_id, plane_insignia):
         return True
     else:
         print("ERROR! Pilot does not have licence for that aircraft.")
         return False
 
 def employee_gsm_validation(employee_gsm):
-    if UIapi.check_employee_gsm_validation(employee_gsm_validation):
+    if ll_validation.check_if_phone_number_exists(employee_gsm):
         print("ERROR! This phonenumber is already in use.")
         return False
     else:
         return True
 
 def employee_email_validation(employee_email):
-    if UIapi.check_employee_email_validation(employee_email_validation):
+    if ll_validation.check_if_email_exists(employee_email):
         print("ERROR! This email address is already in use.")
         return False
     else:
         return True
 
 def is_ssn_available(ssn):
-    if UIapi.check_if_ssn_exists(ssn):
+    if ll_validation.check_if_ssn_exists(ssn):
         print("ERROR! This phonenumber is already in use.")
         return False
     else:

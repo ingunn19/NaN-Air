@@ -56,8 +56,8 @@ class ValitationChecker(LogicParent):
         all_destinations = self.destinations.read_file()
         for line in all_destinations:
             if __contact_number in line:
-                return None
-        return True
+                return True
+        return None
 
     def check_if_role_exists(self, __role):
         """Takes in role and checks if it exists
@@ -91,13 +91,12 @@ class ValitationChecker(LogicParent):
         return None
 
     def check_if_licence_exists(self, __licence):
+        """Takes in a pilot's licence, checks if the licence has a corresponding airplane
+            returns True if it does, None if it does not"""
         __airplane_list = self.aircraft.read_file()
-        if __licence == "N/A":
-            return True
-        else:
-            for line in __airplane_list:
-                if __licence in line:
-                    return True
+        for line in __airplane_list:
+            if __licence in line:
+                return True
         return None
 
     def check_if_phone_number_exists(self, __phonenumber):
@@ -115,8 +114,8 @@ class ValitationChecker(LogicParent):
         __all_employee_list = self.crew.read_file()
         for line in __all_employee_list:
             if email in line:
-                return None
-        return True
+                return True
+        return None
 
 
     # Check for availability

@@ -139,3 +139,7 @@ class LogicAPI():
     def edit_destination_contact(self, destination_info):
         # checker
         self.__add_or_edit_destination.replace_info(destination_info)
+
+    # Return checker
+    def logic_checker(self):
+        return ValitationChecker()

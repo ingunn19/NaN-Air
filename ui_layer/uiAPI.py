@@ -209,3 +209,7 @@ class UI_API:
     def set_changes_for_existing_worktrip(self, worktrip):
         logic_API.edit_worktrip_crew(worktrip) # Vantar!
         print("Setja inn breytt gögn um vinnuferð")
+
+    def get_logic_checker(self):
+        logic_validation = logic_API.logic_checker()
+        return logic_validation
