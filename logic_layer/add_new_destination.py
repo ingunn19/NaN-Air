@@ -35,5 +35,9 @@ class AddNewDestinaion(LogicParent):
         all_destinations.append(new_line)
         self.destinations.write_file(all_destinations)
 
+    #changing
+    def replace_info(self, new_list):
+        self.destination.write_file(new_list)
+
 
 
