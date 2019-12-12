@@ -6,10 +6,10 @@ from ui_layer.uiAPI import UI_API
 # LLapi = LogicAPI()
 def ssn_validation(ssn):
     SSN_LENGTH = 10
-    if len(ssn) != 10:
+    if len(ssn) != SSN_LENGTH:
         print("ERROR! Invalid ssn")
         return False
-    if len(ssn) == 10:
+    if len(ssn) == SSN_LENGTH:
         try:
             int(ssn)
             return ssn
@@ -20,7 +20,6 @@ def ssn_validation(ssn):
 
 def name_validation(name):
     NAME_LENGTH = 50
-    name_list = []
     if len(name) > NAME_LENGTH:
         return print("ERROR! Name too long.")
     if len(name) <= 0:
@@ -263,13 +262,7 @@ def week_validation(week):
 def date_validation(date):
     try:
         datetime_date = datetime.datetime.strptime(date, '%Y, %m, %d')
-        return  True# print(datetime_date.strftime('%Y-%m-%d'))
-    except:
-        print("ERROR! Invalid date.")
-        return False
-    try:
-        datetime_date = datetime.datetime.strptime(date, '%Y, %m, %d')
-        return  True# print(datetime_date.strftime('%Y-%m-%d'))
+        return True
     except:
         print("ERROR! Invalid date.")
         return False
