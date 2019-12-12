@@ -28,6 +28,7 @@ class New_CabinCrew:
         while ssn_check == False:
             self.__ssn = input("SSN: ")
             ssn_check = ssn_validation(self.__ssn)
+            # is ssn avaleble
 
         name_check = False
         while name_check == False:

@@ -25,8 +25,8 @@ class UI_API:
         print(set_workTrip_list)
         logic_API.set_workTrip(set_workTrip_list)
 
-    def set_Destination(self, airportID, destination, contact_name, contact_number):
-        set_destination_list = [airportID, destination, contact_name, contact_number]
+    def set_Destination(self, airportID, travel_time, destination, contact_name, contact_number):
+        set_destination_list = [airportID, travel_time, destination, contact_name, contact_number]
         print(set_destination_list)
         logic_API.set_destination(set_destination_list)
 
