@@ -12,8 +12,9 @@ class DetailedSearch:
         print("Choose an employee:")
         self.employee_id = input("Employee ID: ")
         print(SPACER)
-
-        print(f"{self.__UI_API.get_name(self.employee_id)}:")
+        employee_info = self.__UI_API.get_personal_info(self.employee_id)
+        
+        print(f"{employee_info[1][2]}:")
         action = ""
         while (action != "b"):
             print("1. Personal info")
