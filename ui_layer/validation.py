@@ -54,6 +54,16 @@ def cabin_crew_validation(cabin_crew):
         print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
         return False
 
+def employee_validation(employee):
+    count = 0
+    if UI_API.check_employee(employee):
+        count += 1
+    else:
+        print("ERROR! Invalid employee.")
+        return False
+    if count == 1:
+        return True
+
 
 def licence_validation(licence):
     # fínt að sækja flugvélar niður í LL, veit það þyrfti að breyta slatta til þess að það virki en það væri mikið hentugra
