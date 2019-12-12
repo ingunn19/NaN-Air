@@ -12,7 +12,7 @@ def ssn_validation(ssn):
     if len(ssn) == SSN_LENGTH:
         try:
             int(ssn)
-            return ssn
+            return True
         except ValueError:
             print("ERROR! Cannot include letters.")
             return False
@@ -21,25 +21,30 @@ def ssn_validation(ssn):
 def name_validation(name):
     NAME_LENGTH = 50
     if len(name) > NAME_LENGTH:
-        return print("ERROR! Name too long.")
+        print("ERROR! Name too long.")
+        return False
     if len(name) <= 0:
-        return print("ERROR! Name too short")
+        print("ERROR! Name too short")
+        return False
 
     for x in name:
         if x in string.punctuation:
-            return print("ERROR! Name cannot include punctuations.")
+            print("ERROR! Name cannot include punctuations.")
+            return False
         try:
             int(x)
-            return print("ERROR! Name cannot include numbers.")
+            print("ERROR! Name cannot include numbers.")
+            return False
         except ValueError:
             continue
+    return True
 
 
 def pilot_validation(pilot):
     ROLE = "pilot"
 
     if pilot == ROLE:
-        return pilot
+        return True
     else:
         print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
         return False
@@ -49,21 +54,18 @@ def cabin_crew_validation(cabin_crew):
     ROLE = "cabin crew"
 
     if cabin_crew == ROLE:
-        return cabin_crew
+        return True
     else:
         print(f"ERROR! Invalid role.\nChoose the following role: {ROLE}")
         return False
 
 
 def employee_validation(employee):
-    count = 0
     if UI_API.check_employee(employee):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid employee.")
         return False
-    if count == 1:
-        return True
 
 
 def licence_validation(licence):
@@ -81,7 +83,7 @@ def licence_validation(licence):
 def email_vaidation(e_mail):
     e_mail_list = e_mail.split("@")
     if e_mail_list[1] == "nanair.com":
-        return e_mail
+        return True
     else:
         print("ERROR! Invalid email.\nNot a corporate email.")
         return False
@@ -99,7 +101,7 @@ def phone_validation(gsm):
     gsm_string = "".join(gsm_list)
     try:
         int(gsm_string)
-        return gsm
+        return True
     except ValueError:
         print("ERROR! Gsm cannot include letters.")
         return False
@@ -119,7 +121,7 @@ def address_validation(address):
             return False
         except ValueError:
             continue
-    return address
+    return True
 
 
 def plane_insignia_validation(plane_insignia):
@@ -150,6 +152,7 @@ def plane_insignia_validation(plane_insignia):
             return False
         except ValueError:
             continue
+    return True
 
 
 def plane_type_ID_validation(plane_type_ID):
@@ -162,112 +165,92 @@ def plane_type_ID_validation(plane_type_ID):
 
 
 def departure_validation(departure):
-    count = 0
+
     if UI_API.check_departure(departure):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid departure.")
         return False
-    if count == 1:
-        return True
 
 
 def aircraft_validation(aircraft):
-    count = 0
+
     if UI_API.check_aircraftID(aircraft):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid aricraft ID.")
-        return 
-    if count == 1:
-        return True
+        return
 
 
 def check_pilot_validation(pilot):
-    count = 0
+
     if UI_API.check_pilot(pilot):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid pilot.")
         return False
-    if count == 1:
-        return True
 
 
 def attendant_validation(attendant):
-    count = 0
+
     if UI_API.check_attendant(attendant):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid attendant.")
         return False
-    if count == 1:
-        return True
 
 
 def check_destination(destination):
-    count = 0
+
     if UI_API.check_destination(destination):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid destination.")
         return False
-    if count == 1:
-        return True
 
 
 def destination_ID_validation(destination_ID):
-    count = 0
+
     if UI_API.check_destination_ID(destination_ID):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid destination ID.")
         return False
-    if count == 1:
-        return True
 
 
 def contact_name_validation(contact_name):
-    count = 0
+
     if UI_API.check_contact_name(contact_name):
-        count += 1
+        return True
     else:
         return print("ERROR! Invalid contact name.")
-    if count == 1:
-        return True
 
 
 def contact_number(contact_number):
-    count = 0
+
     if UI_API.check_contact_number(contact_number):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid contact number.")
         return False
-    if count == 1:
-        return True
 
 
 def day_validation(day):
-    count = 0
+
     if UI_API.check_day(day):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid date")
-        return True
-    if count == 1:
         return True
 
 
 def week_validation(week):
-    count = 0
+
     if UI_API.check_week(week):
-        count += 1
+        return True
     else:
         print("ERROR! Invalid week.")
         return False
-    if count == 1:
-        return True
 
 
 def date_validation(date):
