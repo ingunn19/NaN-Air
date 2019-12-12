@@ -141,14 +141,13 @@ def plane_insignia_validation(plane_insignia):
         except ValueError:
             continue
 
-def plane_type_ID_validation(plane_type_ID):
-    LICENCE = "NAFokkerF100"
-    LICENCE2 = "NAFokkerF28"
-    LICENCE3 = "NABAE146"
-    LICENCE_LIST = [LICENCE, LICENCE2, LICENCE3]
 
-    if plane_type_ID not in LICENCE_LIST:
-        print(f"ERROR! Invalid licence.\nChoose from the following: {LICENCE}, {LICENCE2}, {LICENCE3}")
+def plane_type_ID_validation(plane_type_ID):
+
+    if LLapi.check_planeID(plane_type_ID):
+        return True
+    else:
+        print("ERROR! Plane does not exist.")
         return False
 
 
@@ -159,6 +158,8 @@ def departure_validation(departure):
     else:
         print("ERROR! Invalid departure.")
         return False
+    if count == 1:
+        return True
 
 
 def aircraft_validation(aircraft):
@@ -167,7 +168,9 @@ def aircraft_validation(aircraft):
         count += 1
     else:
         print("ERROR! Invalid aricraft ID.")
-        return False
+        return 
+    if count == 1:
+        return True
 
 
 def check_pilot_validation(pilot):
@@ -177,6 +180,8 @@ def check_pilot_validation(pilot):
     else:
         print("ERROR! Invalid pilot.")
         return False
+    if count == 1:
+        return True
 
 
 def attendant_validation(attendant):
@@ -186,7 +191,7 @@ def attendant_validation(attendant):
     else:
         print("ERROR! Invalid attendant.")
         return False
-    if count == 5:
+    if count == 1:
         return True
 
 
@@ -197,6 +202,8 @@ def check_destination(destination):
     else:
         print("ERROR! Invalid destination.")
         return False
+    if count == 1:
+        return True
 
 
 def destination_ID_validation(destination_ID):
@@ -206,6 +213,8 @@ def destination_ID_validation(destination_ID):
     else:
         print("ERROR! Invalid destination ID.")
         return False
+    if count == 1:
+        return True
 
 
 def contact_name_validation(contact_name):
@@ -214,13 +223,18 @@ def contact_name_validation(contact_name):
         count += 1
     else:
         return print("ERROR! Invalid contact name.")
+    if count == 1:
+        return True
 
+
+def contact_number(contact_number):
+    count = 0
     if LLapi.check_contact_number(contact_number):
         count += 1
     else:
         print("ERROR! Invalid contact number.")
         return False
-    if count == 4:
+    if count == 1:
         return True
 
 
@@ -231,6 +245,8 @@ def day_validation(day):
     else:
         print("ERROR! Invalid date")
         return True
+    if count == 1:
+        return True
 
 
 def week_validation(week):
@@ -240,7 +256,7 @@ def week_validation(week):
     else:
         print("ERROR! Invalid week.")
         return False
-    if count == 2:
+    if count == 1:
         return True
 
 
