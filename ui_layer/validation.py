@@ -2,8 +2,8 @@ import string
 import datetime
 from ui_layer.uiAPI import UI_API
 
+UIapi = UI_API()
 
-# LLapi = LogicAPI()
 def ssn_validation(ssn):
     SSN_LENGTH = 10
     if len(ssn) != SSN_LENGTH:
@@ -143,7 +143,7 @@ def plane_insignia_validation(plane_insignia):
 
 def plane_type_ID_validation(plane_type_ID):
 
-    if LLapi.check_planeID(plane_type_ID):
+    if UI_API.check_planeID(plane_type_ID):
         return True
     else:
         print("ERROR! Plane does not exist.")
@@ -152,7 +152,7 @@ def plane_type_ID_validation(plane_type_ID):
 
 def departure_validation(departure):
     count = 0
-    if LLapi.check_departure(departure):
+    if UI_API.check_departure(departure):
         count += 1
     else:
         print("ERROR! Invalid departure.")
@@ -163,7 +163,7 @@ def departure_validation(departure):
 
 def aircraft_validation(aircraft):
     count = 0
-    if LLapi.check_aircraftID(aircraftID):
+    if UI_API.check_aircraftID(aircraft):
         count += 1
     else:
         print("ERROR! Invalid aricraft ID.")
@@ -174,7 +174,7 @@ def aircraft_validation(aircraft):
 
 def check_pilot_validation(pilot):
     count = 0
-    if LLapi.check_pilot(pilot):
+    if UI_API.check_pilot(pilot):
         count += 1
     else:
         print("ERROR! Invalid pilot.")
@@ -185,7 +185,7 @@ def check_pilot_validation(pilot):
 
 def attendant_validation(attendant):
     count = 0
-    if LLapi.check_attendant(attendant):
+    if UI_API.check_attendant(attendant):
         count += 1
     else:
         print("ERROR! Invalid attendant.")
@@ -196,7 +196,7 @@ def attendant_validation(attendant):
 
 def check_destination(destination):
     count = 0
-    if LLapi.check_destination(destination):
+    if UI_API.check_destination(destination):
         count += 1
     else:
         print("ERROR! Invalid destination.")
@@ -207,7 +207,7 @@ def check_destination(destination):
 
 def destination_ID_validation(destination_ID):
     count = 0
-    if LLapi.check_destination_ID(destination_ID):
+    if UI_API.check_destination_ID(destination_ID):
         count += 1
     else:
         print("ERROR! Invalid destination ID.")
@@ -218,7 +218,7 @@ def destination_ID_validation(destination_ID):
 
 def contact_name_validation(contact_name):
     count = 0
-    if LLapi.check_contact_name(contact_name):
+    if UI_API.check_contact_name(contact_name):
         count += 1
     else:
         return print("ERROR! Invalid contact name.")
@@ -228,7 +228,7 @@ def contact_name_validation(contact_name):
 
 def contact_number(contact_number):
     count = 0
-    if LLapi.check_contact_number(contact_number):
+    if UI_API.check_contact_number(contact_number):
         count += 1
     else:
         print("ERROR! Invalid contact number.")
@@ -239,7 +239,7 @@ def contact_number(contact_number):
 
 def day_validation(day):
     count = 0
-    if LLapi.check_day(day):
+    if UI_API.check_day(day):
         count += 1
     else:
         print("ERROR! Invalid date")
@@ -250,7 +250,7 @@ def day_validation(day):
 
 def week_validation(week):
     count = 0
-    if LLapi.check_week(week):
+    if UI_API.check_week(week):
         count += 1
     else:
         print("ERROR! Invalid week.")
