@@ -9,12 +9,12 @@ class ChangeEmployee:
 
     def change_employee_info(self):
         print("Change employee info:")
-        id_checkker = True
-        while id_checkker:
+        id_checkker = False
+        while id_checkker == False:
             try:
                 self.__employee_ID = input("Employee ID: ")
-                id_checkker = False
-            except:# vantar villumeldinguna þarf að prufa að keyra þetta
+                id_checkker = True
+            except :# vantar villumeldinguna þarf að prufa að keyra þetta
                 continue
         self.__employee = self.__UI_API.get_personal_info(self.__employee_ID)
         orgenallist = self.__employee.copy()
@@ -24,29 +24,29 @@ class ChangeEmployee:
         if self.__employee[2] == "":
             self.__employee[2] = orgenallist[2]
 
-        licence_checkker = True
-        while licence_checkker:
+        licence_checkker = False
+        while licence_checkker== False:
             self.__employee[3] = input("New Licence: ")
             if self.__employee[3] == "":
                 self.__employee[3] = orgenallist[3]
             licence_checkker = licence_validation(self.__employee[3])
 
-        email_chekker = True
-        while email_chekker:
+        email_chekker = False
+        while email_chekker == False:
             self.__employee[4] = input("New email: ")
             if self.__employee[4] == "":
                 self.__employee[4] = orgenallist[4]
             email_chekker = email_vaidation(self.__employee[4])
 
-        address_checkker = True
-        while address_checkker:
+        address_checkker = False
+        while address_checkker == False:
             self.__employee[5] = input("New address: ")
             if self.__employee[5] == "":
                 self.__employee[5] = orgenallist[5]
             address_checkker = address_validation(self.__employee[5])
 
-        gsm_checkker = True
-        while gsm_checkker:
+        gsm_checkker = False
+        while gsm_checkker == False:
             self.__employee[6] = input("New GSM: ")
             if self.__employee[6] == "":
                 self.__employee[6] = orgenallist[6]

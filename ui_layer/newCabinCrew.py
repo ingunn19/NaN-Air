@@ -15,29 +15,29 @@ class New_CabinCrew:
         self.__gsm = ""
 
     def create_Cabin_crew(self):
-        ssn_check = True
-        while ssn_check == True:
+        ssn_check = False
+        while ssn_check == False:
             self.__ssn = input("SSN: ")
             ssn_check = ssn_validation(self.__ssn)
 
-        name_check = True
-        while name_check == True:
+        name_check = False
+        while name_check == False:
             self.__name = input("Full name: ")
             name_check = name_validation(self.__name)
 
-        role_check = True
-        while role_check == True:
+        role_check = False
+        while role_check == False:
             self.__role = input("Role: ").lower()
             role_check = pilot_validation(self.__role)
 
-        email_check = True
-        while email_check == True:
+        email_check = False
+        while email_check == False:
             self.__email = input("Email: ")
             email_check = email_vaidation(self.__email)
 
-        gsm_cheker = True
+        gsm_cheker = False
         self.__address = input("Address: ")
-        while gsm_cheker == True:
+        while gsm_cheker == False:
             self.__gsm = input("GSM: ")
             gsm_cheker = phone_validation(self.__gsm)
         print(SPACER)

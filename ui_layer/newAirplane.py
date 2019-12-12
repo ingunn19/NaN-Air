@@ -11,13 +11,13 @@ class New_Airplane:
     def New_Airplane(self):
         print("New airplane: ")
 
-        Plane_Insignia_cheker = True
-        while Plane_Insignia_cheker == True:
+        Plane_Insignia_cheker = False
+        while Plane_Insignia_cheker == False:
             self.Plane_Insignia = input("Plane Insignia: ").upper()
             Plane_Insignia_cheker = plane_insignia_validation(self.Plane_Insignia)
 
-        plane_type_cheker = True
-        while plane_type_cheker == True:
+        plane_type_cheker = False
+        while plane_type_cheker == False:
             self.plane_type_Id = input("plane type Id: ")
             plane_type_cheker = plane_type_ID_validation(self.plane_type_Id)
 
