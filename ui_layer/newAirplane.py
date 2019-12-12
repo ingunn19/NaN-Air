@@ -14,11 +14,15 @@ class New_Airplane:
         Plane_Insignia_cheker = False
         while Plane_Insignia_cheker == False:
             self.Plane_Insignia = input("Plane Insignia: ").upper()
+            if self.Plane_Insignia == "":
+                continue
             Plane_Insignia_cheker = plane_insignia_validation(self.Plane_Insignia)
 
         plane_type_cheker = False
         while plane_type_cheker == False:
             self.plane_type_Id = input("plane type Id: ")
+            if self.plane_type_Id == "":
+                continue
             plane_type_cheker = plane_type_ID_validation(self.plane_type_Id)
 
         print(SPACER)

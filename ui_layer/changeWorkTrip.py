@@ -12,9 +12,9 @@ class ChangeWorkTrip:
         self.worktrip = self.__UI_API.get_specific_worktrip(self.flight_number)
         original_list = self.worktrip.copy()
 
-        self.worktrip[1] = input("Departing from: ")
-        if self.worktrip[1] == "":
-            self.worktrip[1] = original_list[1]
+        #self.worktrip[1] = input("Departing from: ")
+        #if self.worktrip[1] == "":
+        #    self.worktrip[1] = original_list[1]
 
         self.worktrip[2] = input("Arriving at: ")
         if self.worktrip[2] == "":
@@ -24,9 +24,9 @@ class ChangeWorkTrip:
         if self.worktrip[3] == "":
             self.worktrip[3] = original_list[3]
 
-        self.worktrip[4] = input("Return: ")
-        if self.worktrip[4] == "":
-            self.worktrip[4] = original_list[4]
+        #self.worktrip[4] = input("Return: ")
+        #if self.worktrip[4] == "":
+        #    self.worktrip[4] = original_list[4]
 
         self.worktrip[5] = input("Aircraft ID: ")
         if self.worktrip[5] == "":

@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import ssn_validation, name_validation, pilot_validation, licence_validation, phone_validation, email_vaidation, address_validation
+from ui_layer.validation import ssn_validation, name_validation, pilot_validation,plane_type_ID_validation , phone_validation, email_vaidation, address_validation
 
 SPACER = "_____________________________________________"
 
@@ -36,7 +36,7 @@ class New_Pilot:
         licence_check = False
         while licence_check == False:
             self.__licence = input("Licence: ")
-            licence_check = licence_validation(self.__licence)
+            licence_check = plane_type_ID_validation(self.__licence)
 
         email_check = False
         while email_check == False:

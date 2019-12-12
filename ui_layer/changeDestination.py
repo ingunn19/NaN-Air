@@ -1,4 +1,5 @@
 from ui_layer.uiAPI import UI_API
+from ui_layer.validation import destination_ID_validation, contact_name_validation, contact_number
 SPACER = "_____________________________________________"
 class ChangeDestination:
     def __init__(self):
@@ -7,14 +8,38 @@ class ChangeDestination:
         self.destination = []
     def change_destination(self):
         print("Change destination info:")
-        self.destination_name = input("Destination: ")
+        destination_checkker = False
+        while destination_checkker == False:
+            self.destination_name = input("Destination ID: ")
+            destination_checkker = destination_ID_validation(self.destination_name)
+
         self.destination = self.__UI_API.get_specific_destination(self.destination_name)
         originallist = self.destination.copy()
-        self.destination[2] = input("New emergency contact name: ")
-        if self.destination[2] == "":
-            self.destination[2] = originallist[2]
-        self.destination[3] = input("New emergency contact GSM: ")
-        if self.destination[3] == "":
-            self.destination[3] = originallist[3]
-        # hér væri gott að sýna breytingar
+        ID = self.destination[0]
+        DESTIONATION = self.destination[1]
+        TRAVEL_TIME = self.destination[2]
+        CONTACT_NAME = self.destination[3]
+        CONTACT_NUMBER = self.destination[4]
+
+        ORIGINAL_ID = originallist[0]
+        ORIGINAL_DESTIONATION = originallist[1]
+        ORIGINAL_TRAVEL_TIME = originallist[2]
+        ORIGINAL_CONTACT_NAME = originallist[3]
+        ORIGINAL_CONTACT_NUMBER = originallist[4]
+
+        contact_namechekker = False
+        while contact_namechekker == False:
+            CONTACT_NAME = input("New emergency contact name: ")
+            if CONTACT_NAME == "":
+                CONTACT_NAME = ORIGINAL_CONTACT_NAME
+            contact_namechekker = contact_name_validation(CONTACT_NAME)
+
+        contact_number_checkker = False
+        while contact_number_checkker == False:
+            CONTACT_NUMBER = input("New emergency contact GSM: ")
+            if CONTACT_NUMBER == "":
+                CONTACT_NUMBER = ORIGINAL_CONTACT_NUMBER
+            contact_number_checkker = contact_number(CONTACT_NUMBER)
+
+        print(f"{ID}    {DESTIONATION}    {TRAVEL_TIME}    {CONTACT_NAME}    {CONTACT_NUMBER}")
         self.__UI_API.set_changes_for_existing_destination(self.destination)

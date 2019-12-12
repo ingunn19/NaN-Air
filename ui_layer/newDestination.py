@@ -6,9 +6,16 @@ class New_Destination:
     def __init__(self):
         self.__UI_API = UI_API()
         self.__airportID = ""
-        self.__destination	 = ""
+        self.__destination = ""
         self.__contact_name = ""
         self.__contact_number = ""
+
+    #ID
+    #DESTIONATION
+    #TRAVEL_TIME
+    #CONTACT_NAME
+    #CONTACT_NUMBER
+
 
     def Initialize_Destination(self):
         print("New Destination")
