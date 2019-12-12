@@ -1,5 +1,5 @@
 from datetime import datetime, timedelta
-from logic_layer.worktrip_overview import WorkTripOverviewLogic
+from logic_layer.overview_worktrips import WorkTripOverviewLogic
 from logic_layer.logic_parent import LogicParent
 
 class PlaneOverviewLogic(LogicParent):

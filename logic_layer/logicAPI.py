@@ -1,8 +1,8 @@
 # Overview
-from logic_layer.employee_overview import EmployeeOverviewLogic
-from logic_layer.airplane_overview import PlaneOverviewLogic
-from logic_layer.destination_overview import DestinationOverviewLogic
-from logic_layer.worktrip_overview import WorkTripOverviewLogic
+from logic_layer.overview_employees import EmployeeOverviewLogic
+from logic_layer.overview_airplanes import PlaneOverviewLogic
+from logic_layer.overview_destinations import DestinationOverviewLogic
+from logic_layer.overview_worktrips import WorkTripOverviewLogic
 # Add new or edit existing
 from logic_layer.new_or_change_work_trip import AddNewWorkTrip
 from logic_layer.new_or_change_airplane import AddNewAirplane

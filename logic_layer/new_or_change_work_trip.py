@@ -1,6 +1,6 @@
 from models.work_trip import WorkTrip
 from datetime import date, timedelta, datetime
-from logic_layer.employee_overview import EmployeeOverviewLogic
+from logic_layer.overview_employees import EmployeeOverviewLogic
 from logic_layer.clock import Clock
 from logic_layer.logic_parent import LogicParent
 
@@ -134,7 +134,6 @@ class AddNewWorkTrip(LogicParent):
         flight_info_list.insert(0, '')
         flight_info_list.insert(4, return_time)
         flight_id = classObject.get_new_flight_id(flight_info_list)
-        return WorkTrip(flight_id, depart_from, arrive_at, depart_time, return_time, plane_insignia, pilot1, pilot2, fa1, fa2, fa3)
 
 
     #changing info
