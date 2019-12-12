@@ -1,4 +1,5 @@
 from ui_layer.uiAPI import UI_API
+from ui_layer.validation import plane_insignia_validation, plane_type_ID_validation
 SPACER = "_____________________________________________"
 class ChangeAircraft:
     def __init__(self):
@@ -8,14 +9,27 @@ class ChangeAircraft:
 
     def change_aircraft(self):
         print("Change aircraft info:")
-        self.aircraft_insignia = input("Aircraft insignia: ")
+
+        aircraft_insignia_checkker = True
+        while aircraft_insignia_checkker == True:
+            self.aircraft_insignia = input("Aircraft insignia: ")
+            aircraft_insignia_checkker = plane_insignia_validation(self.aircraft_insignia)
         self.aircraft = self.__UI_API.get_specific_aircraft(self.aircraft_insignia)
         orginallist = self.aircraft.copy()
-        self.aircraft[0] = input("New aircraft insignia: ")
-        if self.aircraft[0] == "":
-            self.aircraft[0] = orginallist[0]
-        self.aircraft[1] = input("New aircraft type ID: ")
-        if self.aircraft[1] == "":
-            self.aircraft[1] = orginallist[1]
+
+        aircraft_insignia_checkker = True
+        while aircraft_insignia_checkker == True:
+            self.aircraft[0] = input("New aircraft insignia: ")
+            if self.aircraft[0] == "":
+                self.aircraft[0] = orginallist[0]
+            aircraft_insignia_checkker = plane_insignia_validation(self.aircraft[0])
+
+        aircraft_type_checkker = True
+        while aircraft_type_checkker == True:
+            self.aircraft[1] = input("New aircraft type ID: ")
+            if self.aircraft[1] == "":
+                self.aircraft[1] = orginallist[1]
+            aircraft_type_checkker = plane_type_ID_validation(self.aircraft[1])
+
         # hér væri gott að sýna breytingar
         self.__UI_API.set_changes_for_existing_aircraft(self.aircraft)

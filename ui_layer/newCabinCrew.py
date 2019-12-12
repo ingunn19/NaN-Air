@@ -41,6 +41,5 @@ class New_CabinCrew:
             self.__gsm = input("GSM: ")
             gsm_cheker = phone_validation(self.__gsm)
         print(SPACER)
-        #Villuchekka
-        #Hér væri flott að prenta út ýa fugmannin
+        #Hér væri flott að prenta út nýa flugþjóninn
         self.__UI_API.set_Cabin_crew(self.__ssn, self.__name, self.__role, self.__email, self.__address, self.__gsm)
