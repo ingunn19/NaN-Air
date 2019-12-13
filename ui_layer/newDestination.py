@@ -27,7 +27,10 @@ class New_Destination:
 
         travel_time_checkker = False
         while travel_time_checkker == False:
-            self.__travel_time = input("Travel time: ")
+            try:
+                self.__travel_time = int(input("Travel time: "))
+            except ValueError:
+                print("ERROR! Not a integer")
             travel_time_checkker = time_validation(self.__travel_time)
 
         self.__destination = input("Destination: ")
