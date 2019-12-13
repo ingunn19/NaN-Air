@@ -50,6 +50,7 @@ class WorkTripOverviewLogic(LogicParent):
     #adding the last column , fully staffed or not
     def req_worktrips_of_the_week_with_fullystaffed(self, __week_overview):
         first_line = __week_overview.pop(0)
+        first_line.append("Status")
         for line in __week_overview:
             all_employees_signed_to_worktrip = line[6:11]
             if "" in all_employees_signed_to_worktrip:
