@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import plane_type_ID_validation, email_validation, address_validation, phone_validation, role_validation
+from ui_layer.validation import plane_type_ID_validation, email_validation, address_validation, phone_validation, role_validation, is_ssn_available, employee_gsm_validation
 SPACER = "_____________________________________________"
 class ChangeEmployee:
     def __init__(self):
@@ -58,21 +58,29 @@ class ChangeEmployee:
                 ADDRESS = ORGINAL_ADDRESS
             address_checkker = address_validation(ADDRESS)
 
-        gsm_checkker = False
-        while gsm_checkker == False:
+        checkker = False
+        while checkker == False:
             GSM = input("New GSM: ")
             if GSM == "":
                 GSM = ORGINAL_GSM
             gsm_checkker = phone_validation(GSM)
+            gsm_avalable = employee_gsm_validation(GSM)
+            if gsm_checkker == True:
+                if gsm_avalable == True:
+                    checkker = True
 
-        email_chekker = False
-        while email_chekker == False:
+        chekker = False
+        while chekker == False:
             EMAIL = input("New email: ")
             if EMAIL == "":
                 EMAIL = ORGINAL_EMAIL
             email_chekker = email_validation(EMAIL)
+            avalable_ssn = is_ssn_available(EMAIL)
+            if email_chekker == True:
+                if avalable_ssn == True:
+                    chekker = True
 
         checkker_list = [EMPLOYEE_ID, SSN, NAME, ROLE, LICENCE, ADDRESS, GSM, EMAIL]
 
         print(f"{EMPLOYEE_ID}    {SSN}    {NAME}    {ROLE}    {LICENCE}    {ADDRESS}    {GSM}    {EMAIL}")
-        self.__UI_API.set_changes_for_existing_employee(change_employee)
+        self.__UI_API.set_changes_for_existing_employee(checkker_list)
