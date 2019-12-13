@@ -1,6 +1,6 @@
 from ui_layer.uiAPI import UI_API
 from ui_layer.validation import plane_insignia_validation, plane_type_ID_validation
-SPACER = "_____________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________"
 class ChangeAircraft:
     def __init__(self):
         self.__UI_API = UI_API()
@@ -31,5 +31,5 @@ class ChangeAircraft:
                 self.aircraft[1] = orginallist[1]
             aircraft_type_checkker = plane_type_ID_validation(self.aircraft[1])
 
-        # hér væri gott að sýna breytingar
+        print(f"{self.aircraft[0]}    {self.aircraft[1]}")
         self.__UI_API.set_changes_for_existing_aircraft(self.aircraft, orginallist[0])

@@ -1,6 +1,6 @@
 from ui_layer.uiAPI import UI_API
 from ui_layer.validation import destination_ID_validation, contact_number
-SPACER = "_____________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________"
 class ChangeDestination:
     def __init__(self):
         self.__UI_API = UI_API()
