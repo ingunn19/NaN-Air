@@ -44,7 +44,12 @@ Hefja vinnu í Data Layer
 Laga init í Data - Alexander
 Setja upp startup í Logic fyrir að sækja skráargögn frá Data - Ingunn
 
-------03/12 fimmtudagur------
+------Verkaskipting út restina af tímanum------
+UI_layer vinna, kalla á method í logicAPI, prenta gögn, ect. - Birgir
+UI_layer vinna, búa til villutékkar fyrir allt input, og sækja villutékk method úr Logic gegnum API
+Logic_layer vinna, búa til logicAPI tengingu fyrir UI og Data. Gera class fyrir nýskráningu vinnuferða og tilheirandi reiknivinnu, tímaútreikningar og villutékkar f. logic og UI - Ingunn
+Logic_layer vinna, búa til klasa fyrir overview (sækja gögn úr data og senda til UI), gera clasa fyrir nýskráningu starfsmanna, flugvéla, og áfangastaða - Alexander
 
-
-------03/12 föstudagur------
+------Verkefnaskipting frá 12/12 fimmtudagur------
+kerfisprófun og bug fixes - Sindri, Birgir
+Skýrsluvinna - Ingunn, Alexander
