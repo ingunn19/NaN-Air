@@ -17,6 +17,7 @@ class AircraftOverview:
                 print(SPACER)
 
             if action == "1":
+                print(SPACER)
                 self.__UI_API.get_all_planes()
                 print(SPACER)
                 input()
@@ -24,8 +25,8 @@ class AircraftOverview:
             elif action == "2":
                 print(SPACER)
                 self.__UI_API.get_plane_state()
+                print(SPACER)
                 input()
 
             elif action == "q":
                 quit()
-        print(SPACER)
