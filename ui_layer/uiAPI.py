@@ -83,7 +83,7 @@ class UI_API:
         # return __employee_name
 
     def get_day_with_task(self, task_day):
-        print("Employee_with_task")
+        print("Employee with task:")
         __working_employees_list = logic_API.view_working_today(task_day)
         print('Employee Id: ', end="")
         try:
@@ -95,7 +95,7 @@ class UI_API:
         #print(SPACER) Kíkja á það hvernig hægt er að koma þessum spacer fyrir
 
     def get_day_no_task(self, task_day):
-        print("Employee_not_with_task")
+        print("Employee not with task:")
         __available_employees_list = logic_API.view_available_today(task_day)
         print('Employee Id: ', end="")
         try:
