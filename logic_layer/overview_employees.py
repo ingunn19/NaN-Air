@@ -105,8 +105,6 @@ class EmployeeOverviewLogic(LogicParent):
         for line in __return_list:
             __unavalible_employees = [i for i in line[6:11]]
 
-
-        __unavalible_employees.insert(0,"id")
         return __unavalible_employees
 
     def req_all_employees_not_with_task(self, __date):
@@ -135,7 +133,6 @@ class EmployeeOverviewLogic(LogicParent):
             if crew_id in __all_crew_list:
                 __all_crew_list.remove(crew_id)
 
-        __all_crew_list.insert(0,"id")
         return __all_crew_list
 
     def req_all_pilots_with_licence_on_a_given_plane(self, __plane):

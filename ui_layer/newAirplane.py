@@ -20,10 +20,10 @@ class New_Airplane:
 
         plane_type_cheker = False
         while plane_type_cheker == False:
-            self.plane_type_Id = input("plane type Id: ")
+            self.plane_type_Id = input("plane type: ")
             if self.plane_type_Id == "":
                 continue
-            plane_type_cheker = plane_type_ID_validation(self.plane_type_Id)
+            plane_type_cheker = True
 
         set_airplane = [self.Plane_Insignia, self.plane_type_Id]
         print(f"{set_airplane[0]}    {set_airplane[1]}")

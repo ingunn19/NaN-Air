@@ -7,7 +7,7 @@ class WithTask:
         self.__UI_API = UI_API()
 
     def with_task(self):
-        print("Choose a day: yyyy, mm, dd")
+        print("Choose a day: yyyy-mm-dd")
         try:
             task_day = input()
             self.__UI_API.get_day_with_task(task_day)
