@@ -1,6 +1,6 @@
 from ui_layer.uiAPI import UI_API
 from ui_layer.validation import destination_ID_validation, plane_insignia_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation
-SPACER = "_____________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________"
 
 class New_WorkTrip:
     def __init__(self):

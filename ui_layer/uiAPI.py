@@ -1,7 +1,7 @@
 from logic_layer.logicAPI import LogicAPI
 from datetime import date, timedelta, datetime
 
-SPACER = "_____________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________"
 logic_API = LogicAPI()
 
 class UI_API:
@@ -39,7 +39,7 @@ class UI_API:
         __all_employee_list = logic_API.view_all_employees()
         for line in __all_employee_list:
             id, name, role, licence, address, phonenumber, email, eight = line
-            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:23}{phonenumber:17}{email:14}{eight}')
         print(SPACER)
 
     def get_personal_info(self, employee):
@@ -204,19 +204,20 @@ class UI_API:
     # Set changes
     def set_changes_for_existing_employee(self, employee):
         logic_API.edit_employee(employee) # Vantar!
-        print("Setja inn breytt gögn um notanda")
+
 
     def set_changes_for_existing_destination(self, destination):
         logic_API.edit_destination_contact(destination) # Vantar!
-        print("Setja inn breytt gögn um áfangastað")
+
 
     def set_changes_for_existing_aircraft(self, aircraft, original_id):
-        logic_API.edit_airplane(aircraft, original_id) # Vantar!
-        print("Setja inn breytt gögn um flugvél")
+        plane_changed = [aircraft, original_id]
+        logic_API.edit_airplane(plane_changed) # Vantar!
+
 
     def set_changes_for_existing_worktrip(self, worktrip):
         logic_API.edit_worktrip_crew(worktrip) # Vantar!
-        print("Setja inn breytt gögn um vinnuferð")
+
 
     def get_logic_checker(self):
         logic_validation = logic_API.logic_checker()

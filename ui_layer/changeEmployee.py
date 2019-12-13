@@ -1,6 +1,6 @@
 from ui_layer.uiAPI import UI_API
 from ui_layer.validation import plane_type_ID_validation, email_validation, address_validation, phone_validation, role_validation, is_ssn_available, employee_gsm_validation
-SPACER = "_____________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________"
 class ChangeEmployee:
     def __init__(self):
         self.__UI_API = UI_API()

@@ -116,7 +116,7 @@ class LogicAPI():
 
     def view_single_airplane(self, plane_id):
         #check nota beint
-        return self.__airplane_data.req_single_plane
+        return self.__airplane_data.req_single_plane(plane_id)
         # return None
 
     def view_state_of_planes(self, date):
