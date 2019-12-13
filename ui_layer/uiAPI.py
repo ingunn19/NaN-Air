@@ -84,8 +84,11 @@ class UI_API:
         print("Employee_with_task")
         __working_employees_list = logic_API.view_working_today(task_day)
         print('Employee Id: ', end="")
-        for employee in __working_employees_list:
-            print(employee, end=" ")
+        try:
+            for employee in __working_employees_list:
+                print(employee, end=" ")
+        except ValueError:
+            print("no employees with tasks given this day")
         print("\n")
         #print(SPACER) Kíkja á það hvernig hægt er að koma þessum spacer fyrir
 
@@ -93,8 +96,11 @@ class UI_API:
         print("Employee_not_with_task")
         __available_employees_list = logic_API.view_available_today(task_day)
         print('Employee Id: ', end="")
-        for employee in __available_employees_list:
-            print(employee, end=" ")
+        try:
+            for employee in __available_employees_list:
+                print(employee, end=" ")
+        except ValueError:
+            print("no employees with tasks given this day")
         print("\n")
         #print(SPACER) Kíkja á það hvernig hægt er að koma þessum spacer fyrir
 
