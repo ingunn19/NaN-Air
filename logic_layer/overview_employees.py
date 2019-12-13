@@ -16,13 +16,16 @@ class EmployeeOverviewLogic(LogicParent):
         #getting an list of all empoyees
         __all_employee = self.crew.read_file()
         __pilot_list = []
-        #adding the first row(adding the header)
-        __pilot_list.append(__all_employee[0])
+        
         #each list is one employee
         for list in __all_employee:
             #if the role pilot is in
             if 'pilot' == list[3]:
                 __pilot_list.append(list)
+        #sort by plane licence
+        __pilot_list.sort(key=lambda index: index[4])
+        #adding the first row(adding the header)
+        __pilot_list.insert(0, __all_employee[0])
         # if len(__pilot_list) <= 1:
         #     return None
         return __pilot_list
