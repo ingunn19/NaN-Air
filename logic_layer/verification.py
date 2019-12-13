@@ -27,13 +27,13 @@ class CheckSeries(LogicParent):
 
     def check_add__worktrip(self, __worktrip_info):
         departFrom, arrivingAt, depart_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3 = __worktrip_info
-        if validate.check_if_destination_exists(arrivingAt):
-            pass
-        if validate.check_depart_time_availability(depart_time):
-            pass
+        if validate.check_if_destination_exists(arrivingAt) != True:
+            return None
+        if validate.check_depart_time_availability(depart_time) != True:
+            return None
         if validate.check_if_insignia_exists(aircraftID):
-            if validate.check_aircraft_availability(aircraftID, depart_time):
-                pass
+            if validate.check_aircraft_availability(aircraftID, depart_time) != True:
+                return None
         for employee in __worktrip_info[4: ]:
             if validate.check_if_employee_exists(employee) != True:
                 return None
@@ -50,6 +50,8 @@ class CheckSeries(LogicParent):
         for employee in __worktrip_info[6: ]:
             if validate.check_if_cabin_crew(employee):
                 return True
+            else:
+                return None
         return None
 
     def check_add_destination(self, __destination_info):
@@ -108,11 +110,27 @@ class CheckSeries(LogicParent):
     def check_edit_crew(self, __flight_info):
         flight_id, departFrom, arrivingAt, depart_time, return_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3 = __flight_info
         if validate.check_aircraft_availability(aircraftID, depart_time):
-            for employee in __flight_info[5: ]:
-                if validate.check_employee_availability(employee, depart_time):
-                    pass
+            for employee in __worktrip_info[6: ]:
+                if validate.check_if_employee_exists(employee) != True:
+                    return None
+                if validate.check_employee_availability(employee, depart_time) != True:
+                    return None
+
+            for employee in __worktrip_info[6: 7]:
+                if validate.check_if_pilot(employee):
+                    if validate.check_pilot_licence(employee, aircraftID):
+                        pass
+                    else:
+                        return None
                 else:
                     return None
+
+            for employee in __worktrip_info[7: ]:
+                if validate.check_if_cabin_crew(employee):
+                    return True
+                else:
+                    return None
+        return None
 
     def check_edit_contact(self, __destination_info):
         airportID, travel_time, destination, contact_name, contact_number = __destination_info
