@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import destination_ID_validation, plane_insignia_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation
+from ui_layer.validation import destination_ID_validation, plane_insignia_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation, aircraft_validation
 SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 
 class New_WorkTrip:
@@ -40,13 +40,16 @@ class New_WorkTrip:
         checkker = False
         while checkker == False:
             self.__aircraftID = input("Aircraft insignia: ")
-            if self.__aircraftID == "":
+            if self.__aircraftID != "":
+                plane_id_checkker = plane_insignia_validation(self.__aircraftID)
+                dose_this_plane_exist = aircraft_validation(self.__aircraftID)
+                is_plane_ready = check_aircraft_validation(self.__aircraftID, self.__departure)
+                if plane_id_checkker == True:
+                    if dose_this_plane_exist == True:
+                        if is_plane_ready == True:
+                            checkker = True
+            else:
                 checkker = True
-            plane_id_checkker = plane_insignia_validation(self.__aircraftID)
-            is_plane_ready = check_aircraft_validation(self.__aircraftID, self.__departure)
-            if plane_id_checkker == True:
-                if is_plane_ready == True:
-                    checkker = True
 
         checkker = False
         while checkker == False:
@@ -59,6 +62,8 @@ class New_WorkTrip:
                     if can_pilot_fly_this_plane == True:
                         if can_pilot_work == True:
                             checkker = True
+            else:
+                checkker = True
 
         checkker1 = False
         while checkker1 == False:
@@ -71,6 +76,8 @@ class New_WorkTrip:
                     if can_pilot_fly_this_plane == True:
                         if can_pilot_work == True:
                             checkker1 = True
+            else:
+                checkker1 = True
 
             checkker = False
             while checkker == False:
@@ -81,6 +88,8 @@ class New_WorkTrip:
                     if is_it_cabin_crew == True:
                         if can_cabin_crew_work == True:
                             checkker = True
+                else:
+                    checkker = True
 
             checkker = False
             while checkker == False:
@@ -91,6 +100,8 @@ class New_WorkTrip:
                     if is_it_cabin_crew == True:
                         if can_cabin_crew_work == True:
                             checkker = True
+                else:
+                    checkker = True
 
             checkker = False
             while checkker == False:
@@ -101,6 +112,8 @@ class New_WorkTrip:
                     if is_it_cabin_crew == True:
                         if can_cabin_crew_work == True:
                             checkker = True
+                else:
+                    checkker = True
 
         print(SPACER)
         self.__UI_API.set_WorkTrip(self.__arrivingAt, self.__departure, self.__aircraftID, self.__pilot1, self.__pilot2, self.__flightAttendant1, self.__flightAttendant2, self.__flightAttendant3)
