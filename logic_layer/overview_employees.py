@@ -1,6 +1,9 @@
 from logic_layer.clock import Clock
+from logic_layer.overview_worktrips import WorkTripOverviewLogic
 from logic_layer.logic_parent import LogicParent
 from datetime import datetime, timedelta
+
+worktrips = WorkTripOverviewLogic()
 
 class EmployeeOverviewLogic(LogicParent):
 # Overview employees
@@ -20,8 +23,8 @@ class EmployeeOverviewLogic(LogicParent):
             #if the role pilot is in
             if 'Pilot' == list[3]:
                 __pilot_list.append(list)
-        if len(__pilot_list) <= 1:
-            return None
+        # if len(__pilot_list) <= 1:
+        #     return None
         return __pilot_list
 
     def req_overview_flightattendants(self):
@@ -34,8 +37,8 @@ class EmployeeOverviewLogic(LogicParent):
         for listi in __all_employee:
             if 'Cabincrew' in listi:
                 __flight_attendants.append(listi)
-        if len(__flight_attendants) <= 1:
-            return None
+        # if len(__flight_attendants) <= 1:
+        #     return None
         return __flight_attendants
 
     #nákvæm leit, velja starfsmann, persónuuplýsingar
@@ -49,8 +52,8 @@ class EmployeeOverviewLogic(LogicParent):
             if __identity in employee:
                 __list_of_employee.append(employee)
 
-        if len(__list_of_employee) <= 1:
-            return None
+        # if len(__list_of_employee) <= 1:
+        #     return None
         return __list_of_employee
 
     # nákvæm leiit,velja starfsmann,vikuskipulag (vika x)
@@ -76,8 +79,8 @@ class EmployeeOverviewLogic(LogicParent):
                     if str(__identity) in line:
                         #appending to the week overwiew
                         __week_overview.append(line)
-        if len(__week_overview) <= 1:
-            return None
+        # if len(__week_overview) <= 1:
+        #     return None
 
         #making the date an formated object
         for line in __week_overview:
@@ -96,8 +99,8 @@ class EmployeeOverviewLogic(LogicParent):
         for line in __all_flights:
             if (__date == (line[3][:10] or line[4][:10])):
                     __return_list.append(line)
-        if len(__return_list) <= 1:
-            return None
+        # if len(__return_list) <= 1:
+        #     return None
 
         for line in __return_list:
             __unavalible_employees = [i for i in line[6:11]]
@@ -107,17 +110,11 @@ class EmployeeOverviewLogic(LogicParent):
         return __unavalible_employees
 
     def req_all_employees_not_with_task(self, __date):
-        __temp_list = []
         __unavalible_employees = []
-        __all_flights = self.flight_records.read_file()
-        for line in __all_flights:
-            if (__date == (line[3][:10] or line[4][:10])):
-                    __temp_list.append(line)
-        if len(__temp_list) < 1:
-            return None
+        __flights_of_the_day = worktrips.req_worktrips_of_the_day(__date)
 
         #getting all of the employers id
-        for line in __temp_list:
+        for line in __flights_of_the_day:
             __unavalible_employees = [i for i in line[6:11]]
 
         #removing duplicates
@@ -150,8 +147,8 @@ class EmployeeOverviewLogic(LogicParent):
             if pilot[4] == __plane:
                 __pilots_with_licence.append(pilot)
 
-        if len(__pilots_with_licence) <= 1:
-            return None
+        # if len(__pilots_with_licence) <= 1:
+        #     return None
         return __pilots_with_licence
 
     def req_all_pilot_licences(self):
@@ -159,7 +156,7 @@ class EmployeeOverviewLogic(LogicParent):
         classObject = EmployeeOverviewLogic()
         __list_of_all_pilots = classObject.req_overview_pilots()
 
-        if len(__list_of_all_pilots) <= 1:
-            return None
+        # if len(__list_of_all_pilots) <= 1:
+        #     return None
         return __list_of_all_pilots
 

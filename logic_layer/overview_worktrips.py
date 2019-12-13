@@ -5,8 +5,8 @@ class WorkTripOverviewLogic(LogicParent):
 #overview of worktrips
     def req_all_worktrips(self):
         __all_worktrips = self.flight_records.read_file()
-        if len(__all_worktrips) <= 1:
-            return None
+        # if len(__all_worktrips) <= 1:
+        #     return None
 
         # making the right format for the date
         for line in __all_worktrips:
@@ -34,8 +34,8 @@ class WorkTripOverviewLogic(LogicParent):
 
                     # appending to the week overwiew
                     __week_overview.append(line)
-        if len(__week_overview) <= 1:
-            return None
+        # if len(__week_overview) <= 1:
+        #     return None
         #making the right format for the date
         for line in __week_overview:
             try:
@@ -62,8 +62,8 @@ class WorkTripOverviewLogic(LogicParent):
                         line[4] = datetime.strptime(line[4], '%Y-%m-%dT%H:%M:%S')
                     except:
                         pass
-        if len(__day_overview) <= 1:
-            return None
+        # if len(__day_overview) <= 1:
+        #     return None
         return __day_overview
 
     def req_single_worktrip(self,flight_number):

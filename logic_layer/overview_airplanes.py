@@ -7,8 +7,8 @@ class PlaneOverviewLogic(LogicParent):
     def req_all_planes(self):
         #getting all planes
         __all_planes = self.aircraft.read_file()
-        if len(__all_planes) <= 1:
-            return None
+        # if len(__all_planes) <= 1:
+        #     return None
         return __all_planes
 
     def req_single_plane(self, plane_insignia):
