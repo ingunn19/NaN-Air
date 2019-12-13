@@ -157,7 +157,7 @@ class ValidationChecker(LogicParent):
         for line in __flight_records:
             if __plane_insignia in line:
                 __plane_trips.append(line)
-        __most_recent_trip = __plane_trips[-1][4]
+        __most_recent_trip = __plane_trips[-1][-7]
         __depart_time = Clock(__depart_time)
         __time_diff = __depart_time.calculate_time_diff(__most_recent_trip)
         if __time_diff >= 1:

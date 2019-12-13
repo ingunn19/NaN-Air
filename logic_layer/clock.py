@@ -9,10 +9,10 @@ class Clock():
         return now.strftime("%Y-%m-%dT%H:%M:%S")
 
     def calculate_time_diff(self, time2):
-        time_1 = datetime.datetime.strptime(self.__date_time, '%Y-%m-%dT%H:%M:%S')
-        time_2 = datetime.datetime.strptime(time2, '%Y-%m-%dT%H:%M:%S')
-        time_diff = (time_2 - time_1)
-        return int(time_diff.strftime('%H'))
+        time_1 = datetime.strptime(self.__date_time, '%Y-%m-%dT%H:%M:%S')
+        time_2 = datetime.strptime(time2, '%Y-%m-%dT%H:%M:%S')
+        time_diff = (time_1 - time_2)
+        return time_diff.total_seconds() / 3600
 
     def calculate_return_time(self, travel_time):
         datetime_takeoff = datetime.strptime(self.__date_time, '%Y-%m-%dT%H:%M:%S')

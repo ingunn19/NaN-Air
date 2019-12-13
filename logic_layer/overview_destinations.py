@@ -9,7 +9,7 @@ class DestinationOverviewLogic(LogicParent):
             return None
         return __all_destinaions
 
-    def req_one_destination(self, dest):
+    def req_single_destination(self, dest):
         #getting a list of all of the destinations
         __all_destinaions = self.destinations.read_file()
         list_of_the_destinataion = []

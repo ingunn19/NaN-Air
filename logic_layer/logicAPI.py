@@ -9,7 +9,6 @@ from logic_layer.new_or_change_airplane import AddNewOrChangeAirplane
 from logic_layer.new_or_change_destination import AddNewOrChangeDestinaion
 from logic_layer.new_or_change_employee import AddNewOrChangeEmployee
 # Error checker
-from logic_layer import verify_dude
 from logic_layer.validation_checker import ValidationChecker
 
 
@@ -30,7 +29,7 @@ class LogicAPI():
     # Add new
     def set_employee(self, employee_info_list):
         # checker
-            self.__add_or_edit_employee.add_new_employee(employee_info_list)
+        self.__add_or_edit_employee.add_new_employee(employee_info_list)
 
     def set_airplane(self, airplane_info_list):
         # checker
@@ -50,16 +49,14 @@ class LogicAPI():
         return self.__employee_data.req_overview_allemployees()
 
     def view_employee_details(self, employee_id):
-        if self.__employee_data.req_employee_personal_details(employee_id):
-            return self.__employee_data.req_employee_personal_details(employee_id)
-        return None
+        # check nota beint
+        return self.__employee_data.req_employee_personal_details(employee_id)
+        # return None
     
     def view_employee_work_week(self, employee_id, year, week):
-        if 1 > int(week)  or int(week) > 52:
-            return None
-        if self.__employee_data.req_employee_personal_details(employee_id):
-            return self.__employee_data.req_employee_work_week_overview(employee_id, year, week)
-        return None
+        # check
+        return self.__employee_data.req_employee_work_week_overview(employee_id, year, week)
+        # return None
 
     def view_all_pilots(self):
         return self.__employee_data.req_overview_pilots()
@@ -76,9 +73,9 @@ class LogicAPI():
         return self.__employee_data.req_all_employees_not_with_task(date)
 
     def view_all_with_licence_on_model(self, airplane_type):
-        if airplane_type in self.__airplane_data.req_all_planes():
-            return self.__employee_data.req_all_pilots_with_licence_on_a_given_plane(airplane_type)
-        return None
+        # check nota beint
+        return self.__employee_data.req_all_pilots_with_licence_on_a_given_plane(airplane_type)
+        # return None
     
     def view_all_pilot_licences(self):
         return self.__employee_data.req_all_pilot_licences()
@@ -87,10 +84,9 @@ class LogicAPI():
         return self.__worktrip_data.req_all_worktrips()
 
     def view_single_worktrip(self, flight_id):
-        worktrip = self.__worktrip_data.req_single_worktrip(flight_id)
-        if worktrip:
-            return worktrip
-        return None
+        # check nota beint
+        return self.__worktrip_data.req_single_worktrip(flight_id)
+        # return None
 
     def view_work_week(self, year, week):
         # is this week realchecker   ATH!!!
@@ -104,23 +100,22 @@ class LogicAPI():
         return self.__destination_data.req_all_destinations()
 
     def view_single_destination(self, destination_id):
-        __destination = self.__destination_data.req_one_destination(destination_id)
-        if __destination:
-            return __destination
-        return None
+        # check nota beint
+        return self.__destination_data.req_single_destination(destination_id)
+        # return None
 
     def view_all_planes(self):
         return self.__airplane_data.req_all_planes()
 
     def view_single_airplane(self, plane_id):
-        __airplane = self.__airplane_data.req_single_plane(plane_id)
-        if __airplane:
-            return __airplane
-        return None
+        #check nota beint
+        return self.__airplane_data.req_single_plane
+        # return None
 
     def view_state_of_planes(self, date):
         # checker
         return self.__airplane_data.req_state_of_planes(date)
+        # return None
 
 
     # Edit existing
@@ -139,6 +134,7 @@ class LogicAPI():
     def edit_destination_contact(self, destination_info):
         # checker
         self.__add_or_edit_destination.replace_info(destination_info)
+
 
     # Return checker
     def logic_checker(self):
