@@ -12,7 +12,6 @@ class UI_API:
 
     def set_airplane(self, Plane_Insignia, plane_type_Id):
         set_airplane_list = [Plane_Insignia, plane_type_Id]
-        print(set_airplane_list)
         logic_API.set_airplane(set_airplane_list)
 
     def set_Cabin_crew(self, ssn, name, role, address, gsm, email):
@@ -28,9 +27,8 @@ class UI_API:
         print(set_workTrip_list)
         logic_API.set_workTrip(set_workTrip_list)
 
-    def set_Destination(self, airportID, travel_time, destination, contact_name, contact_number):
-        set_destination_list = [airportID, travel_time, destination, contact_name, contact_number]
-        print(set_destination_list)
+    def set_Destination(self, airportID, destination, travel_time, contact_name, contact_number):
+        set_destination_list = [airportID, destination, travel_time, contact_name, contact_number]
         logic_API.set_destination(set_destination_list)
 
     # Get overview

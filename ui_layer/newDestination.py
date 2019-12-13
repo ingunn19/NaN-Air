@@ -44,4 +44,4 @@ class New_Destination:
 
         print(f"{self.__airportID}    {self.__travel_time}    {self.__destination}    {self.__contact_name}    {self.__contact_number}")
         print(SPACER)
-        self.__UI_API.set_Destination(self.__airportID, str(self.__travel_time), self.__destination, self.__contact_name, self.__contact_number)
+        self.__UI_API.set_Destination(self.__airportID, self.__destination, str(self.__travel_time), self.__contact_name, self.__contact_number)
