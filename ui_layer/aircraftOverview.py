@@ -29,3 +29,4 @@ class AircraftOverview:
 
             elif action == "q":
                 quit()
+        print(SPACER)
