@@ -23,7 +23,7 @@ class New_Destination:
         airportID_checkker = False
         while airportID_checkker == False:
             self.__airportID = input("Airport ID: ")
-            airportID_checkker = destination_ID_validation(self.__airportID)
+            airportID_checkker = True
 
         travel_time_checkker = False
         while travel_time_checkker == False:
