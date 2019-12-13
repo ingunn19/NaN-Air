@@ -172,7 +172,6 @@ class UI_API:
         for line in __all_airplanes_list:
             planeInsignia, planetypeId = line
             print(f"{planeInsignia:<15}{planetypeId}")
-        print(SPACER)
 
     def get_specific_aircraft(self, plane_insignia):
         print("Single airplanes")

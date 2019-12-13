@@ -22,7 +22,7 @@ class AircraftOverview:
                 input()
 
             elif action == "2":
-                print("State of all planes")
+                print(SPACER)
                 self.__UI_API.get_plane_state()
                 input()
 
