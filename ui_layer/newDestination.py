@@ -40,7 +40,7 @@ class New_Destination:
         contact_number_checkker = False
         while contact_number_checkker == False:
             self.__contact_number = input("Emergency number: ")
-            contact_number = contact_number(self.__contact_number)
+            contact_number_checkker = contact_number(self.__contact_number)
 
         print(f"{self.__airportID}    {self.__travel_time}    {self.__destination}    {self.__contact_name}    {self.__contact_number}")
         print(SPACER)

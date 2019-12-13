@@ -53,7 +53,6 @@ class UI_API:
         return employee_info_list # Á þetta að vera?
 
     def get_work_schedule(self, employee, year, week):
-        print("Picking_employee_work_overview_week")
         __employee_work_week_list = logic_API.view_employee_work_week(employee, year, week)
         for line in __employee_work_week_list:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
