@@ -38,63 +38,76 @@ class ChangeWorkTrip:
         ORGINAL_CABINCREW2 = original_list[9]
         ORGINAL_CABINCREW3 = original_list[10]
 
-        plane_id_checkker = False
-        while plane_id_checkker == False:
+        checkker = False
+        while checkker == False:
             AIRCRAFT_ID = input("Aircraft insignia: ")
             if AIRCRAFT_ID == "":
                 AIRCRAFT_ID = ORGINAL_AIRCRAFT_ID
             plane_id_checkker = plane_insignia_validation(AIRCRAFT_ID)
-            # eigum við þessa flugvél til?
-            # er flugvél laus?
+            is_plane_ready = check_aircraft_validation(AIRCRAFT_ID, DEPARTURE)
+            if plane_id_checkker == True:
+                if is_plane_ready == True:
+                    checkker = True
 
-        pilot_checkker1 = False
-        while pilot_checkker1 == False:
-            PILOT1 = input("Pilot1: ")
+        checkker = False
+        while checkker == False:
+            PILOT1 = input("1. Pilot: ")
             if PILOT1 == "":
                 PILOT1 = ORGINAL_PILOT1
-            pilot_checkker1 = pilot_validation(PILOT1)
-            # er þetta örugglega flugmaður?
-            # er flugmaður með leifi á flugvélina?
-            # er flugmaður laus?
+            is_it_a_pilot = check_pilot_validation(PILOT1)
+            can_pilot_fly_this_plane = pilot_licence_validation(PILOT1, AIRCRAFT_ID)
+            can_pilot_work = check_employee_validation(PILOT1, DEPARTURE)
+            if is_it_a_pilot == True:
+                if can_pilot_fly_this_plane == True:
+                    if can_pilot_work == True:
+                        checkker = True
 
-        pilot_checkker2 = False
-        while pilot_checkker2 == False:
-            PILOT2 = input("Pilot2: ")
+        checkker = False
+        while checkker == False:
+            PILOT2 = input("2. Pilot: ")
             if PILOT2 == "":
                 PILOT2 = ORGINAL_PILOT2
-            pilot_checkker2 = pilot_validation(PILOT1)
-            # er þetta örugglega flugmaður?
-            # er flugmaður með leifi á flugvélina?
-            # er flugmaður laus?
+            is_it_a_pilot = check_pilot_validation(PILOT2)
+            can_pilot_fly_this_plane = pilot_licence_validation(PILOT2, AIRCRAFT_ID)
+            can_pilot_work = check_employee_validation(PILOT2, DEPARTURE)
+            if is_it_a_pilot == True:
+                if can_pilot_fly_this_plane == True:
+                    if can_pilot_work == True:
+                        checkker = True
 
-        cabin_crew_checkker1 = False
-        while cabin_crew_checkker1 == False:
-            CABINCREW1 = input("Cabin crew1: ")
+        checkker = False
+        while checkker == False:
+            CABINCREW1 = input("1. Cabin crew: ")
             if CABINCREW1 == "":
                 CABINCREW1 = ORGINAL_CABINCREW1
-            cabin_crew_checkker1 = cabin_crew_validation(CABINCREW1)
-            # er þetta örugglega flugþjónn?
-            # er flugþjónn laus?
+            is_it_cabin_crew = attendant_validation(CABINCREW1)
+            can_cabin_crew_work = check_employee_validation(CABINCREW1, DEPARTURE)
+            if is_it_cabin_crew == True:
+                if can_cabin_crew_work == True:
+                    checkker = True
 
-        cabin_crew_checkker2 = False
-        while cabin_crew_checkker2 == False:
-            CABINCREW2 = input("Cabin crew2: ")
+        checkker = False
+        while checkker == False:
+            CABINCREW2 = input("2. Cabin crew: ")
             if CABINCREW2 == "":
                 CABINCREW2 = ORGINAL_CABINCREW2
-            cabin_crew_checkker2 = cabin_crew_validation(CABINCREW2)
-            # er þetta örugglega flugþjónn?
-            # er flugþjónn laus?
+            is_it_cabin_crew = attendant_validation(CABINCREW2)
+            can_cabin_crew_work = check_employee_validation(CABINCREW2, DEPARTURE)
+            if is_it_cabin_crew == True:
+                if can_cabin_crew_work == True:
+                    checkker = True
 
-        cabin_crew_checkker3 = False
-        while cabin_crew_checkker3 == False:
-            CABINCREW3 = input("Cabin crew3: ")
+        checkker = False
+        while checkker == False:
+            CABINCREW3 = input("3. Cabin crew: ")
             if CABINCREW3 == "":
                 CABINCREW3 = ORGINAL_CABINCREW3
-            cabin_crew_checkker3 = cabin_crew_validation(CABINCREW3)
-            # er þetta örugglega flugþjónn?
-            # er flugþjónn laus?
+            is_it_cabin_crew = attendant_validation(CABINCREW3)
+            can_cabin_crew_work = check_employee_validation(CABINCREW3, DEPARTURE)
+            if is_it_cabin_crew == True:
+                if can_cabin_crew_work == True:
+                    checkker = True
 
         change_list = [FLIGHT_NUM, DESTINATION_FROM, ARRIVING_AT, DEPARTURE, RETURN, AIRCRAFT_ID, PILOT1, PILOT2, CABINCREW1, CABINCREW2, CABINCREW3]
         print(f"{FLIGHT_NUM}    {DESTINATION_FROM}    {ARRIVING_AT}    {DEPARTURE}    {RETURN}    {AIRCRAFT_ID}    {PILOT1}    {PILOT2}    {CABINCREW1}    {CABINCREW2}    {CABINCREW3}")
-        self.__UI_API.set_changes_for_existing_worktrip(change_list)
         self.__UI_API.set_changes_for_existing_worktrip(change_list)
