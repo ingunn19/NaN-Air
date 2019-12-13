@@ -43,7 +43,25 @@ class WorkTripOverviewLogic(LogicParent):
                 line[4] = datetime.strptime(line[4], '%Y-%m-%dT%H:%M:%S')
             except:
                 pass
+
+
         return __week_overview
+
+    #adding the last column , fully staffed or not
+    def req_worktrips_of_the_week_with_fullystaffed(self, __week_overview):
+        first_line = __week_overview.pop(0)
+        for line in __week_overview:
+            all_employees_signed_to_worktrip = line[6:11]
+            if "" in all_employees_signed_to_worktrip:
+                line.append("Not fully staffed")
+            else:
+                line.append("Fully staffed")
+
+        __week_overview.append(first_line)
+
+        return __week_overview
+
+
 
     def req_worktrips_of_the_day(self,date):
         __all_worktrips = self.flight_records.read_file()
@@ -66,7 +84,7 @@ class WorkTripOverviewLogic(LogicParent):
         #     return None
         return __day_overview
 
-    def req_single_worktrip(self,flight_number):
+    def req_single_worktrip(self, flight_number):
         __all_worktrips = self.flight_records.read_file()
         return_list = []
         return_list.append(__all_worktrips[0])
