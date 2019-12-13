@@ -111,7 +111,7 @@ class UI_API:
         __pilots_with_licence_list = logic_API.view_all_with_licence_on_model(model)
         for line in __pilots_with_licence_list:
             id, ssn, name, role, licence, address, phonenumber, email = line
-            print(f"{id:4}{ssn:12}{name:40}{role:10}{licence:20}{address:20}{phonenumber:15}{email:100}")
+            print(f"{id:4}{ssn:20}{name:30}{role:10}{licence:20}{address:20}{phonenumber:15}{email:100}")
         print(SPACER)
 
     def get_pilot_licence(self):
@@ -119,7 +119,7 @@ class UI_API:
         __all_licences_list = logic_API.view_all_pilot_licences()
         for line in __all_licences_list:
             id, ssn, name, role, licence, address, phonenumber, email = line
-            print(f"{id:4}{ssn:12}{name:40}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
+            print(f"{id:4}{ssn:20}{name:30}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
         print(SPACER)
 
     def get_all_worktrips(self):
