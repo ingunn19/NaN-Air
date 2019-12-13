@@ -2,7 +2,7 @@ from ui_layer.newEmployee import New_Employee
 from ui_layer.newAirplane import New_Airplane
 from ui_layer.newWorkTrip import New_WorkTrip
 from ui_layer.newDestination import New_Destination
-SPACER = "_______________________________________________________________________________________________________________________________________"
+SPACER = "______________________________________________"
 
 class Initialize:
     def __init__(self):

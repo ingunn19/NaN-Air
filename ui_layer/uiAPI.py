@@ -39,7 +39,7 @@ class UI_API:
         __all_employee_list = logic_API.view_all_employees()
         for line in __all_employee_list:
             id, name, role, licence, address, phonenumber, email, eight = line
-            print(f'{id:4}{name:15}{role:22}{licence:12}{address:23}{phonenumber:17}{email:14}{eight}')
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:25}{email:14}{eight}')
         print(SPACER)
 
     def get_personal_info(self, employee):
@@ -47,7 +47,7 @@ class UI_API:
         employee_info_list = logic_API.view_employee_details(employee)
         for line in employee_info_list:
             id, name, role, licence, address, phonenumber, email, eight = line
-            print(f'{id:4}{name:15}{role:22}{licence:12}{address:17}{phonenumber:17}{email:14}{eight}')
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:25}{email:14}{eight}')
         print(SPACER)
 
         return employee_info_list # Á þetta að vera?
