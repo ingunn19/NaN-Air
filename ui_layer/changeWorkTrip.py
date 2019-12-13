@@ -38,21 +38,6 @@ class ChangeWorkTrip:
         ORGINAL_CABINCREW2 = original_list[9]
         ORGINAL_CABINCREW3 = original_list[10]
 
-        arriving_at_checkker = False
-        while arriving_at_checkker == False:
-                ARRIVING_AT = input("Arriving at: ")
-                if ARRIVING_AT == "":
-                    ARRIVING_AT = ORGINAL_ARRIVING_AT
-                arriving_at_checkker = destination_ID_validation(ARRIVING_AT) # það er ekki til neitt sem athugar formattið á input destination
-
-        departure_checkker = False
-        while departure_checkker == False:
-            ARRIVING_AT = input("Departure time: ")
-            if ARRIVING_AT == "":
-                ARRIVING_AT = ORGINAL_ARRIVING_AT
-            departure_checkker = time_validation(ARRIVING_AT)
-            # er þessi brottfaratími laus?
-
         plane_id_checkker = False
         while plane_id_checkker == False:
             AIRCRAFT_ID = input("Aircraft insignia: ")
