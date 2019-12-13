@@ -20,6 +20,9 @@ class UI_API:
         logic_API.set_employee(set_cabin_crew_list)
 
     # Vantar að taka inn departure time ATH!!!
+
+                        # ARRIVING_AT,  DEPARTURE,  AIRCRAFT_ID,  PILOT1,  PILOT2,  CABINCREW1,  CABINCREW2,  CABINCREW3
+
     def set_WorkTrip(self, arrivingAt, depart_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3):
         set_workTrip_list = ['RKV', arrivingAt, depart_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3]
         print(set_workTrip_list)

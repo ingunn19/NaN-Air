@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import ssn_validation, name_validation, pilot_validation, phone_validation, email_validation, address_validation, is_ssn_available, employee_email_validation, employee_gsm_validation
+from ui_layer.validation import ssn_validation, name_validation, pilot_validation, phone_validation, email_validation, address_validation, is_ssn_available, employee_email_validation, employee_gsm_validation, cabin_crew_validation
 
 
 SPACER = "_____________________________________________"
@@ -41,7 +41,7 @@ class New_CabinCrew:
         role_check = False
         while role_check == False:
             self.__role = input("Role: ").lower()
-            role_check = pilot_validation(self.__role)
+            role_check = cabin_crew_validation(self.__role)
 
         address_checkker = False
         while address_checkker == False:
