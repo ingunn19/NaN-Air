@@ -59,18 +59,18 @@ class New_WorkTrip:
                     if can_pilot_work == True:
                         checkker = True
 
-        checkker2 = False
-        while checkker2 == False:
+        checkker1 = False
+        while checkker1 == False:
             self.__pilot2 = input("2. Pilot ID: ")
             if self.__pilot2 == "":
-                checkker = True
+                checkker1 = True
             is_it_a_pilot = check_pilot_validation(self.__pilot2)
             can_pilot_fly_this_plane = pilot_licence_validation(self.__pilot2, self.__aircraftID)
             can_pilot_work = check_employee_validation(self.__pilot2, self.__departure)
             if is_it_a_pilot == True:
                 if can_pilot_fly_this_plane == True:
                     if can_pilot_work == True:
-                        checkker2 = True
+                        checkker1 = True
 
             checkker = False
             while checkker == False:
