@@ -76,12 +76,6 @@ class UI_API:
             print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:25}{email:14}{eight}')
         print(SPACER)
 
-    def get_name(self, employee_id): # Vantar get name
-        # __employee_name = self.__logic_API.get_name(employee_id)
-        print("Employee name")# þessi print setning er bara svo eg fái ekki errror
-        print(SPACER)
-        # return __employee_name
-
     def get_day_with_task(self, task_day):
         print("Employee with task:")
         __working_employees_list = logic_API.view_working_today(task_day)
@@ -192,7 +186,7 @@ class UI_API:
 
     def get_plane_state(self):
         print("State of planes")
-        __state_of_airplanes_list = logic_API.view_state_of_planes(date)
+        __state_of_airplanes_list = logic_API.view_state_of_planes()
         for line in __state_of_airplanes_list:
             planeType, planeInsignia, status, next_available, destination, flightNumber = line
             print(f"{planeInsignia:15}{planeType:15}{status:14}{str(next_available):20}{destination:13}{flightNumber}")

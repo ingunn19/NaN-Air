@@ -119,9 +119,9 @@ class LogicAPI():
         return self.__airplane_data.req_single_plane(plane_id)
         # return None
 
-    def view_state_of_planes(self, date):
+    def view_state_of_planes(self):
         # checker
-        return self.__airplane_data.req_state_of_planes(date)
+        return self.__airplane_data.req_state_of_planes()
         # return None
 
 

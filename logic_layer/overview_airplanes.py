@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from logic_layer.overview_worktrips import WorkTripOverviewLogic
 from logic_layer.logic_parent import LogicParent
+from logic_layer.clock import Clock
 
 class PlaneOverviewLogic(LogicParent):
 #overview airplanes
@@ -21,7 +22,7 @@ class PlaneOverviewLogic(LogicParent):
                 return return_list
         return None
 
-    def req_state_of_planes(self, date_input):
+    def req_state_of_planes(self):
         #importing all planes
         tripData = WorkTripOverviewLogic()
         planeData = PlaneOverviewLogic()
@@ -37,7 +38,8 @@ class PlaneOverviewLogic(LogicParent):
         __list_of_all_worktrips = tripData.req_all_worktrips()
 
         #making the date  an isoformat
-        date_iso_format = datetime.strptime(date_input, '%Y-%m-%dT%H:%M:%S')
+        clock = Clock()
+        date_iso_format = clock.get_current_time()
 
         #making the final list
         __final_list = []
@@ -52,12 +54,14 @@ class PlaneOverviewLogic(LogicParent):
                     planeType = plane_row[1]
             departure = line[3]
             arrival = line[4]
+            dt_departure = datetime.strptime(departure, '%Y-%m-%dT%H:%M:%S')
+            dt_arrival = datetime.strptime(arrival, '%Y-%m-%dT%H:%M:%S')
 
             # if date is between dep. and (arrival + 1hr) then is aircraft is unavailable.
             # if datetime.strptime(departure, '%Y-%m-%dT%H:%M:%S') <= date_iso_format <= ((datetime.strptime(arrival, '%Y-%m-%dT%H:%M:%S')) + timedelta(hours=1)):
-            if departure <= date_iso_format <= arrival + timedelta(hours=1):
+            if dt_departure <= date_iso_format <= dt_arrival + timedelta(hours=1):
                 #making all of the attributes that go to the list
-                next_available = line[4] + timedelta(hours=1)
+                next_available = dt_arrival + timedelta(hours=1)
                 planeinsignia = line[5]
                 destination = line[2]
                 flightnumber = line[0]

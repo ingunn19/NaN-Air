@@ -6,7 +6,8 @@ class Clock():
 
     def get_current_time(self):
         now = datetime.now()
-        return now.strftime("%Y-%m-%dT%H:%M:%S")
+        # now.strftime("%Y-%m-%dT%H:%M:%S")
+        return now
 
     def calculate_time_diff(self, time2):
         time_1 = datetime.strptime(self.__date_time, '%Y-%m-%dT%H:%M:%S')
