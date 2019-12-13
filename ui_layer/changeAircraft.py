@@ -32,4 +32,4 @@ class ChangeAircraft:
             aircraft_type_checkker = plane_type_ID_validation(self.aircraft[1])
 
         # hér væri gott að sýna breytingar
-        self.__UI_API.set_changes_for_existing_aircraft(self.aircraft)
+        self.__UI_API.set_changes_for_existing_aircraft(self.aircraft, orginallist[0])

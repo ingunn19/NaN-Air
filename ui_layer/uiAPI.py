@@ -135,8 +135,8 @@ class UI_API:
         print("All worktrips in given year,week")
         __work_week_list = logic_API.view_work_week(year, week)
         for line in __work_week_list :
-            flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3 = line
-            print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
+            flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3, staff = line
+            print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}{staff}")
         print(SPACER)
 
     def get_day_worktrip(self, display_workday):
@@ -153,8 +153,8 @@ class UI_API:
         print("Single worktrip")
         __work_trip_info_list = logic_API.view_single_worktrip(flight_number)
         for line in __work_trip_info_list:
-            flightNumber,departingFrom,arrivingAt,departure_time,return_time,aircraftID,pilot1,pilot2,fa1,fa2,fa3=line
-            print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}")
+            flightNumber,departingFrom,arrivingAt,departure_time,return_time,aircraftID,pilot1,pilot2,fa1,fa2,fa3,staff=line
+            print(f"{flightNumber:14}{departingFrom:15}{arrivingAt:12}{str(departure_time):21}{str(return_time):21}{aircraftID:12}{pilot1:8}{pilot2:8}{fa1:5}{fa2:5}{fa3:5}{staff}")
         print(SPACER)
         return __work_trip_info_list # Á þetta að vera?
 
@@ -211,8 +211,8 @@ class UI_API:
         logic_API.edit_destination_contact(destination) # Vantar!
         print("Setja inn breytt gögn um áfangastað")
 
-    def set_changes_for_existing_aircraft(self, aircraft):
-        logic_API.edit_airplane(aircraft) # Vantar!
+    def set_changes_for_existing_aircraft(self, aircraft, original_id):
+        logic_API.edit_airplane(aircraft, original_id) # Vantar!
         print("Setja inn breytt gögn um flugvél")
 
     def set_changes_for_existing_worktrip(self, worktrip):

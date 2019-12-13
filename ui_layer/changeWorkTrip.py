@@ -12,7 +12,7 @@ class ChangeWorkTrip:
         self.flight_number = input("Flight number: ")
         self.worktrip = self.__UI_API.get_specific_worktrip(self.flight_number)
         change_worktrip = self.worktrip[1]
-        original_list = self.worktrip.copy()
+        original_list = self.worktrip[1].copy()
 
         FLIGHT_NUM = change_worktrip[0]
         DESTINATION_FROM = change_worktrip[1]
