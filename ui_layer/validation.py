@@ -170,7 +170,7 @@ def departure_validation(departure):
     if ll_validation.check_depart_time_availability(departure):
         return True
     else:
-        print("ERROR! Departure time is already reserved.")
+        print("ERROR! Departure time is not available.")
         return False
 
 def aircraft_validation(aircraft):
