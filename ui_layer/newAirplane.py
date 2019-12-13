@@ -1,6 +1,6 @@
 from ui_layer.uiAPI import UI_API
 from ui_layer.validation import plane_insignia_validation, plane_type_ID_validation
-SPACER = "______________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________________________________________________"
 
 class New_Airplane:
     def __init__(self):

@@ -2,7 +2,7 @@ from ui_layer.initializeMenu import Initialize
 from ui_layer.overview import Overview
 from ui_layer.changeInfo import Change_Info
 
-SPACER = "______________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________________________________________________"
 
 class MainMenu:
     def __init__(self):

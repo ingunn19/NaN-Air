@@ -4,7 +4,7 @@ from ui_layer.noTask import NoTask
 from ui_layer.licence import Licence
 from ui_layer.detailedSearch import DetailedSearch
 
-SPACER = "______________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________________________________________________"
 
 class EmployeeOverview:
     def __init__(self):

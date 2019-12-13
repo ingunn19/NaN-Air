@@ -3,7 +3,7 @@ from ui_layer.changeWorkTrip import ChangeWorkTrip
 from ui_layer.changeDestination import ChangeDestination
 from ui_layer.changeAircraft import ChangeAircraft
 #from UI_API import UI_Api
-SPACER = "______________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________________________________________________"
 class Change_Info:
     def __init__(self):
         #self.__UI_API = UI_Api()

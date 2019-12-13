@@ -1,7 +1,7 @@
 from logic_layer.logicAPI import LogicAPI
 from datetime import date, timedelta, datetime
 
-SPACER = "_______________________________________________________________________________________________________________________________________"
+SPACER = "_______________________________________________________________________________________________________________________________________________________________________________"
 logic_API = LogicAPI()
 
 class UI_API:
@@ -64,7 +64,7 @@ class UI_API:
         __pilots_list = logic_API.view_all_pilots()
         for line in __pilots_list:
             id, name, role, licence, address, phonenumber, email, eight = line
-            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:25}{email:14}{eight}')
         print(SPACER)
 
     # This is Alexanders code /all cabin crew
@@ -73,7 +73,7 @@ class UI_API:
         __cabin_crew_list = logic_API.view_all_cabin_crew()
         for line in __cabin_crew_list:
             id, name, role, licence, address, phonenumber, email, eight = line
-            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:17}{email:14}{eight}')
+            print(f'{id:4}{name:15}{role:22}{licence:12}{address:18}{phonenumber:25}{email:14}{eight}')
         print(SPACER)
 
     def get_name(self, employee_id): # Vantar get name
@@ -111,7 +111,7 @@ class UI_API:
         __pilots_with_licence_list = logic_API.view_all_with_licence_on_model(model)
         for line in __pilots_with_licence_list:
             id, ssn, name, role, licence, address, phonenumber, email = line
-            print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
+            print(f"{id:4}{ssn:12}{name:40}{role:10}{licence:20}{address:20}{phonenumber:15}{email:100}")
         print(SPACER)
 
     def get_pilot_licence(self):
@@ -119,7 +119,7 @@ class UI_API:
         __all_licences_list = logic_API.view_all_pilot_licences()
         for line in __all_licences_list:
             id, ssn, name, role, licence, address, phonenumber, email = line
-            print(f"{id:4}{ssn:12}{name:52}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
+            print(f"{id:4}{ssn:12}{name:40}{role:15}{licence:20}{address:20}{phonenumber:15}{email:100}")
         print(SPACER)
 
     def get_all_worktrips(self):
