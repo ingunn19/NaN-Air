@@ -42,10 +42,10 @@ class New_WorkTrip:
             self.__aircraftID = input("Aircraft insignia: ")
             if self.__aircraftID != "":
                 plane_id_checkker = plane_insignia_validation(self.__aircraftID)
-                dose_this_plane_exist = aircraft_validation(self.__aircraftID)
-                is_plane_ready = check_aircraft_validation(self.__aircraftID, self.__departure)
                 if plane_id_checkker == True:
+                    dose_this_plane_exist = aircraft_validation(self.__aircraftID)
                     if dose_this_plane_exist == True:
+                        is_plane_ready = check_aircraft_validation(self.__aircraftID, self.__departure)
                         if is_plane_ready == True:
                             checkker = True
             else:
@@ -56,10 +56,10 @@ class New_WorkTrip:
             self.__pilot1 = input("1. Pilot ID: ")
             if self.__pilot1 != "":
                 is_it_a_pilot = check_pilot_validation(self.__pilot1)
-                can_pilot_fly_this_plane = pilot_licence_validation(self.__pilot1, self.__aircraftID)
-                can_pilot_work = check_employee_validation(self.__pilot1, self.__departure)
                 if is_it_a_pilot == True:
+                    can_pilot_fly_this_plane = pilot_licence_validation(self.__pilot1, self.__aircraftID)
                     if can_pilot_fly_this_plane == True:
+                        can_pilot_work = check_employee_validation(self.__pilot1, self.__departure)
                         if can_pilot_work == True:
                             checkker = True
             else:
@@ -70,10 +70,10 @@ class New_WorkTrip:
             self.__pilot2 = input("2. Pilot ID: ")
             if self.__pilot2 != "":
                 is_it_a_pilot = check_pilot_validation(self.__pilot2)
-                can_pilot_fly_this_plane = pilot_licence_validation(self.__pilot2, self.__aircraftID)
-                can_pilot_work = check_employee_validation(self.__pilot2, self.__departure)
                 if is_it_a_pilot == True:
+                    can_pilot_fly_this_plane = pilot_licence_validation(self.__pilot2, self.__aircraftID)
                     if can_pilot_fly_this_plane == True:
+                        can_pilot_work = check_employee_validation(self.__pilot2, self.__departure)
                         if can_pilot_work == True:
                             checkker1 = True
             else:
@@ -84,8 +84,8 @@ class New_WorkTrip:
                 self.__flightAttendant1 = input("1. Flight attendant ID: ")
                 if self.__flightAttendant1 != "":
                     is_it_cabin_crew = attendant_validation(self.__flightAttendant1)
-                    can_cabin_crew_work = check_employee_validation(self.__flightAttendant1, self.__departure)
                     if is_it_cabin_crew == True:
+                        can_cabin_crew_work = check_employee_validation(self.__flightAttendant1, self.__departure)
                         if can_cabin_crew_work == True:
                             checkker = True
                 else:
@@ -94,10 +94,10 @@ class New_WorkTrip:
             checkker = False
             while checkker == False:
                 self.__flightAttendant2 = input("2. Flight attendant ID: ")
-                if self.__flightAttendant1 != "":
+                if self.__flightAttendant2 != "":
                     is_it_cabin_crew = attendant_validation(self.__flightAttendant2)
-                    can_cabin_crew_work = check_employee_validation(self.__flightAttendant2, self.__departure)
                     if is_it_cabin_crew == True:
+                        can_cabin_crew_work = check_employee_validation(self.__flightAttendant2, self.__departure)
                         if can_cabin_crew_work == True:
                             checkker = True
                 else:
@@ -106,10 +106,10 @@ class New_WorkTrip:
             checkker = False
             while checkker == False:
                 self.__flightAttendant3 = input("3. Flight attendant ID: ")
-                if self.__flightAttendant1 != "":
+                if self.__flightAttendant3 != "":
                     is_it_cabin_crew = attendant_validation(self.__flightAttendant3)
-                    can_cabin_crew_work = check_employee_validation(self.__flightAttendant3, self.__departure)
                     if is_it_cabin_crew == True:
+                        can_cabin_crew_work = check_employee_validation(self.__flightAttendant3, self.__departure)
                         if can_cabin_crew_work == True:
                             checkker = True
                 else:
