@@ -8,8 +8,12 @@ class WithTask:
 
     def with_task(self):
         print("Choose a day: yyyy, mm, dd")
-        task_day = input()
-        print("Here we list all employees with task!")
-        self.__UI_API.get_day_with_task(task_day)
+        try:
+            task_day = input()
+            self.__UI_API.get_day_with_task(task_day)
+        except ValueError:
+            print("No tasks on this week")
+
+
         input()
         print(SPACER)

@@ -32,10 +32,13 @@ class DetailedSearch:
                 input()
 
             elif action == "2":
-                print(SPACER)
-                year = input("Year: ")
-                week = input("week: ")
-                self.__UI_API.get_work_schedule(self.employee_id, year, week)
+                try:
+                    print(SPACER)
+                    year = int(input("Year: "))
+                    week = int(input("week: "))
+                    self.__UI_API.get_work_schedule(self.employee_id, year, week)
+                except TypeError:
+                    print("Employee has no work schedule this week")
                 input()
 
             elif action == "q":
