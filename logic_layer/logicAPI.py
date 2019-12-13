@@ -10,6 +10,10 @@ from logic_layer.new_or_change_destination import AddNewOrChangeDestinaion
 from logic_layer.new_or_change_employee import AddNewOrChangeEmployee
 # Error checker
 from logic_layer.validation_checker import ValidationChecker
+from logic_layer.verification import CheckSeries
+
+#instance
+#instance
 
 
 class LogicAPI():
