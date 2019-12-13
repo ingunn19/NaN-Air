@@ -1,7 +1,7 @@
 from ui_layer.uiAPI import UI_API
 from ui_layer.validation import ssn_validation, name_validation, pilot_validation, plane_type_ID_validation, phone_validation, email_validation, address_validation, is_ssn_available, employee_email_validation, employee_gsm_validation
 
-SPACER = "_______________________________________________________________________________________________________________________________________________________________________________"
+SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 
 class New_Pilot:
     def __init__(self):

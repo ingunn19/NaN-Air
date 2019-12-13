@@ -3,7 +3,7 @@ from ui_layer.worktripHistory import WorktripHistory
 from ui_layer.destinationOverview import DestinationOverview
 from ui_layer.aircraftOverview import AircraftOverview
 
-SPACER = "_______________________________________________________________________________________________________________________________________________________________________________"
+SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 
 class Overview:
     def __init__(self):
