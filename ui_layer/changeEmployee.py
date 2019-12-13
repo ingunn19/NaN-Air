@@ -77,10 +77,10 @@ class ChangeEmployee:
                 if email_chekker == True:
                     email_available = employee_email_change(self.__employee_ID, EMAIL)
                     if email_available == True:
-                        checkker = True
+                        chekker = True
             else:
                 EMAIL = ORGINAL_EMAIL
-                checkker = True
+                chekker = True
 
         checkker_list = [EMPLOYEE_ID, SSN, NAME, ROLE, LICENCE, ADDRESS, GSM, EMAIL]
 

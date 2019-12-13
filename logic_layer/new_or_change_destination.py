@@ -12,9 +12,7 @@ class AddNewOrChangeDestinaion(LogicParent):
         __all_destinations = self.destinations.read_file()
         for line in __all_destinations:
             if __destination_info_list[0] == line[0]:
-                line = __destination_info_list
-            else:
-                return None
+                __all_destinations[__all_destinations.index(line)] = __destination_info_list
         self.destinations.write_file(__all_destinations)
 
 

@@ -12,5 +12,5 @@ class AddNewOrChangeAirplane(LogicParent):
         __all_aircrafts = self.aircraft.read_file()
         for line in __all_aircrafts:
             if original_ID == line[0]:
-                line = __airplane_info_list
+                __all_aircrafts[__all_aircrafts.index(line)] = __airplane_info_list
         self.aircraft.write_file(__all_aircrafts)

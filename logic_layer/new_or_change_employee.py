@@ -22,8 +22,7 @@ class AddNewOrChangeEmployee(LogicParent):
         __employee_id = employee_info_list[0]
         for line in __all_employee_list:
             if __employee_id in line:
-                line = employee_info_list
-            else:
-                return None
+                __all_employee_list[__all_employee_list.index(line)] = employee_info_list
+        self.crew.write_file(__all_employee_list)
 
 
