@@ -130,9 +130,9 @@ class LogicAPI():
         # checker
         self.__add_or_edit_employee.replace_info(employee_info)
 
-    def edit_airplane(self, plane_info):
+    def edit_airplane(self, plane_info, original_ID):
         # checker
-        self.__add_or_edit_airplane.replace_info(plane_info)
+        self.__add_or_edit_airplane.replace_info(plane_info, original_ID)
 
     def edit_worktrip_crew(self, flight_info):
         # checker

@@ -14,6 +14,7 @@ class ChangeDestination:
             destination_checkker = destination_ID_validation(self.destination_name)
 
         self.destination = self.__UI_API.get_specific_destination(self.destination_name)
+        self.destination = self.destination[1]
         originallist = self.destination.copy()
         ID = self.destination[0]
         DESTIONATION = self.destination[1]
