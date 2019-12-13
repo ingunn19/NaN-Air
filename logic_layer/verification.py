@@ -1,9 +1,9 @@
 from logic_layer.validation_checker import ValidationChecker
-from logic_layer import input_checker
+from logic_layer.logic_parent import LogicParent
 
 validate = ValidationChecker()
 
-class CheckSeries():
+class CheckSeries(LogicParent):
     # Add new
     def check_add_employee(self, __employee_info):
         __ssn, __name, __role, __licence, __address, __phonenumber, __email = __employee_info
@@ -82,17 +82,45 @@ class CheckSeries():
         else:
             return None
 
-
-
     # Edit existing
     def check_edit_employee(self, __employee_info):
-        pass
+        id, ssn, name, role, licence, email, address, gsm = __employee_info
+        __all_crew = self.crew.read_file()
+        if validate.check_if_role_exists(role):
+            if validate.check_if_licence_exists(licence):
+                for line in __all_crew:
+                    if line[0] != id:
+                        if email in line:
+                            return None
+                        if address in line:
+                            return None
+                        if gsm in line:
+                            return None
+                        return True
+        return None
 
     def check_edit_airplane(self, __airplane_info):
-        pass
+        Plane_Insignia, plane_type_Id = __airplane_info
+        if validate.check_if_plane_type_exists:
+            if validate.check_if_insignia_exists(Plane_Insignia):
+                return True
 
-    def check_edit_worktrip(self, __worktrip_info):
-        pass
+    def check_edit_crew(self, __flight_info):
+        flight_id, departFrom, arrivingAt, depart_time, return_time, aircraftID, pilot1, pilot2, flightAttendant1, flightAttendant2, flightAttendant3 = __flight_info
+        if validate.check_aircraft_availability(aircraftID, depart_time):
+            for employee in __flight_info[5: ]:
+                if validate.check_employee_availability(employee, depart_time):
+                    pass
+                else:
+                    return None
 
     def check_edit_contact(self, __destination_info):
-        pass
+        airportID, travel_time, destination, contact_name, contact_number = __destination_info
+        __all_destinations = self.destinations.read_file()
+        for line in __all_destinations:
+            if airportID != line[0]:
+                if contact_number in line:
+                    return None
+                else:
+                    return True
+        return None

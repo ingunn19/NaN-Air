@@ -12,8 +12,8 @@ from logic_layer.new_or_change_employee import AddNewOrChangeEmployee
 from logic_layer.validation_checker import ValidationChecker
 from logic_layer.verification import CheckSeries
 
-#instance
-#instance
+validate = ValidationChecker()
+check_series = CheckSeries()
 
 
 class LogicAPI():
