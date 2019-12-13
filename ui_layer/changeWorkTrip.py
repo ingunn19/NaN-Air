@@ -43,6 +43,7 @@ class ChangeWorkTrip:
             AIRCRAFT_ID = input("Aircraft insignia: ")
             if AIRCRAFT_ID == "":
                 AIRCRAFT_ID = ORGINAL_AIRCRAFT_ID
+                checkker = True
             plane_id_checkker = plane_insignia_validation(AIRCRAFT_ID)
             is_plane_ready = check_aircraft_validation(AIRCRAFT_ID, DEPARTURE)
             if plane_id_checkker == True:
@@ -54,6 +55,7 @@ class ChangeWorkTrip:
             PILOT1 = input("1. Pilot: ")
             if PILOT1 == "":
                 PILOT1 = ORGINAL_PILOT1
+                checkker = True
             is_it_a_pilot = check_pilot_validation(PILOT1)
             can_pilot_fly_this_plane = pilot_licence_validation(PILOT1, AIRCRAFT_ID)
             can_pilot_work = check_employee_validation(PILOT1, DEPARTURE)
@@ -67,6 +69,7 @@ class ChangeWorkTrip:
             PILOT2 = input("2. Pilot: ")
             if PILOT2 == "":
                 PILOT2 = ORGINAL_PILOT2
+                checkker = True
             is_it_a_pilot = check_pilot_validation(PILOT2)
             can_pilot_fly_this_plane = pilot_licence_validation(PILOT2, AIRCRAFT_ID)
             can_pilot_work = check_employee_validation(PILOT2, DEPARTURE)
@@ -80,6 +83,7 @@ class ChangeWorkTrip:
             CABINCREW1 = input("1. Cabin crew: ")
             if CABINCREW1 == "":
                 CABINCREW1 = ORGINAL_CABINCREW1
+                checkker = True
             is_it_cabin_crew = attendant_validation(CABINCREW1)
             can_cabin_crew_work = check_employee_validation(CABINCREW1, DEPARTURE)
             if is_it_cabin_crew == True:
@@ -91,6 +95,7 @@ class ChangeWorkTrip:
             CABINCREW2 = input("2. Cabin crew: ")
             if CABINCREW2 == "":
                 CABINCREW2 = ORGINAL_CABINCREW2
+                checkker = True
             is_it_cabin_crew = attendant_validation(CABINCREW2)
             can_cabin_crew_work = check_employee_validation(CABINCREW2, DEPARTURE)
             if is_it_cabin_crew == True:
@@ -102,6 +107,7 @@ class ChangeWorkTrip:
             CABINCREW3 = input("3. Cabin crew: ")
             if CABINCREW3 == "":
                 CABINCREW3 = ORGINAL_CABINCREW3
+                checkker = True
             is_it_cabin_crew = attendant_validation(CABINCREW3)
             can_cabin_crew_work = check_employee_validation(CABINCREW3, DEPARTURE)
             if is_it_cabin_crew == True:
