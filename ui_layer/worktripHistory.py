@@ -18,8 +18,8 @@ class WorktripHistory:
 
             action = input("Choose an option: ").lower()
             if action == "1":
-                print("display worktrip history")
                 self.__UI_API.get_all_worktrips()
+                print(SPACER)
                 input()
 
             elif action == "2":
@@ -28,14 +28,18 @@ class WorktripHistory:
                 year = int(input("Year: "))
                 week = int(input("Week: "))
                 self.__UI_API.get_week_worktrip(year, week)
+                print(SPACER)
                 input()
+
 
             elif action == "3":
                 print("Day worktrip overview ")
                 print("Choose your day: yyyy-mm-dd")
                 display_workday = input()
                 self.__UI_API.get_day_worktrip(display_workday)
+                print(SPACER)
                 input()
+
 
 
             elif action == "q":

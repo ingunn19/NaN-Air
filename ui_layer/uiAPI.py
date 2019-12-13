@@ -131,7 +131,6 @@ class UI_API:
         print(SPACER)
 
     def get_week_worktrip(self, year, week):
-        print("All worktrips in given year,week")
         __work_week_list = logic_API.view_work_week(year, week)
         for line in __work_week_list :
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3, staff = line
@@ -139,7 +138,6 @@ class UI_API:
         print(SPACER)
 
     def get_day_worktrip(self, display_workday):
-        print("All worktrips in given date")
         __work_day_list = logic_API.view_work_day(display_workday)
         for line in __work_day_list:
             flightNumber, departingFrom, arrivingAt, departure_time, return_time, aircraftID, pilot1, pilot2, fa1, fa2, fa3, staff = line
@@ -166,7 +164,7 @@ class UI_API:
         print(SPACER)
 
     def get_specific_destination(self, a_destination):
-        print("One destinaion")
+        print("One destination")
         __destination_info_list = logic_API.view_single_destination(a_destination)
         for line in __destination_info_list:
             id, destination, travel_time, contact_name, contact_number = line

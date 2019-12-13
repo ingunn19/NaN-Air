@@ -18,8 +18,8 @@ class DestinationOverview:
 
             if action == "1":
                 print(SPACER)
-                print("All destnations")
                 self.__UI_API.get_all_destinations()
+                print(SPACER)
                 input()
 
             elif action == "2":
@@ -29,6 +29,7 @@ class DestinationOverview:
                 a_destination = input()
                 print(a_destination)
                 self.__UI_API.get_specific_destination(a_destination)
+                print(SPACER)
                 input()
 
             elif action == "q":
