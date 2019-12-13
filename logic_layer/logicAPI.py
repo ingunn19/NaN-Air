@@ -89,7 +89,8 @@ class LogicAPI():
 
     def view_single_worktrip(self, flight_id):
         # check nota beint
-        return self.__worktrip_data.req_single_worktrip(flight_id)
+        work_day = self.__worktrip_data.req_single_worktrip(flight_id)
+        return self.__worktrip_data.req_worktrips_of_the_week_with_fullystaffed(work_day)
         # return None
 
     def view_work_week(self, year, week):
