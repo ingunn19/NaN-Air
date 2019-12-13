@@ -94,8 +94,8 @@ class LogicAPI():
 
     def view_work_week(self, year, week):
         # is this week realchecker   ATH!!!
-        return self.__worktrip_data.req_worktrips_of_the_week(year, week)
-
+        work_week = self.__worktrip_data.req_worktrips_of_the_week(year, week)
+        return self.__worktrip_data.req_worktrips_of_the_week_with_fullystaffed(work_week)
     def view_work_day(self, date):
         # is this date real checker   ATH!!!
         return self.__worktrip_data.req_worktrips_of_the_day(date)
