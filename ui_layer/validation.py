@@ -252,7 +252,7 @@ def employee_email_validation(employee_email):
 
 def is_ssn_available(ssn):
     if ll_validation.check_if_ssn_exists(ssn):
-        print("ERROR! This phonenumber is already in use.")
+        print("ERROR! This ssn is already in use.")
         return False
     else:
         return True

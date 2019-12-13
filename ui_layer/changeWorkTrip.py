@@ -104,7 +104,7 @@ class ChangeWorkTrip:
         while cabin_crew_checkker3 == False:
             CABINCREW3 = input("Cabin crew3: ")
             if CABINCREW3 == "":
-                CABINCREW3 = original_list[10]
+                CABINCREW3 = ORGINAL_CABINCREW3
             cabin_crew_checkker3 = cabin_crew_validation(CABINCREW3)
             # er þetta örugglega flugþjónn?
             # er flugþjónn laus?
