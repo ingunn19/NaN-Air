@@ -50,7 +50,7 @@ def pilot_validation(pilot):
         return False
 
 def cabin_crew_validation(cabin_crew):
-    ROLE = "cabin crew"
+    ROLE = "cabincrew"
 
     if cabin_crew == ROLE:
         return True
