@@ -58,7 +58,7 @@ class WorkTripOverviewLogic(LogicParent):
             else:
                 line.append("Fully staffed")
 
-        __week_overview.append(first_line)
+        __week_overview.insert(0,first_line)
 
         return __week_overview
 
