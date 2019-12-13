@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import destination_ID_validation, time_validation, plane_insignia_validation, pilot_validation, cabin_crew_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation
+from ui_layer.validation import destination_ID_validation, time_validation, plane_insignia_validation, pilot_validation, cabin_crew_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation, employee_validation
 SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 class ChangeWorkTrip:
     def __init__(self):
@@ -58,11 +58,13 @@ class ChangeWorkTrip:
             if PILOT1 != "":
                 is_it_a_pilot = check_pilot_validation(PILOT1)
                 if is_it_a_pilot == True:
-                    can_pilot_fly_this_plane = pilot_licence_validation(PILOT1, AIRCRAFT_ID)
-                    if can_pilot_fly_this_plane == True:
-                        can_pilot_work = check_employee_validation(PILOT1, DEPARTURE)
-                        if can_pilot_work == True:
-                            checkker = True
+                    is_it_a_employee = employee_validation
+                    if is_it_a_employee == True:
+                        can_pilot_fly_this_plane = pilot_licence_validation(PILOT1, AIRCRAFT_ID)
+                        if can_pilot_fly_this_plane == True:
+                            can_pilot_work = check_employee_validation(PILOT1, DEPARTURE)
+                            if can_pilot_work == True:
+                                checkker = True
             else:
                 PILOT1 = ORGINAL_PILOT1
                 checkker = True
@@ -73,11 +75,13 @@ class ChangeWorkTrip:
             if PILOT2 != "":
                 is_it_a_pilot = check_pilot_validation(PILOT2)
                 if is_it_a_pilot == True:
-                    can_pilot_fly_this_plane = pilot_licence_validation(PILOT2, AIRCRAFT_ID)
-                    if can_pilot_fly_this_plane == True:
-                        can_pilot_work = check_employee_validation(PILOT2, DEPARTURE)
-                        if can_pilot_work == True:
-                            checkker = True
+                    is_it_a_employee = employee_validation
+                    if is_it_a_employee == True:
+                        can_pilot_fly_this_plane = pilot_licence_validation(PILOT2, AIRCRAFT_ID)
+                        if can_pilot_fly_this_plane == True:
+                            can_pilot_work = check_employee_validation(PILOT2, DEPARTURE)
+                            if can_pilot_work == True:
+                                checkker = True
             else:
                 PILOT2 = ORGINAL_PILOT2
                 checkker = True
@@ -89,9 +93,11 @@ class ChangeWorkTrip:
             if CABINCREW1 != "":
                 is_it_cabin_crew = attendant_validation(CABINCREW1)
                 if is_it_cabin_crew == True:
-                    can_cabin_crew_work = check_employee_validation(CABINCREW1, DEPARTURE)
-                    if can_cabin_crew_work == True:
-                        checkker = True
+                    is_it_a_employee = employee_validation
+                    if is_it_a_employee == True:
+                        can_cabin_crew_work = check_employee_validation(CABINCREW1, DEPARTURE)
+                        if can_cabin_crew_work == True:
+                            checkker = True
             else:
                 CABINCREW1 = ORGINAL_CABINCREW1
                 checkker = True
@@ -102,9 +108,11 @@ class ChangeWorkTrip:
             if CABINCREW2 != "":
                 is_it_cabin_crew = attendant_validation(CABINCREW2)
                 if is_it_cabin_crew == True:
-                    can_cabin_crew_work = check_employee_validation(CABINCREW2, DEPARTURE)
-                    if can_cabin_crew_work == True:
-                        checkker = True
+                    is_it_a_employee = employee_validation
+                    if is_it_a_employee == True:
+                        can_cabin_crew_work = check_employee_validation(CABINCREW2, DEPARTURE)
+                        if can_cabin_crew_work == True:
+                            checkker = True
             else:
                 CABINCREW2 = ORGINAL_CABINCREW2
                 checkker = True
@@ -115,9 +123,11 @@ class ChangeWorkTrip:
             if CABINCREW3 != "":
                 is_it_cabin_crew = attendant_validation(CABINCREW3)
                 if is_it_cabin_crew == True:
-                    can_cabin_crew_work = check_employee_validation(CABINCREW3, DEPARTURE)
-                    if can_cabin_crew_work == True:
-                        checkker = True
+                    is_it_a_employee = employee_validation
+                    if is_it_a_employee == True:
+                        can_cabin_crew_work = check_employee_validation(CABINCREW3, DEPARTURE)
+                        if can_cabin_crew_work == True:
+                            checkker = True
             else:
                 CABINCREW3 = ORGINAL_CABINCREW3
                 checkker = True
