@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import destination_ID_validation, time_validation, contact_number
+from ui_layer.validation import destination_ID_validation, time_validation, contact_number, name_validation
 SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 
 class New_Destination:
@@ -35,7 +35,10 @@ class New_Destination:
 
         self.__destination = input("Destination: ")
 
-        self.__contact_name = input("Emergency contact: ")
+        contact_checkker = False
+        while contact_checkker == False:
+            self.__contact_name = input("Emergency contact: ")
+            contact_checkker = name_validation
 
         contact_number_checkker = False
         while contact_number_checkker == False:

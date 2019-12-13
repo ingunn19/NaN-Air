@@ -5,7 +5,6 @@ class AddNewOrChangeDestinaion(LogicParent):
     def add_new_destination(self, __new_list):
         all_destinations = self.destinations.read_file()
         all_destinations.append(__new_list)
-        print(all_destinations)
         self.destinations.write_file(all_destinations)
 
     # Changing
