@@ -16,7 +16,7 @@ class New_Employee:
             print("B. Back")
             print("Q. Quit")
 
-            action = input("Choose an option: ").lower()
+            action = (input("Choose an option: ")).lower()
             if action == "b":
                 print(SPACER)
 

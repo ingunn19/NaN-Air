@@ -37,7 +37,7 @@ class ChangeEmployee:
 
         role_checkker = False
         while role_checkker == False:
-            ROLE = input("New role: ")
+            ROLE = input("New role: ").lower()
             if ROLE == "":
                 ROLE = ORGINAL_ROLE
             role_checkker = role_validation(ROLE)

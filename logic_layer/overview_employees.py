@@ -21,7 +21,7 @@ class EmployeeOverviewLogic(LogicParent):
         #each list is one employee
         for list in __all_employee:
             #if the role pilot is in
-            if 'Pilot' == list[3]:
+            if 'pilot' == list[3]:
                 __pilot_list.append(list)
         # if len(__pilot_list) <= 1:
         #     return None
@@ -35,7 +35,7 @@ class EmployeeOverviewLogic(LogicParent):
         __flight_attendants.append(__all_employee[0])
 
         for listi in __all_employee:
-            if 'Cabincrew' in listi:
+            if 'cabincrew' in listi:
                 __flight_attendants.append(listi)
         # if len(__flight_attendants) <= 1:
         #     return None

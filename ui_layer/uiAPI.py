@@ -58,7 +58,6 @@ class UI_API:
         print(SPACER)
 
     def get_all_pilots(self):
-        print("req_overview_pilots")
         __pilots_list = logic_API.view_all_pilots()
         for line in __pilots_list:
             id, name, role, licence, address, phonenumber, email, eight = line
@@ -67,7 +66,6 @@ class UI_API:
 
     # This is Alexanders code /all cabin crew
     def get_all_cabin_crew(self):
-        print("req_overview_flight attendants")
         __cabin_crew_list = logic_API.view_all_cabin_crew()
         for line in __cabin_crew_list:
             id, name, role, licence, address, phonenumber, email, eight = line

@@ -41,7 +41,7 @@ class New_Pilot:
 
         role_check = False
         while role_check == False:
-            self.__role = input("Role: ").lower()
+            self.__role = (input("Role: ")).lower()
             role_check = pilot_validation(self.__role)
 
         licence_check = False
