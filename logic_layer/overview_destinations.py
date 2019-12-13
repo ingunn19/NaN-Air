@@ -5,8 +5,8 @@ class DestinationOverviewLogic(LogicParent):
     def req_all_destinations(self):
         #getting all destination
         __all_destinaions = self.destinations.read_file()
-        if len(__all_destinaions) <=1:
-            return None
+        # if len(__all_destinaions) <=1:
+        #     return None
         return __all_destinaions
 
     def req_single_destination(self, dest):
@@ -21,6 +21,6 @@ class DestinationOverviewLogic(LogicParent):
             if line[0] == dest:
                 list_of_the_destinataion.append(line)
 
-        if len(list_of_the_destinataion) <= 1:
-            return None
+        # if len(list_of_the_destinataion) <= 1:
+        #     return None
         return list_of_the_destinataion
