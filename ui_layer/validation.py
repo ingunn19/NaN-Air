@@ -151,6 +151,27 @@ def week_validation(week):
         print("ERROR! Invalid week.")
         return False
 
+def employee_gsm_change(employee, gsm):
+    if ll_validation.check_gsm_change_available(employee, gsm):
+        return True
+    else:
+        print("ERROR! This phone number is already in use.")
+        return False
+
+def employee_email_change(employee, email):
+    if ll_validation.check_gsm_change_available(employee, email):
+        return True
+    else:
+        print("ERROR! This email is already in use.")
+        return False
+
+def contact_number_change(destination, number):
+    if ll_validation.check_contact_number_change(destination, number):
+        return True
+    else:
+        print("ERROR! This contact number is already in use.")
+
+
 # Check if exists
 def employee_validation(employee):
     if ll_validation.check_if_employee_exists(employee):
@@ -256,3 +277,17 @@ def is_ssn_available(ssn):
         return False
     else:
         return True
+
+def has_trip_happened(flight_id):
+    if ll_validation.check_if_trip_is_finished(flight_id):
+        print("ERROR! Please choose a work trip that has not concluded.")
+        return False
+    else:
+        return True
+
+def does_trip_exist(flight_id):
+    if ll_validation.check_if_flight_id_exists(flight_id):
+        return True
+    else:
+        print("ERROR! Invalid flight ID.")
+        return False

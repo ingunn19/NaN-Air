@@ -1,6 +1,7 @@
 from logic_layer.logic_parent import LogicParent
 from logic_layer.overview_employees import EmployeeOverviewLogic
 from logic_layer.clock import Clock
+from datetime import datetime
 
 
 class ValidationChecker(LogicParent):
@@ -117,6 +118,38 @@ class ValidationChecker(LogicParent):
                 return True
         return None
 
+    def check_if_flight_id_exists(self, __flight_id):
+        """Takes in flight ID, checks if it already exists in logs
+            returns True if it exists, None if not"""
+        __all_flights = self.flight_records.read_file()
+        for line in __all_flights:
+            if __flight_id == line[0]:
+                return True
+        return None
+
+    def check_gsm_change_available(self, __employee, __gsm):
+        __all_crew = self.crew.read_file()
+        for line in __all_crew:
+            if line[0] != __employee:
+                if line[6] == __gsm:
+                    return None
+        return True
+
+    def check_email_change_available(self, __employee, __email):
+        __all_crew = self.crew.read_file()
+        for line in __all_crew:
+            if line[0] != __employee:
+                if line[-1] == __email:
+                    return None
+        return True
+
+    def check_contact_number_change(self, __destination, __number):
+        __all_destinations = self.destinations.read_file()
+        for line in __all_destinations:
+            if line[0] != __destination:
+                if line[-1] == __number:
+                    return False
+        return True
 
     # Check for availability
     def check_pilot_licence(self, __employee_id, __plane_insignia):
@@ -143,7 +176,7 @@ class ValidationChecker(LogicParent):
         __flight_list = self.flight_records.read_file()
         __employee_shifts = []
         for line in __flight_list:
-            if __day == (line[3][:10] or line[4][:10]):
+            if __day[:10] == (line[3][:10] or line[4][:10]):
                 if __employee_id in line:
                     return None
         return True
@@ -173,3 +206,21 @@ class ValidationChecker(LogicParent):
             if __time_slot in line:
                 return None
         return True
+
+    def check_if_trip_is_finished(self, __flight_id):
+        """Takes in a flight ID and compares it to current time
+            to see if it has happened or not.
+            Return True if it has, None if it has not"""
+        clock = Clock()
+        __all_flights = self.flight_records.read_file()
+        __current_time = clock.get_current_time()
+        for line in __all_flights:
+            if __flight_id in line:
+                __depart_time = line[3]
+                break
+        __dt_depart_time = datetime.strptime(__depart_time, '%Y-%m-%dT%H:%M:%S')
+
+        if __current_time > __dt_depart_time:
+            return True
+        else:
+            return None

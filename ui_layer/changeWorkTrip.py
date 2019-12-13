@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import destination_ID_validation, time_validation, plane_insignia_validation, pilot_validation, cabin_crew_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation, employee_validation
+from ui_layer.validation import destination_ID_validation, time_validation, plane_insignia_validation, pilot_validation, cabin_crew_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation, employee_validation, has_trip_happened, does_trip_exist
 SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 class ChangeWorkTrip:
     def __init__(self):
@@ -9,7 +9,15 @@ class ChangeWorkTrip:
 
     def change_workTrip(self):
         print("Change worktrip info:")
-        self.flight_number = input("Flight number: ")
+        checkker = False
+        while checkker != True:
+            self.flight_number = input("Flight number: ")
+            trip_exists = does_trip_exist(self.flight_number)
+            if trip_exists:
+                trip_over = has_trip_happened(self.flight_number)
+                if trip_over:
+                    checkker = True
+        
         self.worktrip = self.__UI_API.get_specific_worktrip(self.flight_number)
         change_worktrip = self.worktrip[1]
         original_list = self.worktrip[1].copy()
@@ -88,13 +96,13 @@ class ChangeWorkTrip:
 
 
         checkker = False
-        while checkker != False:
+        while checkker == False:
             CABINCREW1 = input("1. Cabin crew: ")
             if CABINCREW1 != "":
-                is_it_cabin_crew = attendant_validation(CABINCREW1)
-                if is_it_cabin_crew == True:
-                    is_it_a_employee = employee_validation
-                    if is_it_a_employee == True:
+                is_it_a_employee = employee_validation(CABINCREW1)
+                if is_it_a_employee == True:
+                    is_it_cabin_crew = attendant_validation(CABINCREW1)
+                    if is_it_cabin_crew == True:
                         can_cabin_crew_work = check_employee_validation(CABINCREW1, DEPARTURE)
                         if can_cabin_crew_work == True:
                             checkker = True
@@ -106,10 +114,10 @@ class ChangeWorkTrip:
         while checkker == False:
             CABINCREW2 = input("2. Cabin crew: ")
             if CABINCREW2 != "":
-                is_it_cabin_crew = attendant_validation(CABINCREW2)
-                if is_it_cabin_crew == True:
-                    is_it_a_employee = employee_validation
-                    if is_it_a_employee == True:
+                is_it_a_employee = employee_validation(CABINCREW2)
+                if is_it_a_employee == True:
+                    is_it_cabin_crew = attendant_validation(CABINCREW2)
+                    if is_it_cabin_crew == True:
                         can_cabin_crew_work = check_employee_validation(CABINCREW2, DEPARTURE)
                         if can_cabin_crew_work == True:
                             checkker = True
@@ -118,13 +126,13 @@ class ChangeWorkTrip:
                 checkker = True
 
         checkker = False
-        while checkker != False:
+        while checkker == False:
             CABINCREW3 = input("3. Cabin crew: ")
             if CABINCREW3 != "":
-                is_it_cabin_crew = attendant_validation(CABINCREW3)
-                if is_it_cabin_crew == True:
-                    is_it_a_employee = employee_validation
-                    if is_it_a_employee == True:
+                is_it_a_employee = employee_validation(CABINCREW3)
+                if is_it_a_employee == True:
+                    is_it_cabin_crew = attendant_validation(CABINCREW3)
+                    if is_it_cabin_crew == True:
                         can_cabin_crew_work = check_employee_validation(CABINCREW3, DEPARTURE)
                         if can_cabin_crew_work == True:
                             checkker = True

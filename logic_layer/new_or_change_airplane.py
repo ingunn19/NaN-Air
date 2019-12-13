@@ -8,11 +8,9 @@ class AddNewOrChangeAirplane(LogicParent):
         self.aircraft.write_file(all_aircrafts)
 
     # Changing
-    def replace_info(self, __airplane_info_list):
+    def replace_info(self, __airplane_info_list, original_ID):
         __all_aircrafts = self.aircraft.read_file()
         for line in __all_aircrafts:
-            if __airplane_info_list[0] == line[0]:
+            if original_ID == line[0]:
                 line = __airplane_info_list
-            else:
-                return None
         self.aircraft.write_file(__all_aircrafts)

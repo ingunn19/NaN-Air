@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import destination_ID_validation, contact_number
+from ui_layer.validation import destination_ID_validation, contact_number_change
 SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 class ChangeDestination:
     def __init__(self):
@@ -38,7 +38,7 @@ class ChangeDestination:
             CONTACT_NUMBER = input("New emergency contact GSM: ")
             if CONTACT_NUMBER == "":
                 CONTACT_NUMBER = ORIGINAL_CONTACT_NUMBER
-            contact_number_checkker = contact_number(CONTACT_NUMBER)
+            contact_number_checkker = contact_number_change(self.destination_name, CONTACT_NUMBER)
 
         change_list = [ID, DESTIONATION, TRAVEL_TIME, CONTACT_NAME, CONTACT_NUMBER]
 

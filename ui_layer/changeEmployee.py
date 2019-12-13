@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import plane_type_ID_validation, email_validation, address_validation, phone_validation, role_validation, is_ssn_available, employee_gsm_validation
+from ui_layer.validation import plane_type_ID_validation, email_validation, address_validation, phone_validation, role_validation, is_ssn_available, employee_gsm_change, employee_email_change, employee_validation
 SPACER = "____________________________________________________________________________________________________________________________________________________________________________"
 class ChangeEmployee:
     def __init__(self):
@@ -11,11 +11,9 @@ class ChangeEmployee:
         print("Change employee info:")
         id_checkker = False
         while id_checkker == False:
-            try:
-                self.__employee_ID = input("Employee ID: ")
-                id_checkker = True
-            except :# vantar villumeldinguna þarf að prufa að keyra þetta
-                continue
+            self.__employee_ID = input("Employee ID: ")
+            id_checkker = employee_validation(self.__employee_ID)
+                
         self.__employee = self.__UI_API.get_personal_info(self.__employee_ID)
         change_employee = self.__employee[1]
         orgenallist = change_employee.copy()
@@ -61,24 +59,28 @@ class ChangeEmployee:
         checkker = False
         while checkker == False:
             GSM = input("New GSM: ")
-            if GSM == "":
+            if GSM != "":
+                gsm_checkker = phone_validation(GSM)
+                if gsm_checkker == True:
+                    gsm_available = employee_gsm_change(self.__employee_ID, GSM)
+                    if gsm_available == True:
+                        checkker = True
+            else:
                 GSM = ORGINAL_GSM
-            gsm_checkker = phone_validation(GSM)
-            gsm_avalable = employee_gsm_validation(GSM)
-            if gsm_checkker == True:
-                if gsm_avalable == True:
-                    checkker = True
+                checkker = True
 
         chekker = False
         while chekker == False:
             EMAIL = input("New email: ")
-            if EMAIL == "":
+            if EMAIL != "":
+                email_chekker = email_validation(EMAIL)
+                if email_chekker == True:
+                    email_available = employee_email_change(self.__employee_ID, EMAIL)
+                    if email_available == True:
+                        checkker = True
+            else:
                 EMAIL = ORGINAL_EMAIL
-            email_chekker = email_validation(EMAIL)
-            avalable_ssn = is_ssn_available(EMAIL)
-            if email_chekker == True:
-                if avalable_ssn == True:
-                    chekker = True
+                checkker = True
 
         checkker_list = [EMPLOYEE_ID, SSN, NAME, ROLE, LICENCE, ADDRESS, GSM, EMAIL]
 

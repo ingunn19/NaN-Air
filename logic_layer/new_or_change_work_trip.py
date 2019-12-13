@@ -80,6 +80,7 @@ class AddNewOrChangeWorkTrip(LogicParent):
         __flight_record_list = self.flight_records.read_file()
         __flight_id = flight_info_list[0]
         for line in __flight_record_list:
-            if __flight_id in line:
-                line = flight_info_list
-        self.flight_records.write_file(flight_info_list)
+            if __flight_id == line[0]:
+                __flight_record_list[__flight_record_list.index(line)] = flight_info_list
+                break
+        self.flight_records.write_file(__flight_record_list)

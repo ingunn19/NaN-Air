@@ -24,12 +24,5 @@ class ChangeAircraft:
                 self.aircraft[0] = orginallist[0]
             aircraft_insignia_checkker = plane_insignia_validation(self.aircraft[0])
 
-        aircraft_type_checkker = False
-        while aircraft_type_checkker == False:
-            self.aircraft[1] = input("New aircraft type ID: ")
-            if self.aircraft[1] == "":
-                self.aircraft[1] = orginallist[1]
-            aircraft_type_checkker = plane_type_ID_validation(self.aircraft[1])
-
         print(f"{self.aircraft[0]}    {self.aircraft[1]}")
         self.__UI_API.set_changes_for_existing_aircraft(self.aircraft, orginallist[0])
