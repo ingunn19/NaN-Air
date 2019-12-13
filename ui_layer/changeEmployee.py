@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import plane_type_ID_validation, email_vaidation, address_validation, phone_validation, role_validation
+from ui_layer.validation import plane_type_ID_validation, email_validation, address_validation, phone_validation, role_validation
 SPACER = "_____________________________________________"
 class ChangeEmployee:
     def __init__(self):
@@ -70,7 +70,7 @@ class ChangeEmployee:
             EMAIL = input("New email: ")
             if EMAIL == "":
                 EMAIL = ORGINAL_EMAIL
-            email_chekker = email_vaidation(EMAIL)
+            email_chekker = email_validation(EMAIL)
 
         checkker_list = [EMPLOYEE_ID, SSN, NAME, ROLE, LICENCE, ADDRESS, GSM, EMAIL]
 

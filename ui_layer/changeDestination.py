@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import destination_ID_validation, contact_name_validation, contact_number
+from ui_layer.validation import destination_ID_validation, contact_number
 SPACER = "_____________________________________________"
 class ChangeDestination:
     def __init__(self):
@@ -27,12 +27,11 @@ class ChangeDestination:
         ORIGINAL_CONTACT_NAME = originallist[3]
         ORIGINAL_CONTACT_NUMBER = originallist[4]
 
-        contact_namechekker = False
-        while contact_namechekker == False:
-            CONTACT_NAME = input("New emergency contact name: ")
-            if CONTACT_NAME == "":
-                CONTACT_NAME = ORIGINAL_CONTACT_NAME
-            contact_namechekker = contact_name_validation(CONTACT_NAME)
+
+        CONTACT_NAME = input("New emergency contact name: ")
+        if CONTACT_NAME == "":
+            CONTACT_NAME = ORIGINAL_CONTACT_NAME
+
 
         contact_number_checkker = False
         while contact_number_checkker == False:

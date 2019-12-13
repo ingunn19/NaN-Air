@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import ssn_validation, name_validation, pilot_validation, plane_type_ID_validation, phone_validation, email_vaidation, address_validation
+from ui_layer.validation import ssn_validation, name_validation, pilot_validation, plane_type_ID_validation, phone_validation, email_validation, address_validation
 
 SPACER = "_____________________________________________"
 
@@ -48,7 +48,7 @@ class New_Pilot:
         email_check = False
         while email_check == False:
             self.__email = input("Email: ")
-            email_check = email_vaidation(self.__email)
+            email_check = email_validation(self.__email)
 
         address_checkker = False
         while address_checkker == False:
