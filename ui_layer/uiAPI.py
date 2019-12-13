@@ -77,10 +77,10 @@ class UI_API:
     def get_day_with_task(self, task_day):
         print("Employee with task:")
         __working_employees_list = logic_API.view_working_today(task_day)
-        print('Employee Id: ', end="")
+        print('Employee Id and destination:')
         try:
-            for employee in __working_employees_list:
-                print(employee, end=" ")
+            for employee, destination in __working_employees_list:
+                print(f"{employee}:{destination}")
         except ValueError:
             print("no employees with tasks given this day")
         print("\n")

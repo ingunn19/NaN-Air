@@ -103,11 +103,11 @@ class EmployeeOverviewLogic(LogicParent):
         #     return None
 
         for line in __return_list:
-            __unavalible_employees.append([line[6],line[1]])
-            __unavalible_employees.append([line[7], line[1]])
-            __unavalible_employees.append([line[8], line[1]])
-            __unavalible_employees.append([line[9], line[1]])
-            __unavalible_employees.append([line[10], line[1]])
+            __unavalible_employees.append([line[6],line[2]])
+            __unavalible_employees.append([line[7], line[2]])
+            __unavalible_employees.append([line[8], line[2]])
+            __unavalible_employees.append([line[9], line[2]])
+            __unavalible_employees.append([line[10], line[2]])
 
 
 
