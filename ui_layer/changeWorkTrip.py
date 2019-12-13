@@ -1,5 +1,5 @@
 from ui_layer.uiAPI import UI_API
-from ui_layer.validation import destination_ID_validation, time_validation, plane_insignia_validation, pilot_validation, cabin_crew_validation
+from ui_layer.validation import destination_ID_validation, time_validation, plane_insignia_validation, pilot_validation, cabin_crew_validation, check_aircraft_validation, departure_validation,check_pilot_validation, pilot_licence_validation, check_employee_validation, attendant_validation
 SPACER = "_____________________________________________"
 class ChangeWorkTrip:
     def __init__(self):
@@ -111,4 +111,5 @@ class ChangeWorkTrip:
 
         change_list = [FLIGHT_NUM, DESTINATION_FROM, ARRIVING_AT, DEPARTURE, RETURN, AIRCRAFT_ID, PILOT1, PILOT2, CABINCREW1, CABINCREW2, CABINCREW3]
         print(f"{FLIGHT_NUM}    {DESTINATION_FROM}    {ARRIVING_AT}    {DEPARTURE}    {RETURN}    {AIRCRAFT_ID}    {PILOT1}    {PILOT2}    {CABINCREW1}    {CABINCREW2}    {CABINCREW3}")
+        self.__UI_API.set_changes_for_existing_worktrip(change_list)
         self.__UI_API.set_changes_for_existing_worktrip(change_list)
