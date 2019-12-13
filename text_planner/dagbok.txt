@@ -115,3 +115,15 @@ Dagbókarfærsla 9.
 Streymi og meðhöndæun gagna úr Data til UI gegnum Logic - Alexander
 
 Áframhaldandi vinna við Logic virkni fyrir Work Trip - Ingunn
+
+
+------Verkaskipting út restina af tímanum------
+UI_layer vinna, kalla á method í logicAPI, prenta gögn, ect. - Birgir
+UI_layer vinna, búa til villutékkar fyrir allt input, og sækja villutékk method úr Logic gegnum API
+Logic_layer vinna, búa til logicAPI tengingu fyrir UI og Data. Gera class fyrir nýskráningu vinnuferða og tilheirandi reiknivinnu, tímaútreikningar og villutékkar f. logic og UI - Ingunn
+Logic_layer vinna, búa til klasa fyrir overview (sækja gögn úr data og senda til UI), gera clasa fyrir nýskráningu starfsmanna, flugvéla, og áfangastaða - Alexander
+
+------Verkefnaskipting frá 12/12 fimmtudagur------
+Öll virkni komin í forritið, hefjum fínpussun og skýrsluvinnu
+kerfisprófun og bug fixes - Sindri, Birgir
+Skýrsluvinna - Ingunn, Alexander
